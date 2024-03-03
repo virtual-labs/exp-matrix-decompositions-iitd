@@ -1,6 +1,6 @@
 <h3 class="page-name">Feedback</h3>
 <p><b>Dear User</b>,</p>
-
+<p>hi</p>
 <p>Thanks for using Virtual Labs. Your opinion is valuable to us.  To help us improve, we'd like to ask you a few questions about your experience. It will only take 3 minutes and your answers will help us make Virtual Labs better for you and other users.
 </p><br/>
 
