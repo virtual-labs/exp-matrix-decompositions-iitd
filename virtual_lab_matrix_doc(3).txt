@@ -1,0 +1,1741 @@
+For Virtual-Lab � Matrix Doc
+TASK 1 � MATRIX OPERATIONS
+1) Adding and Subtracting Matrices-
+Procedure- 
+Choose Matrix A and B of any dimension (m*n , n*n etc. )
+1)Enter matrices which to be added (ex- A and B) 
+2)Check dimensions of both and A and B 
+Condition -1 If they are of different dimension 
+Pop up �error dimension mismatched. Dimension should be same 
+Condition -2 If dimension same � 
+Produce sum � just add the corresponding entries, and place this sum in the corresponding position in the matrix which results.
+
+just to explain this is the procedure for the 2*2 matrices--
+For example-
+
+
+
+
+2) Multiplication of Matrices-
+In linear algebra, the procedure for multiplying two matrices of size n x n is as follows:
+1. Verify that the matrices are of compatible dimensions for multiplication. In order for matrix A of size n x m to be multiplied by matrix B of size p x q, the number of columns in matrix A must be equal to the number of rows in matrix B (m = p).
+Otherwise-Pop up error � matrices dimensions are not compatible for multiplication.
+
+2. Create a new matrix C of size n x q, where each element is initialized to 0.
+3. For each element c(i,j) in matrix C, compute the dot product of the corresponding row i in matrix A and the corresponding column j in matrix B: 
+c(i,j) = a(i,1) * b(1,j) + a(i,2) * b(2,j) + ... + a(i,n) * b(n,j)
+4. Repeat steps 3 for all elements c(i,j) in matrix C.
+5. The resulting matrix C is the product of matrix A and B.
+It is important to keep in mind that not all matrices can be multiplied, and order of matrix also matter while multiplying.
+
+3) Division of matrices-
+Matrix division is not a well-defined operation in linear algebra, in the sense that there is no unique matrix that can be multiplied by another matrix to give a specific matrix. However, there is a way to solve a system of linear equations represented by matrices, which is known as "matrix inversion" and allows to find a solution in terms of a matrix that represents the inverse of the coefficient matrix.
+Suppose we want to find out A/B that can be also written as �
+AX=B, 
+X= A-1 * B
+
+4) Power of a Matrix �
+To find the power of a matrix in linear algebra, you can use matrix multiplication. Specifically, the power of a matrix A raised to the n-th power, denoted as An, is the result of multiplying A by itself n times.
+The procedure for finding the power of a matrix A to the nth power is as follows:
+1. Verify that the matrix A is square, meaning that the number of rows is equal to the number of columns.
+Otherwise-Pop up error �select number of rows and Column should be same(or matrix dimension mismatched or choose an square matrix)
+
+2. Initialize a new matrix B with the same dimensions as A, and set all elements to zero.
+3. Set B = A.
+4. Repeat the following steps (n-1) times: 
+a. Multiply B by A.
+b. Set B = result of step 4a.
+5. The resulting matrix B is the matrix A raised to the nth power.
+For example, if A is a 2x2 matrix and we want to find A^3, we would do the following:
+* A*A = B
+* B*A = A^3
+It is important to keep in mind that not all matrices can be raised to a power, especially non-square matrices. Additionally, some matrices that are square will not have a well-defined matrix power.
+
+5) Transpose of a Matrix-
+
+It is important to keep in mind that the transpose of a matrix is just a reordering of the elements, and does not change the underlying numbers. Therefore, transpose of a matrix is always exist, regardless of the matrix.
+To find the transpose of a matrix in linear algebra, you can follow these steps:
+1. Create a new matrix with the number of rows and columns swapped. For example, if the original matrix is an n x m matrix, the transpose will be an m x n matrix.
+2. For each element in the original matrix, place its corresponding element in the transposed matrix. For example, the element at position (i, j) in the original matrix will be placed at position (j, i) in the transposed matrix.
+3. The resulting matrix is the transpose of the original matrix.
+For example, if the original matrix is: 
+1 2
+3 4
+The transpose of the matrix is:
+1 3 
+2 4
+
+6) Determinant Calculation
+* chose a square matrix (n*n)
+Otherwise-Pop up error �select number of rows and Column should be same(or matrix dimension mismatched)
+
+ 1)  for a 2*2 matrix, the determinant is simply the product of the diagonal elements minus the product of the off- diagonal elements.
+
+
+
+2) for a n*n matrix � 
+There are several methods for finding the determinant of an n x n matrix in linear algebra, including:
+a) Gaussian elimination method: This method involves performing row operations on the matrix until it is transformed into an upper triangular matrix, and then taking the product of the diagonal elements. This method is useful for small matrices, but becomes impractical as the size of the matrix increases.
+b) Laplace expansion method: This method involves expanding the determinant of the matrix along a given row or column using the determinant of sub-matrices. This method can be applied to any size matrix, but becomes computationally expensive for large matrices.
+c) LU Decomposition method: This method involves decomposing the matrix into the product of a lower triangular matrix and an upper triangular matrix, and then taking the product of the diagonal elements of the upper triangular matrix. This method is efficient for large matrices.
+d) Cofactor Expansion method: This method involves expanding the determinant of the matrix using the determinant of the sub-matrices obtained by deleting a row and column from the original matrix. This method is similar to the Laplace expansion method, but avoids calculating the determinant of smaller sub-matrices multiple times.
+ In this document Please see the LU decomposition method of three types in detail.
+
+
+7) Adjoint matrix or adjugate matrix �
+The�adjoint of a matrix�B is the transpose of the cofactor matrix of B. The adjoint of a square matrix B is denoted by adj B. Let B = [bij] be a square matrix of order n. The three important steps involved in finding the adjoint of a matrix are:
+* Find the�minor matrix�M of all the elements of matrix B.- refer point 8 in this document.
+* Find the�cofactor matrix�C of all the minor elements of matrix M.-refer point 9 in this document.
+* Find the adj B by taking the�transpose�of the cofactor matrix C.- refer point 5 in this document.
+note that some important properties of the adjoint of a matrix-
+a) If 0 is a null matrix and I is an identity matrix then, adj (0) = 0 and adj (I) = I respectively.
+b) adj(BT) = adj(B)T, here BT�is a transpose of a matrix B.
+
+
+
+
+
+
+8 ) Minor of a Matrix:
+Minor of an element in a matrix is defined as the determinant obtained by deleting the row and column in which that element lies. 
+
+Procedure-
+1. Choose a square matrix (n X n) (e.g., 2 X 2, 3 X 3, 4 X 4, etc.,)
+Otherwise-Pop up error � select number of rows and Columns should be same (or matrix dimension mismatched) 
+
+2. Matrix elements will be entered by the user into input fields. The input fields should be user-friendly and in suitable shape. For a given matrix
+A = [?(a11&a12&a13@a21&a22&a23@a31&a32&a33)] 
+Minor of matrix element a11 is denoted as M11
+
+The minor�M11�of�A�is the determinant of�(n?1) � (n-1)�submatrix�of A, where the ith (here, 1st ) row and�jth (here, 1st ) column are deleted. In mathematical notation, we will get
+
+In our example,
+
+M11 = |?(a22&a23@a32&a33)| = a22*a33 � a23*a32
+Sign �|  |� denotes �determinant of a matrix�. 
+
+Similarly, minor of matrix element, a12 and a13 are denoted as
+ M12 = |?(a21&a23@a31&a33)| = a21*a33 � a23*a31
+And
+ M13 = |?(a21&a22@a31&a32)| = a21*a32 � a22*a31            , respectively.
+And so on.
+
+Now, minor of this given matrix A is
+[?(M11&M12&M13@M21&M22&M23@M31&M32&M33)] 
+
+3. Before getting the final result, all intermediate steps must be shown.
+
+
+9) Co-factor of a matrix-
+The�cofactor�of an element aij�is obtained by multiplying its corresponding minor by (-1)i+j. i.e., the minor is multiplied by a positive (+) or negative (-) sign depending on whether the element in the matrix is in a positive (+) or (-) position. Consider a square matrix B. By cofactor�Cij of an element�bij of B, we mean minor of�bij�with a positive or negative sign depending on i and j.
+
+for example � for 2 *2 matrix-
+
+
+
+10) Find inverse of a matrix
+Procedure-
+ 
+1) chose a square matrix (n*n)
+Otherwise-Pop up error �select number of rows and Column should be same(or matrix dimension mismatched)
+2) Check for singularity
+� If |A| =0 (singular matrix)
+Pop up error � inverse of this matrix cannot be found
+� If |A|? 0 (non-singular matrix)
+Calculate A-1  = �adj(A)/det(A)
+where�adj(A)�refers to the adjoint of a matrix A, to find adjoint find the cofactor matrix of the given matrix and then take transpose.
+
+
+
+
+11 ) Trace of a Matrix-
+The trace of a matrix is the sum of the diagonal elements. For a square matrix, the diagonal elements are the entries from the top-left corner to the bottom-right corner. The trace of a matrix is often represented using the notation tr(A) or Tr(A).
+To calculate the trace of a matrix of order n*n, you add up the elements along the diagonal.
+In general, for a square matrix A of order n*n, the trace is given by: tr(A) = ?(i=1 to n) a[i][i]
+Where a[i][i] is the diagonal element of matrix A at i-th row and i-th column.
+For example, for the matrix
+ A = [a11, a12, a13, a21, a22, a23, a31, a32, a33], 
+the trace is a11 + a22 + a33.
+
+12) Characteristic Polynomial of a matrix-
+The characteristic polynomial of a square matrix of order n x n can be found as follows:
+1. Create the matrix A and augment it with the identity matrix I, to form a new matrix [A|I].
+2. Perform row operations on [A|I] to create zeros below the main diagonal of A.
+3. Repeat the process until the matrix A becomes an upper triangular matrix.
+4. The characteristic polynomial of the matrix A is given by the determinant of (A - ?I), where ? is a scalar.
+5. The characteristic polynomial can be expressed as a polynomial of order n in terms of ?, which is called the characteristic polynomial of the matrix A.
+For example, for a 3x3 matrix A:
+| a, b, c | 
+| d, e, f | 
+| g, h, i |
+The characteristic polynomial is given by det(A - ?I), where ? is a scalar, and I is the identity matrix.
+det(A - ?I) =
+| a-?, b, c | 
+| d, e-?, f | 
+| g, h, i-? |
+The characteristic polynomial is a polynomial in ?, given by:
+det (A - ?I) = (a-?) (e-?) (i-?) - bdf - cde - ghi + cgh + bgi + aeh.
+
+13) Eigen Value of a Matrix-
+An eigenvalue of a matrix is a scalar value that satisfies the equation -  Av = ?v, where v is a non-zero eigenvector and ? is the corresponding eigenvalue. To find the eigenvalues of a matrix, one can use various methods such as the characteristic polynomial, the Jordan normal form, or the power iteration method. The characteristic polynomial is obtained by det(A - ?I) = 0, where A is the matrix, I is the identity matrix, and ? is an eigenvalue. The Jordan normal form is a diagonal matrix with the eigenvalues of A on its main diagonal. The power iteration method is an iterative algorithm that estimates the eigenvalues.
+the steps to find the eigenvalues of a square matrix of order n*n:
+1. Create the characteristic equation: Determine the characteristic polynomial of the matrix A by det(A - ?I) = 0, where ? is the eigenvalue, I is the identity matrix, and det is the determinant function.
+2. Solve the characteristic equation: Find the values of ? that satisfy the characteristic equation. These are the eigenvalues of the matrix.
+3. Find the eigenvectors: For each eigenvalue, find the corresponding eigenvector by solving the equation Av = ?v, where v is the eigenvector.
+4. Check the results: Verify that the eigenvalue and eigenvector satisfy the eigenvalue equation Av = ?v.
+Note: There are various numerical methods to find eigenvalues, such as the power iteration method, the QR algorithm, and the Jacobi method. The choice of method depends on the size of the matrix, the properties of the matrix, and the desired accuracy.
+Here is an example of finding eigenvalues of a 2x2 matrix:
+Given a matrix A = [[a, b], [c, d]], the characteristic equation can be found by det(A - ?I) = 0, where I is the identity matrix and ? is an eigenvalue.
+So for the 2x2 matrix, the characteristic equation will be:
+|A - ?I| = | [[a, b], [c, d]] - ? [[1, 0], [0, 1]] | = (a - ?)(d - ?) - bc = 0
+Solving this equation for ? gives the eigenvalues of the matrix.
+For example, let A = [[2, -1], [3, 4]]
+The characteristic equation will be:
+(2 - ?)(4 - ?) - (-1)(3) = 0
+Expanding and simplifying the equation:
+?^2 - 6? + 8 = 0
+Solving this quadratic equation for ?, we get the eigenvalues as:
+? = 2, 4
+
+
+14) Eigen Vector of a Matrix-
+Eigenvectors of a matrix are non-zero vectors whose direction is unchanged when the matrix is multiplied by it. The procedure to find eigenvectors of a matrix is:
+1. Find the eigenvalues of the matrix
+2. For each eigenvalue, solve the equation (A - ?I)x = 0, where A is the matrix, ? is the eigenvalue, I is the identity matrix, and x is the eigenvector.
+3. Normalize the eigenvectors so that their length is 1.
+4. The set of eigenvectors corresponding to each eigenvalue form a basis for the eigenspace associated with that eigenvalue.
+
+An example to find the eigen vector of a matrix A is as follows:
+1. Find the eigenvalue(s) of the matrix A using the characteristic polynomial or by solving the equation det(A - ?I) = 0, where I is the identity matrix.
+2. For each eigenvalue, solve the equation (A - ?I)x = 0 to find the corresponding eigenvector x.
+3. The eigenvector can be normalized by dividing by its magnitude, to make it a unit vector.
+For example, consider a matrix A = [2 1; 1 2].                                      The characteristic polynomial is-
+ (? - 2)^2 = 0, which gives ? = 2 as the eigenvalue. 
+To find the eigenvector, we solve the equation-
+ (A - 2I)x = 0, 
+which gives x = [1; 1]. 
+The eigenvector can be normalized by dividing by its magnitude to make it a unit vector.
+
+15 ) Transforming matrix to Row Echelon form � 
+
+
+
+16 ) Transforming matrix to Reduced Row Echelon form
+Procedure
+1. Choose an m X n matrix
+2. All zero rows are at the bottom. 
+3. Choose the leading entry in the first non-zero row and swap it with the first row if necessary.
+4. Divide the first row by the leading entry so that the leading entry becomes 1.
+5. Use row operations to make all entries in the first column above and below the leading entry equal to 0.
+6. Repeat steps 3 through 5 for each subsequent row, working from top to bottom.
+7. After all, rows have been processed, the matrix is in reduced row echelon form.
+
+Example:
+Given matrix A = [?(1&2&3@2&5&7@3&6&10)]
+
+R2 ? R2 � 2*R1 (R1 denotes row 1 and so on)
+[?(1&2&3@0&1&1@3&6&10)]
+
+R3 ? R3 � 3*R1
+[?(1&2&3@0&1&1@0&0&1)]
+
+
+R1 ? R1 � 2*R2
+[?(1&0&1@0&1&1@0&0&1)]
+
+R1 ? R1 � R3
+[?(1&0&0@0&1&1@0&0&1)]
+
+R2 ? R2 � R3
+[?(1&0&0@0&1&0@0&0&1)]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17 ) Triangular Matrix
+A triangular matrix is a type of square matrix (i.e., having an equal number of rows and columns) in which the entries below or above the main diagonal are all zero. That is, if a matrix is triangular, then all the elements below or above the main diagonal are zero, while the elements on the main diagonal and the rest of the matrix can have non-zero values. Triangular matrices are commonly used in numerical linear algebra and have several mathematical properties that make them useful in various computational tasks.
+There are two types of triangular matrices: upper triangular and lower triangular. A matrix can be converted into an upper triangular matrix or a lower triangular matrix using the Gaussian elimination method or by using matrix factorization techniques such as LU decomposition.
+The Gaussian elimination method involves performing row operations on the original matrix to obtain a row-reduced form that is an upper triangular matrix. The row operations include multiplying a row by a non-zero scalar, adding or subtracting two rows, and swapping two rows. The row-reduced form obtained by applying these row operations to the original matrix is the upper triangular matrix equivalent of the original matrix.
+Similarly, the lower triangular matrix can be obtained by applying row operations to the original matrix to obtain a row-reduced form that is a lower triangular matrix.
+It's important to note that the Gaussian elimination method may produce different results for different matrices and the results may also be sensitive to the order in which the rows are processed.
+
+
+
+
+
+ 18 ) LU Decomposition Using Gauss Elimination Method 
+
+LU Decomposition is a method to find solutions of linear equations.
+
+Using Gauss Elimination Method 
+
+Consider a matrix�??. If all entries below the diagonal entries are zero, then the matrix is called �upper triangular.� If all entries above the diagonal entries are zero, then the matrix is called �lower triangular.� 
+         And A = L*U
+L = [?(u11&0&0&0@u21&u22&0&0@u31&u32&u33&0@u41&u42&u43&u44)]  ;   U = [?(l11&l12&l13&l14@0&l22&l23&l24@0&0&l33&9@0&0&0&l44)]
+
+L= lower triangular matrix; U= upper triangular matrix
+
+Procedure-
+1. Choose a matrix (m X n) (e.g., 3X 3, 3 X 4, 4 X 4, etc.,)
+
+2. Initialize the L and U matrices. For L matrix, take a matrix with all diagonal elements assigned to 1, and the remaining components are zero. L matrix size will be (m X m). 
+
+3. Consider the U matrix's elements to be same to those of the A matrix. So, size of matrix U will be as same as matrix A.
+
+
+4. 4. Next, execute row operations on the U matrix to make sure that all of the components below the diagonal are zeroes. For instance, to make an element in row 2 or R2 at the (i,j)th position zero, we would first do 
+
+"R2 - (-2)*R1" 
+
+and then set the value �(-2)� at the (i,j)th place of the L Matrix.
+
+5. For a given matrix
+A = [?(2&4&3&5@-4&-7&-5&-8@6&8&2&9@4&9&-2&14)]
+
+A=L*U
+Or, A=[?(1&0&0&0@0&1&0&0@0&0&1&0@0&0&0&1)]  * [?(2&4&3&5@-4&-7&-5&-8@6&8&2&9@4&9&-2&14)]
+
+L= lower triangular matrix; U= upper triangular matrix
+
+After doing the row�operation "R2 - (-2)*R1," we get,
+
+Or, A = [?(1&0&0&0@-2&1&0&0@0&0&1&0@0&0&0&1)]  * [?(2&4&3&5@0&1&1&2@6&8&2&9@4&9&-2&14)]
+
+After row operation in matrix U, we have set (-2) to the same place of the L matrix and the (2, 1)th position of the U matrix, which is now zero.
+Firstly, try the first column elements of matrix U below diagonal elements to make zeroes,
+
+After doing,          �R2-(-2)*R1� (as demonstrated above)
+                              �R3-(3)*R1� and
+                              �R4-(2)*R1�
+We get,
+
+A = [?(1&0&0&0@-2&1&0&0@3&0&1&0@2&0&0&1)]  * [?(2&4&3&5@0&1&1&2@0&-4&-7&-6@0&1&-9&2)]
+
+In a same way, we will now employ row operations to set the elements of the second column of matrix U to zero.
+
+Calculate,    �R3-(-4)*R2� and
+                    �R4-(1)*R2�
+
+We get,
+A = [?(1&0&0&0@-2&1&0&0@3&-4&1&0@2&1&0&1)]  * [?(2&4&3&5@0&1&1&2@0&0&-3&2@0&0&-9&-4)]
+
+Now, we'll apply row operations to convert the elements of the third column of matrix U to zeroes.
+
+Now calculate "R4-(3)*R2"
+We get,
+
+A = [?(1&0&0&0@-2&1&0&0@3&-4&1&0@2&1&3&1)]  * [?(2&4&3&5@0&1&1&2@0&0&-3&2@0&0&0&-4)]
+
+So, 
+
+L = [?(1&0&0&0@-2&1&0&0@3&-4&1&0@2&1&3&1)]  
+
+U = [?(2&4&3&5@0&1&1&2@0&0&-3&2@0&0&0&-4)]
+ 19 )LU Decomposition using Doolittle Factorization
+
+We can write an m X n matrix A as a product of two matrices, L and U. And A = L*U
+L = [?(1&0&0&0@l21&1&0&0@l31&l32&1&0@l41&l42&l43&1)]  ;   U = [?(u11&u12&u13&u14@0&u22&u23&u24@0&0&u33&u34@0&0&0&u44)]
+
+L= lower triangular matrix;    U= upper triangular matrix
+
+Procedure-
+1. Choose a matrix (m X n) (e.g., 3X 3, 3 X 4, 4 X 4, etc.,)
+
+2. Initialize the L and U matrices. For L matrix, take a matrix with all diagonal elements assigned to 1, and the matrix elements above the diagonal are zeroes. L matrix size will be (m X m). The values of matrix elements below the main diagonal can be assigned to l21, l31, etc., and so on. 
+
+ [?(1&0&0&0@l21&1&0&0@l31&l32&1&0@l41&l42&l43&1)]
+ 
+                                            l21, l31, etc. are unknown
+
+3. Size of matrix U will be as same as matrix A (or, m X n). Matrix U can be written as 
+[?(u11&u12&u13&u14@0&u22&u23&u24@0&0&u33&u34@0&0&0&u44)]
+                                    u11, u12, u13, u14, u22, etc. � all are unknown.
+
+4. For a given example, 
+
+A =[?(2&-1&-2@-4&6&3@-4&-2&8)]
+
+
+Now, [?(2&-1&-2@-4&6&3@-4&-2&8)] = L * U = [?(1&0&0@l21&1&0@l31&l32&1)] * [?(u11&u12&u13@0&u22&u23@0&0&u33)]
+
+Next, resolve the basic equations, u11 = 2, u12 = -1, u13 = -2
+To get the above equations, take the sum of the multiplications of the elements in row 1 of matrix L and the elements in column 1 of matrix U to obtain the equations above. Then compare the sum with corresponding element of matrix A.
+Then follow the same process for matrix L�s row 1 and matrix U�s column 2, then matrix L�s row 1 and matrix U�s column 3.
+Then follow the same procedure for matrix L�s row 2 and 3
+Apply the same procedure to the first row of matrix L and the second column of matrix U, then to the first row of matrix L and third column of matrix U.
+Then repeat these steps for rows 2 and 3 of matrix L.
+
+l21*u11 = -4
+l21*u12 + u22 = 6
+l21*u13 + l23 =3
+
+l31*u11 = -4
+l31*u12 + l32*u22 = -2
+l31*u13 + l32* u23 + u33 = 8 
+
+We obtain matrices L and U by solving the aforementioned equations.
+
+
+20 ) LU Decomposition using Crout�s Method
+
+Procedure-
+1. Choose a matrix (m X n) (e.g., 3X 3, 3 X 4, 4 X 4, etc.,)
+
+2. The Crout�s matrix decomposition algorithm differs slightly from the Doolittle method. Doolittle's method returns a unit lower triangular matrix and an upper triangular matrix, while the Crout�s method returns a lower triangular matrix and a unit upper triangular matrix.
+
+3. Initialize the L and U matrices. L matrix size will be (m X m). The values of matrix elements below the main diagonal can be assigned to l21, l31, etc., and so on. And the matrix elements above the diagonal are zeroes.
+
+ [?(l11&0&0&0@l21&l22&0&0@l31&l32&l33&0@l41&l42&l43&l44)]
+ 
+                                            l21, l31, etc. are unknown
+
+4. For matrix U, take a matrix with all diagonal elements assigned to 1, and the matrix elements below the diagonal are zeroes. Size of matrix U will be as same as matrix A (or, m X n). Matrix U can be written as 
+
+[?(1&u12&u13&u14@0&1&u23&u24@0&0&1&u34@0&0&0&1)]
+                                    u11, u12, u13, u14, u22, etc. are unknown.
+
+
+
+5. For a given example, 
+
+A =[?(1&2&3@2&5&2@3&2&5)]
+
+
+Now, [?(1&2&3@2&5&2@3&2&5)]= L * U = [?(l11&0&0@l21&l22&0@l31&l32&l33)] * [?(1&u12&u13@0&1&u23@0&0&1)]
+                                         
+                                           = [?(l11&(l11*u12)&(l11*u13)@l21&(l21*u12+l22)&(l21*u13+l22*u23)@l31&(l31*u12+l32)&(l31*u13+l32*u23+l33))] 
+
+Next, resolve the basic matrix multiplication equations from above, 
+l11 = 1
+l11*u12 = 2
+l11*u13 = 3
+
+l21 = 2
+l21*u12+l22 = 5
+l21*u13+l22*u23 = 2
+
+l31 = 3
+l31*u12+l32 = 2
+l31*u13+l32*u23+l33=5
+We obtain matrices L and U by solving the aforementioned equations.
+
+21) Jordan Decomposition
+The goal of a Jordan decomposition is to diagonalize a given square matrix. If there is an invertible n�n matrix C and a diagonal matrix D such that A=CDC-1, then an n�n matrix A is diagonalizable.
+
+Procedure-
+1. Choose a square matrix (m X m) (e.g., 3 X 3, 4 X 4, 5 X 5, etc.,)
+Otherwise-Pop up error � select number of rows and Columns should be same (or matrix dimension mismatched) 
+
+2. For a given matrix,
+A = [?(2&1&0@1&2&1@0&1&2)] 
+
+The aim of Jordan decomposition is to diagonalize a given square matrix A, if A=PDP-1 is possible, where P is an invertible matrix and D is diagonal matrix. We'll go into the specifics of how matrix P and matrix D are formed later. Matrix P and D are�derived from matrix A.
+
+3. Firstly, we�ll find the eigen values of the matrix A
+| A � ?*I | = 0          (I = identity matrix)
+Or, [?(2&1&0@1&2&1@0&1&2)]- ?*[?(1&0&0@0&1&0@0&0&1)] = 0
+Or, [?((2-?)&1&0@1&(2-?)&1@0&1&(2-?))] = 0
+
+Or, (2-?) ((2-?) � (2-?)-1�1)-1(1� (2-?)-1�0) +0(1�1-(2-?) �0) = 0
+Or,(2-?)((4-4?+?2)-1)-1((2-?)-0)+0(1-0)=0
+
+Or,(2-?)(3-4?+?2)-1(2-?)+0(1)=0
+
+Or,(6-11?+6?2-?3)-(2-?)+0=0
+
+Or,(-?3+6?2-10?+4)=0
+
+Or,-(?-2)(?-0.5858)(?-3.4142)=0
+
+Or,(?-2)=0or(?-0.5858)=0or(?-3.4142)=0
+
+So,�The eigenvalues of the matrix�A�are given by�?=0.5858,2,3.4142
+You can apply Newton Raphson method to find a good approximation for the�root�of a real-valued function. You can use this method here to find the eigen values (or, ?�s)
+
+Please read through the matrix's minor and co-factor in to understand the finding of the determinant value in step 3. I've already written an article regarding minors of�a matrix.
+
+4. Now, calculate the eigen vectors from the corresponding eigen values.
+In our case, eigen values are 0.5858, 2, 3.4142
+For, ?=0.5858
+A - ?*I
+= A - 0.5858*I
+= [?(2&1&0@1&2&1@0&1&2)] � 0.5858*[?(1&0&0@0&1&0@0&0&1)]
+=
+=        
+
+1.4142
+1
+0
+=        
+1
+1.4142
+1
+
+
+0
+1
+1.4142
+
+
+Now, do row operations to reduce the matrix
+Now, reduce this matrix
+R1?R1�1.4142
+�=�
+
+1
+0.7071
+0
+
+
+1
+1.4142
+1
+
+
+0
+1
+1.4142
+
+
+
+
+R2?R2-R1
+�=�
+
+1
+0.7071
+0
+
+
+0
+0.7071
+1
+
+
+0
+1
+1.4142
+
+
+
+
+Interchanging rows�R2?R3
+�=�
+
+1
+0.7071
+0
+
+
+0
+1
+1.4142
+
+
+0
+0.7071
+1
+
+
+
+
+R1?R1-0.7071�R2
+�=�
+
+1
+0
+-1
+
+
+0
+1
+1.4142
+
+
+0
+0.7071
+1
+
+
+
+
+R3?R3 - 0.7071�R2
+�=�
+
+1
+0
+-1
+
+
+0
+1
+1.4142
+
+
+0
+0
+0
+
+
+
+One can calculate row echelon form to reduce a matrix
+Now, compute
+A*x - ?I*x = 0
+Or, (A - ?I)x=0
+Or, (A - 0.5858*I)x=0
+Or, [?(1&0&-1@0&1&1.4142@0&0&0)]* [?(x1@x2@x3)]=[?(0@0@0)]
+Or, x1-x3=0, x2+1.4142x3=0
+
+Or, x1=x3, x2=-1.4142x3
+Now, for eigen value, ?=0.5858, corresponding eigen vector is 
+v1= [?(x3@-1.4142x3@x3)]
+let x3 = 1
+v1= [?(1@-1.4142@1)]
+We found the eigen vector for the eigen value, =0.5858, only in step 4 above. The same method may be used to calculate the eigen vectors for ?=2 and 3.4142.
+Corresponding eigen vectors for eigen values 2 & 3.4142 are
+v2= [?(-1@0@1)]
+and
+v3= [?(1@1.4142@1)]    respectively.
+
+5. To allow diagonalization, the number of eigenvectors must be equal the given square matrix�s dimension.
+
+If the number of eigenvalues�is less than the dimension of the given square matrix, a matrix cannot be diagonalized and show pop-up error.
+Pop up error � �not diagonalizable!�
+
+6. Now, initialize the P matrix. P matrix columns are formed from the eigen vectors derived from the eigen values 0.5858, 2, and 3.4142 or they are
+
+[v1     v2      v3]
+
+or, P = [-?(1&-1&1@1.4142&0&1.4142@1&1&1)]
+
+7. The diagonal matrix (D) of the above matrix A contains the eigen values of matrix A as the following diagonal elements:
+
+D = [?(0.5858&0&0@0&2&0@0&0&3.4142)]
+
+8. Now the final step is to check whether the matrix P is invertible or not. If matrix P is not invertible then display the pop-up notification
+Pop up error � �not diagonalizable!�
+
+The values of matrices A, P, and  P-1 will�only be displayed if matrix P is invertible.
+
+
+22) Power Method for Dominant Eigenvalue
+Let ?1, ?2, ?3, and ?n be the eigenvalues of an n X n matrix A.  ?1 is called the dominant eigenvalue of A if
+| ?1| > | ?i |,   i = 2, 3, ... , n
+The eigenvectors corresponding to ?1 are called dominant eigenvectors of A.
+
+Procedure
+1. Choose an n X n matrix
+Otherwise-Pop up error � the number of rows and columns should be the same (or matrix dimension mismatched)
+
+2. Like the Jacobi and Gauss-Seidel methods, the power method for approximating eigenvalues is iterative. First, we assume that matrix A has a dominant eigenvalue with corresponding dominant eigenvectors. Then we choose an initial approximation x0 of one of the
+dominant eigenvectors of A. This initial approximation must be a nonzero vector in Rn 
+
+Finally, we form the sequence given by
+x1 = Ax0
+x2 = Ax1 = A(Ax0) = A2x0
+x3 = Ax2 = A(A2x0) = A3x0
+. . .
+xn = Axn-1 = A(An-1x0) = Anx0
+(In the above, x1 denotes the value of vector x at the first iteration and so on)
+
+Compare the updated value of x with its previous value (obtained from the previous iteration)
+
+For large powers of k, and by properly scaling this sequence, we will see that we obtain a good approximation of the dominant eigenvector of A. 
+
+3. Repeat the iteration process until convergence
+
+4. The formula for finding the corresponding eigenvalue from eigenvector x.
+If x is an eigenvector of A, then its corresponding eigenvalue is given by 
+
+? = (Ax.x / x.x)
+
+
+5. If they do not converge even after many iterations (maybe after 1000 iterations), then show pop-up message
+Otherwise-Pop up error � Entered matrix has no dominant eigenvalue
+
+Example
+A = [?(2&-12@1&-5)]
+
+We begin with an initial nonzero approximation of
+x0 = [?(1@1)]
+
+We then obtain the following approximations
+x1 = Ax0 = [?(2&-12@1&-5)][?(1@1)] = [?(-10@-4)] = -4[?(2.50@1.00)]
+
+x2 = Ax1 = [?(2&-12@1&-5)][?(-10@-4)] = [?(28@10)] = 10[?(2.80@1.00)]
+x3 = Ax2 = [?(2&-12@1&-5)][?(28@10)] = [?(-64@-22)] = -22[?(2.91@1.00)]
+
+x4 = Ax3 = [?(2&-12@1&-5)][?(-64@-22)] = [?(136@46)] = 46[?(2.96@1.00)]
+
+x5 = Ax4 = [?(2&-12@1&-5)][?(136@46)] = [?(-280@-94)] = -94[?(2.98@1.00)]
+x6 = Ax5 = [?(2&-12@1&-5)][?(-280@-94)] = [?(568@190)] = 190[?(2.99@1.00)]
+
+Note that the approximations in Example appear to be approaching scalar multiples of [?(3@1)]
+So, the obtained dominant eigenvector from the above iterations is
+x = [?(3@1)]
+
+Now, we�ll find the corresponding eigenvalue from the obtained eigenvector
+
+Formula
+If x is an eigenvector of A, then its corresponding eigenvalue is given by 
+
+? = (Ax.x / x.x)
+Ax = [?(2&-12@1&-5)][?(2.99@1.00)] = [?(-6.02@-2.01)]
+Then, Ax.x = [?(-6.02@-2.01)][?(2.99@1.00)] = -20.0 (approx.)
+And x.x = [?(2.99@1.00)][?(2.99@1.00)] = [?(2.99@1.00)] = 9.94 (approx.)
+So, the corresponding eigenvalue, ? = (-20.0 / 9.94) = -2 (approx.)
+
+
+Some more discussion about eigenvalue & eigenvector
+Let�s assume a square matrix A
+The characteristic equation,
+| A � ?*I | = 0   
+(where I is an identity matrix)
+After calculating the values of ?s we attempt to find eigenvectors for corresponding eigenvalues like this
+For eigenvalue, ? = ?1
+A*x = ?1*I*x   (where, x is an unknown vector)
+Or, (A - ?1*I)*x = 0
+The value of x is the corresponding eigenvector of ?1
+We�ve already discussed the topic of �eigenvalue and eigenvector� with the proper example in �Jordan Decomposition�. Please go thru it if you want.
+
+23) Determinant using Sarrus rule
+
+Procedure
+1. Choose an n X n matrix
+Otherwise-Pop up error � the number of rows and columns should be the same (or matrix dimension mismatched)
+          Although, Sarrus rule is not applicable for a square matrix which size is greater than 3 X 3, but also we can apply it to obtained 3 X 3 matrix after co-factor expansion of a given matrix.
+
+2. For a given matrix,
+A = [?(a11&a12&a13@a21&a22&a23@a31&a32&a33)]
+
+(a) If the number of rows = number of columns = 3, then,
+
+The determinant of this matrix using the Sarrus rule is
+
+
+Write out the first two columns of the matrix to the right of the third column, giving five columns in a row.
+
+Then add the products of the diagonals going from top to bottom (solid) and subtract the products of the diagonals going from bottom to top (dashed).
+
+det(A) = a11*a22*a33 + a12*a23*a31 + a13*a21*a32 � a31*a22*a13 � a32*a23*a11 � a33*a21*a12
+
+(b) If the number of rows = number of columns > 3, then
+Use cofactor expansion to find the determinant of given matrix
+For example, 
+A = [?(a11&a12&a13&a14@a21&a22&a23&a24@a31&a32&a33&a34@a41&a42&a43&a44)]
+det(A) = (-1)i+j * a11 * |?(a22&a23&a24@a32&a33&a34@a42&a43&a44)| + (-1)i+j * a12 * |?(a21&a23&a24@a31&a33&a34@a41&a43&a44)| +
+(-1)i+j * a13 * |?(a21&a22&a24@a31&a32&a34@a41&a42&a44)| + (-1)i+j * a14 * |?(a21&a22&a23@a31&a32&a33@a41&a42&a43)|
+
+(In (-1)i+j , �i� denotes the row number and �j� denotes the column number of a matrix element or entry)
+
+Now, you can apply Sarrus rule to find determinant of a matrix which size is 3X3.
+Same procedure can be applied for an n X n matrix.
+
+Co-factors and minors of a matrix are already discussed. Please go thru them if you want.
+
+Example
+For a 3 X 3 matrix
+A = [?(1&3&5@2&0&-1@4&-3&1)] = 1.0.1 + 3.(-1).4 + 5.2.(-3) � 4.0.5 � (-3).(-1).1 � 1.2.3
+= 0 -12 -30 � 0 � 3 � 6
+= -51
+
+
+
+For a 5 X 5 matrix
+A = [?(1&2&3&4&5@2&3&4&5&1@3&4&5&1&2@4&5&1&2&3@5&1&2&3&4)]
+= (-1)1+1*1* |?(3&4&5&1@4&5&1&2@5&1&2&3@1&2&3&4)| + (-1)1+2 * 2 * |?(2&4&5&1@3&5&1&2@4&1&2&3@5&2&3&4)| + (-1)1+3 * 3 * |?(2&3&5&1@3&4&1&2@4&5&2&3@5&1&3&4)| +
+(-1)1+4 * 4 * |?(2&3&4&1@3&4&5&2@4&5&1&3@5&1&2&4)| + (-1)1+5 * 5 * |?(2&3&4&5@3&4&5&1@4&5&1&2@5&1&2&3)|
+
+= 1* |?(3&4&5&1@4&5&1&2@5&1&2&3@1&2&3&4)| -2 * |?(2&4&5&1@3&5&1&2@4&1&2&3@5&2&3&4)| +3 * |?(2&3&5&1@3&4&1&2@4&5&2&3@5&1&3&4)| -4 * |?(2&3&4&1@3&4&5&2@4&5&1&3@5&1&2&4)| + 
+5 * |?(2&3&4&5@3&4&5&1@4&5&1&2@5&1&2&3)|
+
+Now, |?(3&4&5&1@4&5&1&2@5&1&2&3@1&2&3&4)| = 3 * |?(5&1&2@1&2&3@2&3&4)| -4 * |?(4&1&2@5&2&3@1&3&4)| +5 * |?(4&5&2@5&1&3@1&2&4)| -1 * |?(4&5&1@5&1&2@1&2&3)|
+= 3 * {(5.2.4 + 1.3.2 + 2.1.3) � (2.2.2 + 3.3.5 + 4.1.1)} -4* {(4.2.4+1.3.1+2.5.3) - (1.2.2 + 3.3.4 + 4.5.1)} + 5* {(4.1.4 + 5.3.1 + 2.5.2) � (1.1.2 + 2.3.4 + 4.5.5)} � 1* {(4.1.3 + 5.2.1 + 1.5.2) � (1.1.1 + 2.2.4 + 3.5.5)}
+= -350
+
+(Here in the above we�ve used Sarrus rule to find determinants of 3 X 3 matrices)
+
+Similarly, -2 * |?(2&4&5&1@3&5&1&2@4&1&2&3@5&2&3&4)| = -2*[2*|?(5&1&2@1&2&3@2&3&4)| -4*|?(3&1&2@4&2&3@5&3&4)|+5* |?(3&5&2@4&1&3@5&2&4)| 
+-1* |?(3&5&1@4&1&2@5&2&3)|]
+
+= -2* [2*{(5.3.4 + 1.3.2 + 2.1.3) � (2.2.2 + 3.3.5 + 4.1.1)} -4* {(3.2.4 + 1.3.5 + 2.4.3) � (5.2.2 + 3.3.3 + 4.4.1)} +5* {(3.1.4 + 5.3.5 + 2.4.2) � (5.1.2 + 2.3.3 + 4.4.5)} -1* {(3.1.3 + 5.2.5 + 1.4.2) � (5.1.1+ 2.2.3 + 3.4.5)}]
+
+(Here also we�ve used Sarrus rule to find determinants of 3 X 3 matrices)
+
+
+= -2 *[-25] = 50
+Similarly, 3 * |?(2&3&5&1@3&4&1&2@4&5&2&3@5&1&3&4)| = 3 * [25] = 75
+
+-4 * |?(2&3&4&1@3&4&5&2@4&5&1&3@5&1&2&4)| = -4 * [-25] = 100
+
+And, 
+5 * |?(2&3&4&5@3&4&5&1@4&5&1&2@5&1&2&3)| = 5*[400] =2000
+
+So, A = [?(1&2&3&4&5@2&3&4&5&1@3&4&5&1&2@4&5&1&2&3@5&1&2&3&4)] = -350 + 50 + 75 +100 + 2000 = 1875
+
+
+
+
+
+
+
+
+
+
+
+TASK -2 Solve linear equation of any number of variables using
+Solve linear equation of any number of variables using - 
+
+a1.�Inverse Matrix method
+a2.�Cramer's Rule method
+a3.�Gauss-Jordan Elimination method � DONE 
+a4.�Gauss Elimination Back Substitution method � done 
+a5.�Gauss Seidel method � DONE 
+a6.�Gauss Jacobi method � DONE 
+a7.�Elimination method- 
+a8.�LU decomposition using Gauss Elimination method � heading n0- 
+a9.�LU decomposition using Doolittle's method heading no- 
+a10.�LU decomposition using Crout's method heading no - 
+a11.�Cholesky decomposition method
+a12.�SOR (Successive over-relaxation) method � about to 
+a13.�Relaxation method � done 
+
+
+a3) Gauss Jordan Elimination Method
+
+Often Gauss Jordan Elimination (GJE) is used to get a matrix to reduced echelon form so it is easy to solve a linear equation. Linear systems can have many variables. These systems can be solved as long as we have one unique equation/variable.
+
+For example- two variables need two equations
+Three variables need three equation to find a unique solution.
+And ten variables need ten equation and so on.
+In the same way 4 variables need 4 equation to find a unique solution.
+
+Although, Gauss-Jordan elimination works on matrices of any size, they don�t have to be square. But the number of independent linear equations must not be less than number of unknown variables. However, we actually don't need. For solving �n� number of unknown variables �n� number of independent linear equations are enough. On the other hand, the given matrix needs to be square if you are using it to calculate the inverse of the matrix.
+
+Procedure
+1. Choose an n X n matrix
+Otherwise- Show Pop up � please select number of rows equal to number of Columns
+2. Swap the rows so that all rows with all zero entries are on the bottom. 
+3. Swap the rows so that the row with the largest, leftmost nonzero entry is on top.
+4. Multiply / Divide the top row by a scalar so that top row's leading entry becomes 1.
+5. Add/subtract multiples of the top row to the other rows so that all other entries in the column containing the top row's leading entry are all zero.
+6. Repeat steps 3-5 for the next leftmost nonzero entry until all the leading entries are 1.
+7. Swap the rows so that the leading entry of each nonzero row is to the right of the leading entry of the row above it.
+
+Example
+Solve Equations 2x+5y+z=17, 3x+y+z=12, x+y+z=6 using Gauss-Jordan Elimination method
+Solution:
+Total Equations are�3
+
+2x+5y+z=17 �(i)
+
+3x+y+z=12 �(ii)
+
+x+y+z=6 �(iii)
+
+Converting given equations into matrix form
+
+AX = b
+
+Where, 
+A = [?(2&5&1@3&1&1@1&1&1)], X=[?(x@y@z)], b=[?(17@12@6)]
+
+Now, we can generate the augmented matrix like that
+
+[A : b] =[?(2&5&1&:&17@3&1&1&:&12@1&1&1&:&6)] 
+
+Now, we�re swapping the rows R1 & R2 as leftmost element / entry of R2 is the largest.
+R1     R2
+[?(3&1&1&:&12@2&5&1&:&17@1&1&1&:&6)]
+Now, divide the top row 1 by a scalar so that top row's leading entry becomes 1.
+
+R1? (R1/3)
+[?(1&0.3333&0.3333&:&4@2&5&1&:&17@1&1&1&:&6)]
+
+Now, Add/subtract multiples of the top row to the other rows so that all other entries in the column 1 containing the top row's leading entry are all zeroes.
+R2?R2-(2�R1)
+[?(1&0.3333&0.3333&:&4@0&4.3333&0.3333&:&9@1&1&1&:&6)]
+
+R3?R3-R1
+[?(1&0.3333&0.3333&:&4@0&4.3333&0.3333&:&9@0&0.6667&0.6667&:&2)]
+
+Now you can see all other entries in the column 1 containing the top row's leading entry are all zero. Apply the same process to convert the leading non zero element in row 2 to 1. Then attempt 
+R2 ? (0.2308 � R2)
+[?(1&0.3333&0.3333&:&4@0&1&0.0769&:&2.0769@0&0.6667&0.6667&:&2)]
+
+R1?(R1-0.3333�R2)
+[?(1&0&0.3077&:&3.3077@0&1&0.0769&:&2.0769@0&0.6667&0.6667&:&2)]
+
+R3?(R3-0.6667�R2)
+[?(1&0&0.3077&:&3.3077@0&1&0.0769&:&2.0769@0&0&0.6154&:&0.6154)]
+
+R3?R3�1.625
+[?(1&0&0.3077&:&3.3077@0&1&0.0769&:&2.0769@0&0&1&:&1)]
+
+R1?R1-(0.3077�R3)
+[?(1&0&0&:&3@0&1&0.0769&:&2.0769@0&0&1&:&1)]
+
+R2?R2-(0.0769�R3)
+[?(1&0&0&:&3@0&1&0&:&2@0&0&1&:&1)]
+
+Now, we get, x=3, y=2, z=1
+(Solution by Gauss Jordan Elimination Method)
+
+
+a4.�Gauss Elimination Back Substitution method �
+Gaussian Elimination with Back Substitution Method 
+Gaussian elimination�is a method in which an augmented matrix is subjected to row operations until the component corresponding to the coefficient matrix is reduced to triangular form.
+
+Procedure
+1. Choose an n X n matrix
+Otherwise- Show Pop up � please select number of rows equal to number of Columns
+2. Here, we can perform two different types of operations to convert a given matrix into the REF (row echelon) form (a) modify a row by adding or subtracting multiples of another row. (b) multiply/divide a row by a scalar
+3. Construct an upper triangular matrix from the given matrix.
+4. In the next step convert the diagonal elements to 1s.
+
+
+Example
+Solve Equations x+2y-3z=1, 2x-y+z=1, x+4y-2z=9 using Gaussian Elimination with Back Substitution method
+Solution: 
+Total Equations are�3
+
+x+2y-3z=1 � (i) 
+
+2x-y+z=1 � (ii) 
+
+x+4y-2z=9 � (iii)
+
+
+From the aforementioned equations, 
+
+A =[?(1&2&-3@2&-1&1@1&4&-2)]; b =[?(1@1@9)]; 
+
+
+Now, the augmented matrix,
+
+[A:b] = [?(1&2&-3&:&1@2&-1&1&:&1@1&4&-2&:&9)]
+
+
+Converting the given matrix into an upper triangular matrix form
+
+R3 ? -R1 + R3
+[?(1&2&-3&:&1@2&-1&1&:&1@0&2&1&:&8)]
+
+R2 ? -2R1 + R2
+[?(1&2&-3&:&1@0&-5&7&:&-1@0&2&1&:&8)]
+
+R3 ? 2R2 + 5R3
+[?(1&2&-3&:&1@0&-5&7&:&-1@0&0&19&:&38)]
+
+The aforementioned matrix is an upper triangular matrix.
+Now, convert all diagonal elements to 1s. 
+
+R2 ? (-1/5)*R2
+[?(1&2&-3&:&1@0&1&-7/5&:&1/5@0&0&19&:&38)]
+
+R3 ? (1/19)*R3
+[?(1&2&-3&:&1@0&1&-7/5&:&1/5@0&0&1&:&2)]
+
+The above matrix is now in the desired form.
+     x + 2y � 3z = 1  . . . (i)
+     y � 7z/5 = 1/5  . . . (ii)
+                z = 2  . . . (iii)
+
+You have to�move in a back substitution manner in order to retrieve the values of y and x.
+y � 7*2/5 = 1/5 (since we already know the value of z = 2)
+Or, y = 1/5 + 14/5 = 3
+
+Then, x + 2(3) � 3(2) = 1
+Or, x = 1 
+
+a5) Gauss-Seidel Method
+
+In numerical linear algebra, the Gauss�Seidel method, also known as the Liebmann method or the method of successive displacement, is an iterative method used to solve a system of a strictly diagonally dominant system of linear equations.
+
+Procedure
+1. Choose an n X n matrix
+Otherwise- Show Pop up � please select the number of rows equal to the number of Columns
+2. Verify that the magnitude of the diagonal item in each row of the matrix is greater than or equal to the sum of the magnitudes of all other (non-diagonal) values in that row so that
+
+Otherwise- Show Pop up � entered matrix is not diagonally dominant
+
+Ensure that all of the diagonal elements are non-zero as well.
+                                          aii ? 0
+Otherwise- Show Pop up � all of the diagonal elements must be non-zero
+
+3. Decompose the given matrix A into a lower triangular matrix L*, and a strictly upper triangular matrix U:
+
+Let�s assume, A linear system of the form�??=?Ax = b
+
+L* = [?(a11&0&?&0@a21&a22&0&0@?&?&?&?@an1&an2&?&ann)];   
+
+U = [?(0&a12&?&a1n@0&0&. . .&a2n@?&?&?&?@0&0&?&0)]; 
+
+An upper triangular matrix differs significantly from a strictly upper triangular matrix in that an upper triangular matrix contains all zero elements below the diagonal while a strictly upper triangular matrix contains all zeroes on the diagonal also.
+
+4. Now we�ve to choose a column matrix x(0)  of size n X 1 containing only 1s
+
+x(0)   = [?(x1@x2@?@xn)], where, x1 = x2 = x3 = . .  . = xn = 1
+
+5. The system of linear equations can be rewritten as
+Ax = b
+Or, (L* + U)x = b
+Or, L*x + Ux = b
+Or, L*x = b � Ux
+
+Firstly, we can only guess starting points of x, then go to the next iteration and put the updated value of x as shown in the example below
+
+Or, x(k+1) = L*-1(b � Ux(k))
+
+Repeat the iteration process until either the value of x(k) converges or the error, (Ax � b) becomes very tiny.�For greater precision, you can choose a threshold value of 1e-8 or 1e-10. Stop the iteration procedure if the value of the error, (Ax - b), is less than 1e-8 or 1e-10. Additionally, you can initially set the program's total iterations to 1000 at the beginning.
+
+
+
+
+Example
+
+Use the iterative Gauss-Seidel method to solve the problem. There are equations
+
+16x + 3y = 11
+  7x - 11y = 13
+
+
+Taking values from the aforementioned equations, we obtain,
+
+A = [?(16&3@7&-11)];    b = [?(11@13)];    
+
+Let�s initialize, x(0) =[?(1@1)];    
+
+Then calculate,
+
+1st iteration
+
+x(1) = L*-1(b � Ux(0)))
+      = L*-1b - L*-1Ux(0)
+
+         = [?(16&0@7&-11)]-1 * [?(11@13)] - [?(16&0@7&-11)]-1 * [?(0&3@0&0)] * [?(1@1)]  
+
+     = [?(0.0625&0@0.0398&-0.0909)] * [?(11@13)]  - [?(0.0625&0@0.0398&-0.0909)] * [?(0&3@0&0)] * [?(1@1)]  
+
+    = [?(0.6875@-0.7439)] - [?(0&-0.1875@0&-0.1194)]* [?(1@1)]  
+
+   =  [?(0.5000@-0.8636)]
+
+
+2nd Iteration
+
+x(2) = L*-1(b � Ux(1)))
+      = L*-1b - L*-1Ux(1)
+
+     = [?(16&0@7&-11)]-1 * [?(11@13)] - [?(16&0@7&-11)]-1 * [?(0&3@0&0)] * [?(0.5000@-0.8636)]
+
+                    = [?(0.8494@-0.6413)]
+
+
+3rd Iteration
+
+x(3) = L*-1(b � Ux(2)))
+      = L*-1b - L*-1Ux(2)
+      = [?(0.8077@-0.6678)]
+
+4th Iteration
+
+x(4) = L*-1(b � Ux(3)))
+      = L*-1b - L*-1Ux(3)
+      = [?(0.8127@-0.6646)]
+
+
+5th Iteration
+
+x(5) = L*-1(b � Ux(4)))
+      = L*-1b - L*-1Ux(4)
+      = [?(0.8121@-0.6650)]
+
+6th Iteration
+
+x(6) = L*-1(b � Ux(5)))
+      = L*-1b - L*-1Ux(5)
+      = [?(0.8122@-0.6650)]
+
+7th Iteration
+
+x(7) = L*-1(b � Ux(6)))
+      = L*-1b - L*-1Ux(6)
+      = [?(0.8122@-0.6650)]
+
+As expected, the algorithm converges to the exact solution
+Now the approximate value of x and y are 0.8122 and -0.6650, respectively.
+
+
+(for the programming perspective)
+Repeat the iteration process until either the value of x(k) converges or the error, (Ax � b) becomes very tiny.�For greater precision, you can choose a threshold value of 1e-8 or 1e-10. Stop the iteration procedure if the value of the error, (Ax - b), is less than 1e-8 or 1e-10. Additionally, you can initially set the program's total iterations to 1000 at the beginning.
+
+
+a6)  Gauss Jacobi Method
+
+In numerical linear algebra, the Gauss-Jacobi method (the Jacobi iteration method) is an iterative algorithm for determining the solutions of a strictly diagonally dominant system of linear equations.
+
+Procedure
+1. Choose an n X n matrix
+Otherwise- Show Pop up � please select the number of rows equal to the number of Columns
+2. Verify that the magnitude of the diagonal item in each row of the matrix is greater than or equal to the sum of the magnitudes of all other (non-diagonal) values in that row so that
+
+Otherwise- Show Pop up � entered matrix is not diagonally dominant
+
+Ensure that all of the diagonal elements are non-zero as well.
+                                          aii ? 0
+Otherwise- Show Pop up � all of the diagonal elements must be non-zero
+
+3. Decompose the given matrix into a diagonal matrix D, a lower triangular matrix L, and an upper triangular matrix U:
+
+Let�s assume, A linear system of the form�??=?Ax = b
+
+A = [?(a11&a12&?&a1n@a21&a22&. . .&a2n@?&?&?&?@an1&an2&?&ann)];   D = [?(a11&0&?&0@0&a22&. . .&0@?&?&?&?@0&0&?&ann)];     
+
+L + U = [?(0&a12&?&a1n@a21&0&. . .&a2n@?&?&?&?@an1&an2&?&0)]; 
+
+Where, 
+A = D + L + U
+D contains only the main diagonal elements of matrix A & (L + U) = A � D
+
+4. Consider solving a n X n (n by n) matrix then initially take a column matrix X(0)  of size n X 1 containing only 1s
+
+X(0)   = [?(x1@x2@?@xn)], where, x1 = x2 = x3 = . .  . = xn = 1
+
+
+5. Then calculate,
+X(1)  = D-1 (b � (L + U) X(0))
+Or, X(1)  = D-1 (b � (L + U) X(0))
+
+D-1 or the inverse of a diagonal matrix is a diagonal matrix where the elements of the main diagonal are the reciprocals of the corresponding elements of the original diagonal matrix. Or,
+
+D-1 = [?(1/a11&0&?&0@0&1/a22&. . .&0@?&?&?&?@0&0&?&1/ann)];     
+
+
+Then check, ||AX(1) � b|| is small or not
+
+If ||A X1 � b|| is not small then go for the 2nd iteration
+
+X(2) = D-1 (b � (L + U)X(1))
+
+Continue to the next iteration if the condition is still unsatisfied
+
+
+
+
+
+
+Example
+
+Use the iterative Gauss-Jacobi method to solve the problem. There are equations
+
+2x + y = 13
+5x + 7y = 11
+
+Taking values from the aforementioned equations, we obtain,
+
+A = [?(2&1@5&7)];    b = [?(13@11)];    
+
+Now, D = [?(2&0@0&7)];    L + U = [?(0&1@5&0)];    
+
+
+Let�s initialize, x(0) =[?(1@1)];    
+
+Then calculate,
+
+1st iteration
+
+X(1) = D-1 (b � (L + U)X(0))
+    = -D-1(L + U) X0 + D-1b
+= -[?(1/2&0@0&1/7)][?(0&1@5&0)] [?(1@1)]   +  [?(1/2&0@0&1/7)][?(13@11)]
+= - [?(0&1/2@5/7&0)][?(1@1)]  +   [?(13/2@11/7)]
+
+=  [?(-1/2@-5/7)]+ [?(13/2@11/7)]
+
+=  [?(6@6/7)]
+
+
+
+
+||A X(1) � b||
+= ||[?(2&1@5&7)][?(6@6/7)]  -  [?(13@11)] ||
+= ||[?(90/7@36)] - [?(13@11)]||
+= ||[?(-1/7@25)]||
+= ?(2&((-1)/7)^2+25^2)
+= 25.0004
+
+
+2nd Iteration
+
+X(2) = D-1 (b � (L + U)X(1))
+    = -[?(1/2&0@0&1/7)][?(0&1@5&0)] [?(6@6/7)]   +  [?(1/2&0@0&1/7)][?(13@11)]
+  = - [?(0&1/2@5/7&0)][?(4@10/7)]  +   [?(13/2@11/7)]
+= [?(58/14@-19/7)]
+
+||AX(2)  � b||
+= ||[?(2&1@5&7)][?(58/14@-19/7)]  -  [?(13@11)] ||
+= ||[?(39/7@12/7)] - [?(13@11)]||
+= ||[?(-52/7@-65/7)]||
+=  ?(2&(-52/7)^2+?(-65/7)?^2 )
+= 11.8915
+
+Repeat the above iteration process until it converges, i.e. until the value of ||Ax (n)�� b|| is small.
+
+You can set a threshold value of (1e-10). If ||Ax (n)�� b|| < (1e-10), the iteration loop will terminate. And initially, you can keep the total number of iterations = 1000
+
+
+
+
+a11.�Cholesky decomposition method
+
+Procedures
+1. Choose an n X n matrix
+Otherwise-Pop up error � select number of rows and Columns should be same (or matrix dimension mismatched) 
+
+2. The chosen matrix should be symmetric
+
+Let�s assume, A = [?(a1&a2&a3@a2&a4&a5@a3&a5&a6)]
+a matrix A is symmetric if 
+(a) A is a square matrix
+(b) and A = AT
+Otherwise-Pop up error � entered matrix should be symmetric
+
+3. The chosen matrix should be positive definite as well.
+a matrix A is positive definite if determinants of all upper-left sub-matrices are positive or,
+
+|?(a1)| > 0
+
+|?(a1&a2@a2&a4)| > 0
+
+|?(a1&a2&a3@a2&a4&a5@a3&a5&a6)|  > 0
+         Otherwise-Pop up error � entered matrix should be positive definite
+
+4. Every symmetric positive definite matrix A can be decomposed into a product of a unique lower triangular matrix L and its transpose.
+A = L*LT 
+5. There is a clear-cut formula to find the elements of matrix L
+
+Where, for example, lki denotes the matrix L�s entry/element in kth row and ith column.
+
+lkk denotes the main diagonal elements of matrix L
+
+
+Example:
+Given matrix, A = [?(4&2&14@2&17&-5@14&-5&83)]
+
+The matrix A is symmetric as A = AT
+
+Now, we�ll check given matrix A is positive definite or not.
+
+|?(4)| > 0
+
+|?(4&2@2&17)| = 68 � 4 = 64 > 0
+
+|?(4&2&14@2&17&-5@14&-5&83)| = 1600 > 0
+
+So, the matrix is positive definite as well.
+
+Any symmetric positive definite matrix A can be decomposed into a product of a unique lower triangular matrix L and its transpose or,
+A = L*LT
+Formula
+
+
+l11 = ?4 = 2
+l21 = a21 / l11 = 2/2 =1
+l22 = ?( a22 � (l21)2) = ?(17 � 1) = 4
+l31 = a31 / l11 = 14/2 = 7
+l32 = (a32 � l31 * l21) / l22 = (-5 � (7)*(1)) / 4 = -3
+l33 = ?( a33 � (l31)2 - (l32)2) = ?(83 � (7)2 - (-3)2) = 5
+
+Now, from the solutions of the aforementioned equations we obtain the matrix L.
+L = [?(l11&0&0@l21&l22&0@l31&l32&l33)] = [?(2&0&0@1&4&0@7&-3&5)]
+And L*LT = [?(2&0&0@1&4&0@7&-3&5)]* [?(2&1&7@0&4&-3@0&0&5)] = [?(4&2&14@2&17&-5@14&-5&83)] = A
+
+
+Some more discussion about Cholesky decomposition (Extra)
+          a square matrix A can be factorized as 
+A = L*U
+Where L is a lower triangular matrix and U is an upper triangular matrix. We�ve already discussed in detail about �LU decomposition�
+
+For a symmetric and positive definite matrix
+U = LT
+So, in this case, A = L*U = L * LT
+                For a system of linear equations
+Ax = b
+Or, L* LT * x = b
+Let, LT * x = y
+Then, L * y = b
+Now, one need to find the value of L by calculating
+L * LT = A
+Or, [?(l11&0&0@l21&l22&0@l31&l32&l33)]*[?(l11&l21&l31@0&l22&l23@0&0&l33)] = [?(4&2&14@2&17&-5@14&-5&83)]
+See above to find the solution of matrix L. This is already discussed as a formula.
+Once, one has solved y from L*y = b
+Then solve x from �LT * x = y�
+
+In the above, we�ve discussed the whole procedure of finding matrix L from a given matrix.
+
+
+a12) Successive over Relaxation Method-
+In numerical linear algebra, the method of successive over-relaxation (SOR) is a variant of the Gauss�Seidel method for solving a linear system of equations, resulting in faster convergence. A similar method can be used for any slowly converging iterative process.
+
+Procedure
+1. Choose an n X (n+1) matrix
+Consider the augmented matrix [A: b]; where A is an n X n matrix and b is an          n X 1 matrix.
+Let's assume the provided equations are
+a11x1 + a12x2 + . . . + a1nxn = b1
+a21x1 + a22x2 + . . . + a2nxn = b2
+a31x1 + a32x2 + . . . + a3nxn = b3
+                    .  .  .
+An1x1 + an2x2 + . . . + annxn = bn
+In matrix form for the aforementioned square system of�n�linear equations with unknown�column vector x
+Ax = b
+A =[?(a11&a12&. ..&a1n@a21&a22&.. .&a2n@...&.. .&.. .&.. .@an1&an2&.. .&ann)]; x=[?(x1@x2@.. .@xn)]; b =[?(b1@b2@.. .@bn)]; 
+Otherwise- Show Pop up � please select the number of columns that is one more than the number of rows
+2. Verify that the magnitude of the diagonal item in each row of the matrix A is greater than or equal to the sum of the magnitudes of all other (non-diagonal) values in that row so that
+
+Otherwise- Show Pop up � entered matrix is not diagonally dominant
+
+(Instruct the user to rearrange the rows in order to satisfy the aforementioned criteria or you can use coding to rearrange the rows.)
+
+Ensure that all of the diagonal elements are non-zero as well.
+                                          aii ? 0
+Otherwise- Show Pop up � all of the diagonal elements must be non-zero
+
+3. Initialize the solution vector x with an initial guess.
+
+4. For each iteration, repeat the following steps for each equation in the system:
+1. Calculate the new values for vector x by using the following formula:
+
+x_new[i][1] = (1 - w) * x_old[i][1] + (w/A[i][i]) * (b[i][1] - sum(A[i][j] * x_old[j][1] for j in range(n) if j != i))
+
+Where w is the relaxation factor, n is the number of unknowns, x_old[i] is the current value of x[i], and x_new[i] is the updated value of x[i]. It is analogous to if x[i] is the value we obtain after kth iteration process then x_new[i] is going to be the value of updated x[i] after (k + 1)th iteration.
+
+Expression x[i] is analogous to x1, x2, or xn if i = 1, 2, or n and so on as mentioned in column vector x in step 1.
+
+Ask the user to choose a relaxation factor value between 1 and 2, such as 1.25, 1.5, etc.
+
+5. Check for convergence. The method has converged when the difference between the old and new solutions is below a certain tolerance or threshold
+6. Update the solution vector x with the new values from the previous step.
+7. Repeat steps 2 to 6 until convergence or a maximum number of iterations is reached.
+8. If convergence is reached, the solution vector x will contain the solution to the system of linear equations.
+
+Example:
+Consider the following system of linear equations:
+3x + y = 9
+x + 2y = 8
+We can represent this system of equations as a matrix equation:
+A * x = b
+where A = [?(3&1@1&2)];    b = [?(9@8)];
+The initial guess for the solution vector x is [0, 0].
+Choose a relaxation factor w. A value between 1 and 2 is commonly used. For this example, let's use w = 1.5
+Repeat the following steps until convergence:
+
+1st iteration
+x_new = [(1 - w) * x[1][1] + (w/A[1][1]) * (b[1][1] - (A[1][2] * x[2][1])),
+         (1 - w) * x[2][1] + (w/A[2][2]) * (b[2][1] - (A[2][1] * x[1][1]))]
+(Above expression is analogous to x_new =[?(x1@x2)];)
+ = [(1 - 1.5) * 0 + (1.5/3) * (9 - (1 * 0)),    (1 - 1.5) * 0 + (1.5/2) * (8 - (1 * 0))]
+ 
+ = [?(3@4)]
+So, now, x[1][1] = 3  and  x[2][1] = 4
+
+
+2nd iteration
+x_new = [(1 - w) * x[1][1] + (w/A[1][1]) * (b[1][1] - (A[1][2] * x[2][1])),
+         (1 - w) * x[2][1] + (w/A[2][2]) * (b[2][1] - (A[2][1] * x[1][1]))]
+= [(1 - 1.5) * 3 + (1.5/3) * (9 - (1 * 4)),    (1 - 1.5) * 4 + (1.5/2) * (8 - (1 * 3))]
+= [?(1@1.75)]
+
+Continue the iteration process until the difference between the old and new solutions of vector x is below a certain tolerance or threshold. If convergence is reached, the solution vector x (of final iteration) will contain the solution to the system of linear equations. From a programming perspective, you can continue using the 10e-8 threshold value.
+
+a13 Relaxation Method-
+
+
+Procedure
+1. Choose an n X (n+1) matrix
+Take an augmented matrix [A: b]; where A is an n X n matrix and b is an n X 1 matrix.
+Suppose the given equations are
+a11x + a12y + a13z = b1
+a21x + a22y + a23z = b2
+a31x + a32y + a33z = b3
+A =[?(a11&a12&a13@a21&a22&a23@a31&a32&a33)]; b =[?(b1@b2@b3)];
+Otherwise- Show Pop up � please select the number of columns that is one more than the number of rows
+2. Verify that the magnitude of the diagonal item in each row of the matrix A is greater than or equal to the sum of the magnitudes of all other (non-diagonal) values in that row so that
+
+Otherwise- Show Pop up � entered matrix is not diagonally dominant
+
+(You can command user to rearrage the rows or do coding to rearrange the rows so that it satifies the above condition)
+
+Ensure that all of the diagonal elements are non-zero as well.
+                                          aii ? 0
+Otherwise- Show Pop up � all of the diagonal elements must be non-zero
+
+3. Now Define Residuals,
+R1 = b1 - a11x - a12y - a13z
+R2 = b2 - a21x - a22y - a23z
+R3 = b3 - a31x - a32y - a33z
+4. Operating table will be
+
+
+R1
+R2
+R3
+?x
+-a11
+-a21
+-a31
+?y
+-a12
+-a22
+-a32
+?z
+-a13
+-a23
+-a33
+In the operating table above diagonal elements are �a11, -a22, and �a33
+
+1st iteration
+If x = y = z = 0 (initializing)
+Then, 
+R1(1)  = b1
+R2(1)  = b2
+R3(1)  = b3
+
+Look, which is maximum among three residuals. 
+Here, superscript denotes iteration number.
+Let�s assume, R3 is maximum among R1, R2, and R3
+Then, updated value of ?z will be R3(1)/(-(-a33)) where �a33 is the diagonal element in the 3rd row
+Remember that as R3 is maximum among all residuals, so we�re updating the value of ?z. If R2 were maximum then we need to update the value of ?y and so on.
+2nd iteration
+R1(2) = R1(1)   + (-a13)( R3(1)/(-(-a33)))
+R2(2)  = R2(1)   + (-a23)( R3(1)/(-(-a33)))
+R3(2)  = R3(1)   + (-a33)( R3(1)/(-(-a33)))
+
+Let�s assume, R2 is maximum among R1, R2, and R3 above
+Then, updated value of ?y will be R2(2)/(-(-a22)) where �a22 is the diagonal element in the 2nd row
+
+
+3rd iteration
+R1(3)   = R1(2)   + (-a12)( R2(2)/(-(-a22)))
+R2(3)   = R2(2)   + (-a22)( R2(2)/(-(-a22)))
+R3(3)   = R3(2)   + (-a32)( R2(2)/(-(-a22)))
+
+Let�s assume, R1(3)    is maximum among R1(3)   , R2(3)   , and R3(3)   
+Then, updated value of ?x will be R1(3)/(-(-a11)) where �a11 is the diagonal element in the 1st  row
+4th iteration
+R1(4)   = R1(3)   + (-a11)( R1(3)/(-(-a11)))
+R2(4)   = R2(3)   + (-a21)( R1(3)/(-(-a11)))
+R3(4)   = R3(3)   + (-a31)( R1(3)/(-(-a11)))
+
+Let�s assume, R3(4)    is maximum among R1(4)   , R2(4)   , and R3(4)   
+Then, updated value of ?z will be R3(4)/(-(-a33)) where �a33 is the diagonal element in the 1st  row
+
+Continue the iteration process up to nth iteration until R1(n)   , R2(n)   , and R3(n) become very close to zeroes.
+
+Then, 
+x = ? ?x
+y = ? ?y
+z = ? ?z
+
+? ?x denotes sum of all updated values of ?x we obtain during total �n� number of iteration processes
+
+Example
+10x � 2y � 2z = 6 . . . (i)
+-x +10y � 2z = 7 . . . (ii)
+-x � y + 10z = 8 . . . (iii)
+
+Taking values from the aforementioned equations, we obtain,
+
+A = [?(10&-2&-2@-1&10&-2@-1&-1&10)]
+b = [?(6@7@8)]
+
+To perform relaxation method diagonal element in matrix A should be greater than the sum of other elements (values without signs) in the same row. 
+
+From the above matrix A,
+a11 or 10 >2+2
+a22 or 10 >1+2
+a33 or 10 >1+1
+
+Now, define residuals from the above equations
+R1 = 6 � 10x + 2y + 2z
+R2 = 7 + x � 10y + 2z
+R3 = 8 + x + y - 10z
+
+Then construct Operating Table from the above residuals
+
+R1
+R2
+R3
+?x
+-10
+1
+1
+?y
+2
+-10
+1
+?z
+2
+2
+-10
+Here, the diagonal elements are -10, -10, and -10
+
+1st iteration
+Let�s initialize as x=0, y=0, and z=0
+Then, 
+R1 = 6
+R2 = 7
+R 3 = 8
+In the above R3 is maximum
+Afterward, the updated value of ?z will be, ?z = 8/-(-10) = 0.8
+
+2nd iteration
+R1 = 6 + (2)*(0.8) = 7.6
+R2 = 7 + (2)*(0.8) = 8.6
+R3 = 8 + (-10)*(0.8) = 0
+R3 is maximum
+So, the updated value of ?y will be,
+?y = 8.6/-(-10) = 0.86
+
+3rd iteration
+R1 = 7.6 + 2*0.86 = 9.32
+R2 = 8.6 + (-10)*0.86 = 0
+R3 = 0 + 1*0.86 = 0.86
+Max value = 9.32 (=R1)
+So, updated value of ?x is now,
+?x = 9.32 / -(-10) = 0.932
+
+4th iteration
+R1 = 9.32 + (-10)*0.932 = 0
+R2 = 0 + 1*0.932 = 0.932
+R3 = 0.86 + 1*0.932 = 1.792
+Max value = 1.792 (=R3)
+So, updated value of ?z will be,
+?z = 1.792 / -(-10) = 0.1792
+
+5th iteration
+R1 = 0 + 2*0.1792 = 0.3584
+R2 = 0.932 + 2*0.1792 = 1.2904
+R3 = 1.732 + (-10)*0.1792 = 0
+
+Max value = 1.2904 (=R2)
+Now, updated ?y = 1.2904 / -(-10) = 0.12904
+
+6th iteration
+R1 = 0.3584 + 2*0.12904 = 0.6165
+R2 = 1.2904 + (-10)*0.12904 = 0
+R3 = 0 + 1*0.12904 = 0.129
+Max value = 0.6165 (=R1)
+Now, updated value of ?x will be
+?x = 0.6165 / -(-10) = 0.0616
+
+7th iteration
+R1 = 0.0616 + (-10)*0.0616 = 0
+R2 = 0 + 1*0.0616 = 0.0616
+R3 = 0.129 + 1*0.0616 = 0.1907
+Max value = 0.1907
+Now, updated ?z = 0.1907 / -(-10) = 0.0191
+
+8th iteration
+R1 = 0 + 2*0.0191 = 0.0381
+R2 = 0.0616 + 2*0.0191 = 0.0998
+R3 = 0.1907 + (-10)*0.0191 = 0
+Max value = 0.0998 (=R2)
+Now, updated ?y = 0.0998/-(-10) = 0.0098 ~ 0.01
+
+9th iteration
+R1= 0.0381 + 2*0.01 = 0.0581
+R2 = 0.0998 + (-10)*0.01 = 0
+R3 = 0 + 1*0.01 = 0.01
+Max value is 0.0581 (=R1)
+Now, updated value of ?x = 0.0581/-(-10) = 0.0058
+
+10th iteration
+R1 = 0.0581 + (-10)*0.0058 = 0
+R2 = 0 + 1 * 0.0058 = 0.0058
+R3 = 0.01 + 1*0.0058= 0.0158
+Max value is 0.0158 (=R3)
+Now, updated ?z = 0.0158/-(-10) = 0.0016
+
+11th iteration
+R1 = 0 + 2*0.0016 = 0.0032
+R2 = 0.0058 + 2*0.0016 = 0.009
+R3 = 0.0158 + (-10)*0.0016 = 0
+Max value = 0.009 (=R2)
+Now, updated ?z = 0.009/-(-10) = 0.0009
+
+12th iteration
+R1 = 0.0032 + 2*0.0009 = 0.005
+R2 = 0.009 + (-10)*0.0009 = 0
+R3 = 0 + 1*0.0009 = 0.0009
+Max value = 0.005 (=R1)
+Now, updated value of ?x = 0.005/-(-10) = 0.0005
+
+13th iteration
+R1 = 0.005 + (-10)*0.0005 = 0
+R2 = 0 + 1*0.0005 = 0.0005
+R3 = 0.0009 +1*0.0005 = 0.0014
+Max value = 0.0014 (=R3)
+Now the updated value of ?z will be
+?z = 0.0014/-(-10) = 0.0001
+Here, in the 13th iteration the values of R1, R2, and R3 all are going to be very close to 0 (zero).
+So, now we�ll stop the iteration process.
+
+So, solutions by Relaxation method 
+x = ? ?x = 0.932 + 0.0616 + 0.0058 + 0.0005 = 0.999 ~ 1
+y = ? ?y = 0.86 + 0.129 + 0.01 + 0.0009 = 0.999 ~ 1
+z = ? ?z = 0.8 + 0.1792 + 0.0191 + 0.0016 = 0.999 ~ 1
+
+
+
+
+
+
+
+
+
+
+
+
+TASK-3 FIND THE TYPE OF MATRIX (MATRIX STRUCTURE)-
+1) Row Matrix - A row matrix is a matrix with only one row and multiple columns. It can also be considered as a 1xn matrix, where n is the number of columns.
+To check if a matrix is a row matrix-  you can look at its dimensions. If the number of rows is 1 and the number of columns is greater than 1, then the matrix is a row matrix.
+2) Column Matrix- A column matrix is a matrix with only one column and multiple rows. It can also be considered as a nx1 matrix, where n is the number of rows.
+To check if a matrix is a column matrix, you can look at its dimensions. If the number of columns is 1 and the number of rows is greater than 1, then the matrix is a column matrix.
+3) Square Matrix- A square matrix is a matrix where the number of rows and columns are equal, i.e. the number of rows is equal to the number of columns.
+To check if a matrix is a square matrix, you can look at its dimensions. If the number of rows is equal to the number of columns, then the matrix is a square matrix.
+4) horizontal Matrix - A matrix, in which number of rows is less than the number of columns, is called a vertical matrix.
+5) Vertical Matrix - A matrix, in which number of columns is less than the number of rows, is called a vertical matrix.
+6) Diagonal Matrix- A diagonal matrix is a square matrix where all the elements outside the main diagonal are zero. The main diagonal runs from the top-left to bottom-right of the matrix.
+To check if a matrix is a diagonal matrix, you can check if all the elements outside the main diagonal are zero. If they are, then the matrix is a diagonal matrix.
+7) Scalar Matrix- A scalar matrix is a diagonal matrix where all the elements on the main diagonal are equal. It is also known as a multiple of the identity matrix.
+To check if a matrix is a scalar matrix, you can check if it is a diagonal matrix and if all the elements on the main diagonal are equal. If they are, then the matrix is a scalar matrix.
+8) Null Matrix - A null matrix, also known as a zero matrix, is a matrix where all the elements are zero.
+To check if a matrix is a null matrix, you can check if all the elements in the matrix are zero. If they are, then the matrix is a null matrix.
+9) Lower Triangular Matrix- A lower triangular matrix is a square matrix where all the elements above the main diagonal are zero.
+To check if a matrix is a lower triangular matrix, you can check if all the elements above the main diagonal are zero. If they are, then the matrix is a lower triangular matrix.
+ 
+10) Upper Triangular Matrix - An upper triangular matrix is a square matrix where all the elements below the main diagonal are zero.
+To check if a matrix is an upper triangular matrix, you can check if all the elements below the main diagonal are zero. If they are, then the matrix is an upper triangular matrix.
+11) Orthogonal Matrix - An orthogonal matrix is a square matrix where the transpose of the matrix is equal to its inverse. This means that the dot product of the matrix and its transpose is equal to the identity matrix.
+To check if a matrix is an orthogonal matrix, you can calculate its transpose and see if it is equal to its inverse. If it is, then the matrix is an orthogonal matrix. Another way to check this is to calculate the dot product of the matrix and its transpose, and see if it is equal to the identity matrix.
+12) Singular Matrix- A singular matrix is a square matrix whose determinant is equal to zero. This means that the matrix is not invertible and its rows or columns are linearly dependent.
+To check if a matrix is singular, you can calculate its determinant and see if it is equal to zero. If it is, then the matrix is a singular matrix. Another way to check this is to see if the matrix is not invertible, meaning that it has no inverse.
+13) Non-Singular Matrix- A non-singular matrix is a square matrix whose determinant is not equal to zero. This means that the matrix is invertible and its rows and columns are linearly independent.
+To check if a matrix is non-singular, you can calculate its determinant and see if it is not equal to zero. If it is not, then the matrix is a non-singular matrix. Another way to check this is to see if the matrix is invertible, meaning that it has an inverse.
+14) Symmetric Matrix- A symmetric matrix is a square matrix that is equal to its transpose. This means that the elements along the main diagonal remain unchanged when the matrix is transposed.
+To check if a matrix is symmetric, you can calculate its transpose and see if it is equal to the original matrix. If it is, then the matrix is symmetric. Another way to check this is to see if the elements along the main diagonal are unchanged when the matrix is transposed.
+15) Skew Symmetric Matrix - A skew-symmetric matrix is a square matrix where the transpose of the matrix is equal to the negation of the original matrix. This means that if "A" is a skew-symmetric matrix, then A^T = -A.
+To check if a matrix is skew-symmetric, you can calculate its transpose and see if it is equal to the negation of the original matrix. If it is, then the matrix is a skew-symmetric matrix.
+16) Nilpotent Matrix- A nilpotent matrix is a square matrix where some power of the matrix is equal to a zero matrix. In other words, if "A" is a nilpotent matrix, then there exists a positive integer "n" such that A^n = 0.
+To check if a matrix is nilpotent, you can calculate increasing powers of the matrix until you get a zero matrix. If you do, then the matrix is nilpotent. Another way to check if a matrix is nilpotent is to find its eigenvalues. If all of the eigenvalues are zero, then the matrix is nilpotent.
+
+17) Involutory Matrix- An involutory matrix is a square matrix that is its own inverse. This means that if "A" is an involutory matrix, then -        A^2 = I, where "I" is the identity matrix.
+To check if a matrix is involutory, you can calculate its square and see if it is equal to the identity matrix. If it is, then the matrix is involutory. Another way to check if a matrix is involutory is to find its eigenvalues. If all the eigenvalues are either 1 or -1, then the matrix is involutory.
+18) Idempotent Matrix- An idempotent matrix is a square matrix that when multiplied by itself, gives the same result as the original matrix. In other words, if "A" is an idempotent matrix, then A^2 = A.
+To check if a matrix is idempotent, you can calculate its square and see if it is equal to the original matrix. If it is, then the matrix is idempotent. Another way to check if a matrix is idempotent is to find its eigenvalues. If all of the eigenvalues are either 0 or 1, then the matrix is idempotent.
+19) Periodic Matrix- A periodic matrix is a square matrix where some power of the matrix gives the same result as the original matrix. In other words, if "A" is a periodic matrix, then there exists a positive integer "n" such that A^n = A.
+To check if a matrix is periodic, you can calculate increasing powers of the matrix until you get the same matrix as the original. If you do, then the matrix is periodic. Another way to check if a matrix is periodic is to find its eigenvalues. If all of the eigenvalues have a magnitude of 1, then the matrix is periodic.
+20) Positive Definite Matrix- A positive definite matrix is a square matrix where all of its eigenvalues are positive and the inner product of any non-zero vector with itself is positive. This means that the matrix is symmetric, and for any non-zero vector x, the result of x^T * A * x is positive.
+To check if a matrix is positive definite, you can calculate its eigenvalues and see if they are all positive. Another way to check if a matrix is positive definite is to see if it is symmetric and to see if x^T * A * x is positive for any non-zero vector x. You can also check if the determinant of all of the leading sub-matrices is positive, as a positive definite matrix has a positive determinant.
+21) Negative Definite Matrix - A negative definite matrix is a square matrix where all of its eigenvalues are negative and the inner product of any non-zero vector with itself is negative. This means that the matrix is symmetric, and for any non-zero vector x, the result of -           x^T * A * x is negative.
+To check if a matrix is negative definite, you can calculate its eigenvalues and see if they are all negative. Another way to check if a matrix is negative definite is to see if it is symmetric and to see if  -    x^T * A * x is negative for any non-zero vector x. You can also check if the determinant of all of the leading sub-matrices is negative, as a negative definite matrix has a negative determinant.
+22) Derogatory Matrix � A matrix is derogatory if it's eigenvalues are repeated. for example, The eigenvalues of the matrix A are�3,3,12
+Here eigenvalue�3�is repeated, so matrix is derogatory matrix.
+23) Diagonally Dominant Matrix - A matrix is said to be diagonally dominant if the absolute value of each diagonal element is greater than or equal to the sum of the absolute values of the non-diagonal elements in the corresponding row. This property is important in numerical analysis for solving systems of linear equations and for establishing the convergence of certain algorithms.
+To check if a matrix is diagonally dominant, you can calculate the sum of the absolute values of the non-diagonal elements in each row and compare it to the absolute value of the corresponding diagonal element. If the absolute value of the diagonal element is greater than or equal to the sum of the absolute values of the non-diagonal elements, then the matrix is diagonally dominant.
+For example, for the matrix A:
+| a11, a12, a13 | 
+| a21, a22, a23 | 
+| a31, a32, a33 |
+It would be diagonally dominant if 
+|a11| >= |a12| + |a13|, |a22| >= |a21| + |a23|, and |a33| >= |a31| + |a32|.
+
+24) strictly Diagonally Dominant Matrix - A matrix is said to be strictly diagonally dominant if the absolute value of each diagonal element is strictly greater than the sum of the absolute values of the non-diagonal elements in the corresponding row. This property is even stronger than diagonally dominant, and it is also important in numerical analysis for solving systems of linear equations and for establishing the convergence of certain algorithms.
+To check if a matrix is strictly diagonally dominant, you can calculate the sum of the absolute values of the non-diagonal elements in each row and compare it to the absolute value of the corresponding diagonal element. If the absolute value of the diagonal element is strictly greater than the sum of the absolute values of the non-diagonal elements, then the matrix is strictly diagonally dominant.
+For example, for the matrix A:
+| a11, a12, a13 | 
+| a21, a22, a23 |
+| a31, a32, a33 |
+
+It would be strictly diagonally dominant if  
+|a11| > |a12| + |a13|, |a22| > |a21| + |a23|, and |a33| > |a31| + |a32|.
+Top of Form
+
+25) Identity Matrix - An identity matrix is a square matrix with 1s on its main diagonal and 0s everywhere else. The identity matrix is a special type of diagonal matrix and has the property of being its own inverse, meaning that when multiplied by itself, it returns to itself.
+To check if a matrix is an identity matrix, it must satisfy the following conditions:
+* It must be a square matrix (number of rows = number of columns)
+* The diagonal elements must be 1
+* All other elements must be 0
+For example, for a 3x3 matrix:
+| 1, 0, 0 | 
+| 0, 1, 0 | 
+| 0, 0, 1 |
+It is an identity matrix because it satisfies all three conditions.
+
+
+
+TASK 4 � PROVING EXPRESSIONS - Prove that any two matrix expression is equal or not calculator
+
+
+
+Properties of Matrix Operations
+�
+Properties�of Addition
+The basic properties of addition for real numbers also hold true for matrices.�
+Let�A,�B�and�C�be�m x n�matrices
+1. A + B� =� B + A����commutative
+2. A + (B + C)� =� (A + B) + C����associative
+3. There is a unique�m x n�matrix�O�with
+
+��������A + O� =� A��������additive identity
+4. For any��m x n�matrix,�A�there is an�m x n�matrix�B�(called�-A) with
+
+�������A + B� =� O��������additive inverse
+
+Properties of Matrix�Multiplication
+Unlike matrix addition, the properties of multiplication of real numbers do not all generalize to matrices.� Matrices rarely commute even if�AB�and�BA�are both defined.� There often is no multiplicative inverse of a matrix, even if the matrix is a square matrix.� There are a few properties of multiplication of real numbers that generalize to matrices.� We state them now.
+Let�A,�B�and�C�be matrices of dimensions such that the following are defined.� Then
+1. A(BC)� =� (AB)C���������������� associative
+2. A(B + C)� =� AB + AC��������distributive
+3. (A + B)C� =� AC + BC��������distributive
+4. There are unique matrices�Im�and�In�with
+
+������� Im�A� =� A In� =� A��������multiplicative identity
+
+Properties of�Scalar�Multiplication
+Since we can multiply a matrix by a scalar, we can investigate the properties that this multiplication has.� All of the properties of multiplication of real numbers generalize.� In particular, we have
+Let�r�and�s�be real numbers and�A�and�B�be matrices.� Then
+1. r(sA)� =� (rs)A
+
+2. (r + s)A� =� rA + sA
+3. r(A + B)� =� rA + rB
+4. A(rB)� =� r(AB)� =� (rA)B
+
+Properties of the�Transpose�of a Matrix
+Recall that the transpose of a matrix is the operation of switching rows and columns.� We state the following properties.� We proved the first property in the last section.
+Let�r�be a real number and�A�and�B�be matrices.� Then
+1. (AT)T� =� A
+2. (A + B)T� =� AT�+ BT
+3. (AB)T� =� BTAT
+4. (rA)T� =� rAT
+
+Properties of Determinants
+1. det(A) = �det(AT)
+2. If any row or column of a determinant, is multiplied by any scalar value, that is, a non-zero constant, the entire determinant gets multiplied by the same scalar, that is, if any row or column is multiplied by constant k, the determinant value gets multiplied by k.
+                                                  det(?�) = k det(?)
+3. If all elements of any column or row are zero, then the determinant is zero
+4. If all the elements in the determinant above or below the diagonal are zero, then the determinant is a product of diagonal elements
+
+2 | Page
+
+
