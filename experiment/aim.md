@@ -1,1 +1,1 @@
-#### This experiment aims to demonstrate the degree of kinematic indeterminacy of different structures having various conditions of construction.  
+### Aim of the experiment

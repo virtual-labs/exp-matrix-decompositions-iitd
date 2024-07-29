@@ -1,1 +1,1 @@
-##  Determination of Kinematic Indeterminacy 
+## Experiment name
