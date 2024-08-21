@@ -16,106 +16,86 @@
         <p><span><a href ="./theory/Row_Echelon_Form.html">Row echelon form</a></span> is a fundamental tool in linear algebra that supports various signal processing applications by simplifying the analysis and solution of linear systems, determining matrix rank, etc.</p>
         <p>These foundational matrices enable efficient computation, representation, and manipulation of signals, serving as the building blocks for more complex signal processing tasks.</p>
         </div></div>
-      <div class="px-6 pb-6 flex-1">
-        <div
-          class="w-full text-[#007bff] font-normal text-[19.2px]"
-          style="font-family: Raleway, sans-serif"
-        >
-          <ol class="mb-4 pl-4">
-		  
-		              <li>
-              <a href="./theory/Properties.pdf">
-                <div class="flex">
-                  <span class="text-black mr-4">1.</span>
-                  <p class="hover:text-[#3e6389] hover:underline">
-                    Properties of Matrix Operations (Addition, Multiplication, Transpose, Determinants, Minor, Co-factor, Adjoint, Inverse, etc.)
-                  </p>
-                </div>
-              </a>
-            </li>
-			
-			
-						            <li>
-              <a href="./theory/EigenValue_and_EigenVector.pdf">
-                <div class="flex">
-                  <span class="text-black mr-4">2.</span>
-                  <p class="hover:text-[#3e6389] hover:underline">
-                    Eigenvalue and EigenVector
-                  </p>
-                </div>
-              </a>
-            </li>
-			
-			
-									            <li>
-              <a href="./theory/Singular_Value_Decomposition.pdf">
-                <div class="flex">
-                  <span class="text-black mr-4">3.</span>
-                  <p class="hover:text-[#3e6389] hover:underline">
-                    Singular Value Decomposition (SVD)
-                  </p>
-                </div>
-              </a>
-            </li>
-			            <li>
-              <a href="./theory/LU_Decomposition.html">
-                <div class="flex">
-                  <span class="text-black mr-4">4.</span>
-                  <p class="hover:text-[#3e6389] hover:underline">
-                    LU Decomposition Method
-                  </p>
-                </div>
-              </a>
-            </li>
-			
-			
-			
-			            <li>
-              <a href="./theory/Row_Echelon_Form.html">
-                <div class="flex">
-                  <span class="text-black mr-4">5.</span>
-                  <p class="hover:text-[#3e6389] hover:underline">
-                    Row Echelon Form
-                  </p>
-                </div>
-              </a>
-            </li>
-			
-			            <li>
-              <a href="./theory/Reduced_Row_Echelon_Form.html">
-                <div class="flex">
-                  <span class="text-black mr-4">6.</span>
-                  <p class="hover:text-[#3e6389] hover:underline">
-                    Reduced Row Echelon Form
-                  </p>
-                </div>
-              </a>
-            </li>
-			
-			
-						            <li>
-              <a href="./theory/Rank.pdf">
-                <div class="flex">
-                  <span class="text-black mr-4">7.</span>
-                  <p class="hover:text-[#3e6389] hover:underline">
-                    Rank of a Matrix
-                  </p>
-                </div>
-              </a>
-            </li>
-			
-          </ol>
-        </div>
-      </div>
-<style>
-a {
-    color: blue;
-}
+<div class="px-6 pb-6 flex-1">
+  <div
+    class="w-full text-[#007bff] font-normal text-[19.2px]"
+    style="font-family: Raleway, sans-serif"
+  >
+    <ol class="mb-4 pl-4">
+      <li>
+        <a href="./theory/Properties.pdf">
+          <div class="flex">
+            <span class="text-black mr-4">1.</span>
+            <p class="hover:text-[#3e6389] hover:underline">
+              Properties of Matrix Operations (Addition, Multiplication, Transpose, Determinants, Minor, Co-factor, Adjoint, Inverse, etc.)
+            </p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="./theory/EigenValue_and_EigenVector.pdf">
+          <div class="flex">
+            <span class="text-black mr-4">2.</span>
+            <p class="hover:text-[#3e6389] hover:underline">
+              Eigenvalue and EigenVector
+            </p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="./theory/Singular_Value_Decomposition.pdf">
+          <div class="flex">
+            <span class="text-black mr-4">3.</span>
+            <p class="hover:text-[#3e6389] hover:underline">
+              Singular Value Decomposition (SVD)
+            </p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="./theory/LU_Decomposition.html">
+          <div class="flex">
+            <span class="text-black mr-4">4.</span>
+            <p class="hover:text-[#3e6389] hover:underline">
+              LU Decomposition Method
+            </p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="./theory/Row_Echelon_Form.html">
+          <div class="flex">
+            <span class="text-black mr-4">5.</span>
+            <p class="hover:text-[#3e6389] hover:underline">
+              Row Echelon Form
+            </p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="./theory/Reduced_Row_Echelon_Form.html">
+          <div class="flex">
+            <span class="text-black mr-4">6.</span>
+            <p class="hover:text-[#3e6389] hover:underline">
+              Reduced Row Echelon Form
+            </p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="./theory/Rank.pdf">
+          <div class="flex">
+            <span class="text-black mr-4">7.</span>
+            <p class="hover:text-[#3e6389] hover:underline">
+              Rank of a Matrix
+            </p>
+          </div>
+        </a>
+      </li>
+    </ol>
+  </div>
+</div>
 
-a:hover {
-    color: #3e6389; /* Optional: Darker blue color for hover state */
-    text-decoration: underline; /* Optional: Underline on hover */
-}
-</style>
+
 </body>
 </html>
