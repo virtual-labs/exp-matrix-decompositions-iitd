@@ -129,7 +129,7 @@
                       </button>
                       <button id="trace1" value="Trace trc">Trace</button>
                       <button id="ref1" value="Row Echelon Form ref">
-                        Row Echelon Form
+                        Reduced Row Echelon Form
                       </button>
                       <button id="rankofmatrix1" value="Rank of matrix">
                         Rank of Matrix
@@ -229,7 +229,7 @@
                       </button>
                       <button id="trace" value="Trace trc">Trace</button>
                       <button id="ref" value="Row Echelon Form ref">
-                        Row Echelon Form
+                        Reduced Row Echelon Form
                       </button>
                       <button id="rankofmatrix" value="Rank of Matrix">
                         Rank of Matrix
@@ -608,6 +608,11 @@
 
       function calculateInverse(matrixString) {
         try {
+		  const determinantff = calculateDeterminant(matrixString);
+        // Check if the matrix is singular (determinant is 0)
+        if (determinantff === 0) {
+            return "The matrix is singular and doesn't have an inverse";
+        } 
           const matrix = parseMatrixString(matrixString);
           const mathMatrix = math.matrix(matrix);
           const inverseMatrix = math.inv(mathMatrix);
@@ -676,22 +681,41 @@
         }
       }
       // minor of matrix
-      // diagonalize matrix
-      function diagonalizeMatrix(matrixString) {
-        try {
-          const matrix = parseMatrixString(matrixString);
-          const n = matrix.length;
-          const diagonalElements = [];
+// Diagonalize matrix function
+function diagonalizeMatrix(matrixString) {
+  try {
+    const matrix = parseMatrixString(matrixString);  // Parse the input matrix string
+    const n = matrix.length;  // Get the size of the matrix
 
-          for (let i = 0; i < n; i++) {
-            diagonalElements.push(matrix[i][i]);
-          }
+    // Initialize an empty matrix to store the diagonal matrix
+    const diagonalElements = [];
 
-          return diagonalElements;
-        } catch (error) {
-          return `Error: ${error.message}`;
-        }
-      }
+    // Loop to create the diagonal matrix
+    for (let i = 0; i < n; i++) {
+      // Create a row filled with zeros
+      const row = new Array(n).fill(0);
+
+      // Set the diagonal element in the row
+      row[i] = matrix[i][i];
+
+      // Push the row to the diagonal matrix
+      diagonalElements.push(row);
+    }
+
+    // Return the diagonalized matrix
+    return diagonalElements;
+
+  } catch (error) {
+    return `Error: ${error.message}`;
+  }
+}
+/*
+// Function to parse the matrix string into a 2D array (you need to implement this)
+function parseMatrixString(matrixString) {
+  return JSON.parse(matrixString);  // Assuming the matrix is passed as a JSON string
+}
+*/
+
       //diagonalize matrix
       //trace
       function findTrace(matrixString) {
@@ -1235,17 +1259,27 @@
         return math.matrix(array);
       }
 
-      // Function to perform division of two matrices
-      function matrixDivision(matrix1, matrix2) {
-        try {
-          const result = math.multiply(matrix1, math.inv(matrix2));
-          return result
-            .toArray()
-            .map((row) => row.map((val) => parseFloat(val.toFixed(4))));
-        } catch (error) {
-          return `Error: ${error.message}`;
-        }
-      }
+// Function to perform division of two matrices
+function matrixDivision(matrix1, matrix2) {
+  try {
+    // Check if matrix2 is invertible
+    const determinant = math.det(matrix2);
+    if (determinant === 0) {
+      return "Matrix2 is singular and does not have an inverse";
+    }
+
+    // Perform matrix multiplication of matrix1 with inverse of matrix2
+    const result = math.multiply(matrix1, math.inv(matrix2));
+
+    // Return the result as an array with elements rounded to 4 decimal places
+    return result
+      .toArray()
+      .map((row) => row.map((val) => parseFloat(val.toFixed(4))));
+  } catch (error) {
+    return `Error: ${error.message}`;
+  }
+}
+
       // Function to perform multiplication of two matrices
       function matrixMultiplication(matrix1, matrix2) {
         try {
