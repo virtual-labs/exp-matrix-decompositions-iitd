@@ -14,7 +14,11 @@
                 <li><strong>Matrix Decompositions</strong></li>
             </ul>
         </li>
-        <li>For each section, you can input your matrix element values in two ways:
+      <br/><br/>
+          <p>
+        <strong>Steps</strong>:
+            </p>
+        <li>1. For each section, you can input your matrix element values in two ways:
             <ul>
                 <li><strong>Textarea</strong>:
                     <ul>
@@ -30,7 +34,7 @@
                 </li>
             </ul>
         </li>
-        <li>After entering the matrix values, select the desired operation by clicking the corresponding button:
+        <li>2. After entering the matrix values, select the desired operation by clicking the corresponding button:
             <ul>
                 <li><strong>Available operations include</strong>:</li>
                 <li>Determinant</li>
