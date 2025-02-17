@@ -35,7 +35,6 @@
       }
       .overlay-content {
         background-color: white;
-        padding: 20px;
         border-radius: 10px;
         text-align: center;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow for the container */
@@ -47,10 +46,44 @@
         top: 10px;
         right: 10px;
         cursor: pointer;
-      }
+		      }
+	h1, #inst {
+    color: #333;
+    font-size: 25px; /* Increased font size */
+	font-weight: 500;
+    margin-bottom: 20px;
+}
+	ul {
+    list-style-type: none;
+    fft1: 0;
+}
+
+li {
+    background-color: #e0e7ff;
+    margin: 5px 0;
+    fft1: 5px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px; /* Set font size for list items */
+}
+
+li::before {
+    content: "✔";
+    color: #4caf50;
+    margin-right: 10px;
+}
     </style>
   </head>
   <body>
+  	<div id = "instructions">
+    <h1 id ="inst">Instructions for Matrix Operations</h1>
+<ul>
+<li>Step 1: For each section, you can input your matrix element values in two ways: either through the textarea or by filling the cells.</li>
+<li>Step 2: After entering the matrix values, select the desired operation by clicking the corresponding button. Available operations include addition, multiplication, LU decomposition, SVD, etc.</li>
+</ul>
+
+	</div>
+	<hr/>
     <!-- sidebar and body -->
     <div class="flex min-h-[80vh]">
       <div class="px-1 pb-6 flex-1">
@@ -158,6 +191,9 @@
                   >
                     A - B
                   </button>
+		<button 
+		class="button bg-green-500 text-white rounded-md px-2 py-1"
+		onclick = "location.reload();">Reset Simulator</button>
                 </div>
                 <!-- matrix -->
                 <div class="matrix flex items-center flex-col">
@@ -263,6 +299,7 @@
         </div>
       </div>
     </div>
+	
     <script>
       var overlay = document.getElementById("overlay");
 
@@ -274,7 +311,21 @@
     </script>
     <script>
       let matrixSize = 3; // Initial size of the matrix
-      let matrixSize1 = 3; // Initial size of the matrix   Yesterday_you_stoped_here_
+      let matrixSize1 = 3; // Initial size of the matrix   
+	  
+function padding() {
+    let paddingValue = (matrixSize > matrixSize1) ? matrixSize * 75 : matrixSize1 * 75; // Calculate padding value
+
+    // Ensure the element exists before setting the style
+    let overlayContent = document.querySelector(".overlay-content");
+    if (overlayContent) {
+        overlayContent.style.padding = `${paddingValue}px`;
+    } else {
+        console.log("Element with class 'overlay-content' not found.");
+    }
+}
+
+padding(); // Call the function
 
       function createMatrix(size, values = []) {
         const container = document.getElementById("matrixGrid");
