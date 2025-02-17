@@ -104,9 +104,43 @@
         right: 10px;
         cursor: pointer;
       }
+	  	h1, #inst {
+    color: #333;
+    font-size: 25px; /* Increased font size */
+	font-weight: 500;
+    margin-bottom: 20px;
+}
+	ul {
+    list-style-type: none;
+    fft1: 0;
+}
+
+li {
+    background-color: #e0e7ff;
+    margin: 5px 0;
+    fft1: 5px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px; /* Set font size for list items */
+}
+
+li::before {
+    content: "✔";
+    color: #4caf50;
+    margin-right: 10px;
+}
     </style>
   </head>
   <body>
+<div id = "instructions">
+    <h1 id ="inst">Instructions for Calculating a System of Equations</h1>
+<ul>
+<li>Step 1: For each section, you can input your matrix element values in two ways: either through the textarea or by filling the cells.</li>
+<li>Step 2: After entering the matrix values, click the 'Solve' button to solve the equations.</li>
+</ul>
+
+	</div>
+	<hr/>
     <!-- sidebar and body -->
     <div class="flex min-h-[80vh]">
       <div class="px-6 pb-6 flex-1">
@@ -115,7 +149,6 @@
           <div class="">
             <div class="">
               <!--  -->
-              <p class="text-[28px] font-medium">System of Equations:</p>
               <div id="eqnContainer" class="eqnContainer mt-5">
                 <div class="eqnRow">
                   <div class="part_eqn">
@@ -170,6 +203,12 @@
                 <button id="solveButton">Solve</button>
               </div>
             </div>
+			<br/>
+			<div style="text-align: center;">
+    <button 
+        class="button bg-green-500 text-white rounded-md px-2 py-1"
+        onclick="hardRefresh();">Reset Simulator</button>
+</div>
             <!-- <div class=" bg-slate-300 flex justify-center items-center">
               <p class="" id="result">helo</p>
             </div> -->
@@ -390,6 +429,10 @@
       document
         .getElementById("subtractVarButton")
         .addEventListener("click", removeVariableAndEquation);
+		
+		function hardRefresh() {
+    location.reload(true); // Hard refresh the page
+}
     </script>
   </body>
 </html>
