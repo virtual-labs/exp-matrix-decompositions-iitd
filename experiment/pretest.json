@@ -109,15 +109,15 @@
     "a": "[[1, 2], [2, 1]]",
     "b": "[[1, 0], [0, 1]]",
     "c": "[[1, 2], [3, 4]]",
-    "d": "[[1, 1], [1, 1]]"
+    "d": "All of the above"
   },
   "explanations": {
     "a": "This matrix is symmetric, and symmetric matrices can always be diagonalized.",
-    "b": "This matrix is already diagonal. Diagonalizable matrices must have enough linearly independent eigenvectors to form a basis.",
-    "c": "This matrix has distinct eigenvalues, so it can be diagonalized.",
-    "d": "This matrix has a single eigenvalue but is still diagonalizable since it has enough independent eigenvectors."
+    "b": "This matrix is already diagonal. A matrix is diagonalizable if it has enough linearly independent eigenvectors to form a basis.",
+    "c": "This matrix has distinct eigenvalues, meaning it can be diagonalized.",
+    "d": "All of the above matrices can be diagonalized."
   },
-  "correctAnswer": ["a", "b", "c", "d"],
+  "correctAnswer": "d",
   "difficulty": "beginner"
 },
     {
