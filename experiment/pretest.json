@@ -172,7 +172,7 @@
       "difficulty": "intermediate"
     },
 
-    // Additional 10 questions
+
     {
       "question": "11. If A is a 2×2 matrix and A is invertible, which of the following must also be invertible?",
       "answers": {
