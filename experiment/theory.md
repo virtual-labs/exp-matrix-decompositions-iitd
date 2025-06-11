@@ -22,255 +22,103 @@
         <p>These foundational matrices enable efficient computation, representation, and manipulation of signals, serving as the building blocks for more complex signal processing tasks.</p>
         </div></div>
 <br/><br/>
-# **Properties of Matrix Operations**
-
----
-
-## **Properties of Matrix Addition**
-
-The fundamental properties of real number addition also apply to matrices.
-
-Let \( A \), \( B \), and \( C \) be \( m \times n \) matrices:
-
-1. **Commutative Property**:  
-   \( A + B = B + A \)
-
-2. **Associative Property**:  
-   \( A + (B + C) = (A + B) + C \)
-
-3. **Additive Identity**:  
-   There exists a unique \( m \times n \) zero matrix \( O \) such that  
-   \( A + O = A \)
-
-4. **Additive Inverse**:  
-   For every \( m \times n \) matrix \( A \), there exists a matrix \( -A \) such that  
-   \( A + (-A) = O \)
-
----
-
-## **Properties of Matrix Multiplication**
-
-Unlike addition, not all multiplication properties of real numbers apply to matrices. In general:
-
-- Matrix multiplication is **not commutative**:  
-  Even if both \( AB \) and \( BA \) are defined, they may not be equal.
-- A matrix may not have a **multiplicative inverse**, even if it is square.
-
-However, some properties **do generalize**.  
-Let \( A \), \( B \), and \( C \) be matrices such that the following operations are defined:
-
-1. **Associative Property**:  
-   \( A(BC) = (AB)C \)
-
-2. **Left Distributive Property**:  
-   \( A(B + C) = AB + AC \)
-
-3. **Right Distributive Property**:  
-   \( (A + B)C = AC + BC \)
-
-4. **Multiplicative Identity**:  
-   There exist identity matrices \( I_m \) and \( I_n \) such that:  
-   \( I_m A = A \) and \( A I_n = A \)
-
----
-
-## **Properties of Scalar Multiplication**
-
-When multiplying matrices by scalars, all properties of scalar multiplication for real numbers apply.
-
-Let \( r \) and \( s \) be real numbers, and \( A \) and \( B \) be matrices:
-
-1. \( r(sA) = (rs)A \)
-
-2. \( (r + s)A = rA + sA \)
-
-3. \( r(A + B) = rA + rB \)
-
-4. \( A(rB) = r(AB) = (rA)B \)  
-   *(if multiplication is defined)*
-
----
-
-## **Properties of the Transpose of a Matrix**
-
-The **transpose** of a matrix is obtained by switching its rows and columns.
-
-Let \( r \) be a real number, and \( A \), \( B \) be matrices:
-
-1. \( (A^T)^T = A \)
-
-2. \( (A + B)^T = A^T + B^T \)
-
-3. \( (AB)^T = B^T A^T \)
-
-4. \( (rA)^T = rA^T \)
-
----
-
-## **Properties of Determinants**
-
-1. \( \det(A) = \det(A^T) \)
-
-2. If any row or column is multiplied by a scalar \( k \), then:  
-   \[
-   \det(\Delta') = k \cdot \det(\Delta)
-   \]
-
-3. If all elements in any row or column are zero, then the determinant is zero.
-
-4. If a matrix is **upper or lower triangular**, i.e., all elements above or below the diagonal are zero, then the determinant equals the **product of the diagonal elements**.
-
-# **Matrix Theory: Minor, Cofactor, Adjoint, and Inverse**
-
----
-
-## **Matrix Multiplication Representation**
-
-Given two matrices:  
-- \( [A]_{i \times k} \)  
-- \( [B]_{k \times j} \)  
-
-Their product is:  
-\[
-[A]_{i \times k} \cdot [B]_{k \times j} = [C]_{i \times j}
-\]  
-Where each element of the resulting matrix \( C \) is given by:  
-\[
-c_{ij} = \sum_{k} a_{ik} \cdot b_{kj}
-\]
-
-The **transpose** of matrix \( C \) is:  
-\[
-C^T = [C]_{j \times i} = [C]_{ji}
-\]
-
-Where \( C^T \) denotes the transpose of matrix \( C \).
-
----
-
-## **1. Transpose of a Product of Matrices**
-
-### **1.a)**  
-\[
-(A \cdot B)^T = B^T \cdot A^T
-\]
-
-Proof:  
-\[
-(A \cdot B)^T_{ij} = (A \cdot B)_{ji} = \sum_k a_{jk} b_{ki} = \sum_k b^T_{ik} a^T_{kj} = (B^T \cdot A^T)_{ij}
-\]
-
-### **1.b)**  
-\[
-B^T \cdot A^T = (A \cdot B)^T
-\]
-
-Proof (reverse direction):  
-\[
-(B^T \cdot A^T)_{ij} = \sum_k b^T_{ik} \cdot a^T_{kj} = \sum_k b_{ki} \cdot a_{jk} = (A \cdot B)_{ji} = (A \cdot B)^T_{ij}
-\]
-
----
-
-## **2. Cofactor and Adjoint of a Matrix**
-
-### **Cofactor Matrix of A**
-
-The cofactor matrix \( \text{CO}_{ij} \) is defined as:  
-\[
-\text{CO}_{ij} = (-1)^{i+j} \cdot M_{ij}
-\]  
-Where \( M_{ij} \) is the **minor** of element \( a_{ij} \) — the determinant of the matrix formed by deleting the \( i^\text{th} \) row and \( j^\text{th} \) column from matrix \( A \).
-
-### **Adjoint of A**
-
-The adjoint of matrix \( A \), denoted as \( \text{Adj}(A) \), is the **transpose of the cofactor matrix**:  
-\[
-\text{Adj}(A) = [\text{CO}_{ij}]^T
-\]
-
----
-
-## **3. Inverse of a Matrix**
-
-If matrix \( A \) is square and invertible, its inverse is given by:  
-\[
-A^{-1} = \frac{\text{Adj}(A)}{\det(A)}
-\]  
-Where \( \det(A) \) is the determinant of \( A \).
-
----
-
-## **4. Inverse of a Product of Matrices**
-
-Let \( A \) and \( B \) be invertible square matrices of size \( n \times n \). Then:  
-\[
-(AB)^{-1} = B^{-1} A^{-1}
-\]
-
-**Proof Sketch**:
-
-Start from:  
-\[
-(AB)(AB)^{-1} = I
-\]
-
-Pre-multiply both sides by \( A^{-1} \):  
-\[
-A^{-1} (AB)(AB)^{-1} = A^{-1} I
-\Rightarrow B(AB)^{-1} = A^{-1}
-\]
-
-Now pre-multiply both sides by \( B^{-1} \):  
-\[
-B^{-1} B(AB)^{-1} = B^{-1} A^{-1}
-\Rightarrow (AB)^{-1} = B^{-1} A^{-1}
-\]
-
----
-
-## **5. Adjoint of a Product**
-
-\[
-\text{Adj}(AB) = \text{Adj}(B) \cdot \text{Adj}(A)
-\]
-
-**Proof Sketch**:
-
-From inverse definition:
-\[
-(AB)^{-1} = \frac{\text{Adj}(AB)}{\det(AB)}
-\Rightarrow \text{Adj}(AB) = (AB)^{-1} \cdot \det(AB) \tag{1}
-\]
-
-Also,  
-\[
-(AB)^{-1} = B^{-1} A^{-1}, \quad \det(AB) = \det(A) \cdot \det(B) \tag{2}
-\]
-
-Now use the definition of adjoint:  
-\[
-A^{-1} = \frac{\text{Adj}(A)}{\det(A)}, \quad B^{-1} = \frac{\text{Adj}(B)}{\det(B)} \Rightarrow
-\]
-
-\[
-\text{Adj}(A) = A^{-1} \cdot \det(A), \quad \text{Adj}(B) = B^{-1} \cdot \det(B)
-\]
-
-Therefore,  
-\[
-\text{Adj}(B) \cdot \text{Adj}(A) = \det(A) \cdot \det(B) \cdot B^{-1} \cdot A^{-1} \tag{3}
-\]
-
-Substitute (2) into (1):  
-\[
-\text{Adj}(AB) = \det(A) \cdot \det(B) \cdot B^{-1} \cdot A^{-1} \tag{4}
-\]
-
-From (3) and (4):  
-\[
-\text{Adj}(AB) = \text{Adj}(B) \cdot \text{Adj}(A)
-\]
+  <h1>Properties of Matrix Operations</h1>
+  <hr>
+
+  <h2>Properties of Matrix Addition</h2>
+  <p>The fundamental properties of real number addition also apply to matrices.</p>
+  <p>Let \( A \), \( B \), and \( C \) be \( m \times n \) matrices:</p>
+  <ol>
+    <li><strong>Commutative Property</strong>: \( A + B = B + A \)</li>
+    <li><strong>Associative Property</strong>: \( A + (B + C) = (A + B) + C \)</li>
+    <li><strong>Additive Identity</strong>: There exists a unique \( m \times n \) zero matrix \( O \) such that \( A + O = A \)</li>
+    <li><strong>Additive Inverse</strong>: For every matrix \( A \), there exists \( -A \) such that \( A + (-A) = O \)</li>
+  </ol>
+
+  <hr>
+  <h2>Properties of Matrix Multiplication</h2>
+  <p>Unlike addition, not all multiplication properties of real numbers apply to matrices.</p>
+  <ul>
+    <li>Matrix multiplication is <strong>not commutative</strong>: Even if both \( AB \) and \( BA \) are defined, they may not be equal.</li>
+    <li>A matrix may not have a <strong>multiplicative inverse</strong>, even if it is square.</li>
+  </ul>
+  <p>However, some properties <strong>do generalize</strong>. Let \( A \), \( B \), and \( C \) be matrices such that the operations are defined:</p>
+  <ol>
+    <li><strong>Associative Property</strong>: \( A(BC) = (AB)C \)</li>
+    <li><strong>Left Distributive Property</strong>: \( A(B + C) = AB + AC \)</li>
+    <li><strong>Right Distributive Property</strong>: \( (A + B)C = AC + BC \)</li>
+    <li><strong>Multiplicative Identity</strong>: \( I_m A = A \), \( A I_n = A \)</li>
+  </ol>
+
+  <hr>
+  <h2>Properties of Scalar Multiplication</h2>
+  <p>Let \( r \), \( s \) be real numbers, and \( A \), \( B \) be matrices:</p>
+  <ol>
+    <li>\( r(sA) = (rs)A \)</li>
+    <li>\( (r + s)A = rA + sA \)</li>
+    <li>\( r(A + B) = rA + rB \)</li>
+    <li>\( A(rB) = r(AB) = (rA)B \) (if defined)</li>
+  </ol>
+
+  <hr>
+  <h2>Properties of the Transpose of a Matrix</h2>
+  <p>Let \( r \) be real, and \( A \), \( B \) be matrices:</p>
+  <ol>
+    <li>\( (A^T)^T = A \)</li>
+    <li>\( (A + B)^T = A^T + B^T \)</li>
+    <li>\( (AB)^T = B^T A^T \)</li>
+    <li>\( (rA)^T = rA^T \)</li>
+  </ol>
+
+  <hr>
+  <h2>Properties of Determinants</h2>
+  <ol>
+    <li>\( \det(A) = \det(A^T) \)</li>
+    <li>If any row/column is multiplied by \( k \), then \( \det(\Delta') = k \cdot \det(\Delta) \)</li>
+    <li>If a row or column is all zeros, then \( \det = 0 \)</li>
+    <li>If matrix is upper/lower triangular, \( \det = \) product of diagonal elements</li>
+  </ol>
+
+  <h1>Matrix Theory: Minor, Cofactor, Adjoint, and Inverse</h1>
+  <hr>
+
+  <h2>Matrix Multiplication Representation</h2>
+  <p>Given two matrices \( [A]_{i \times k} \), \( [B]_{k \times j} \):</p>
+  <p>\( [A] \cdot [B] = [C]_{i \times j} \), where \( c_{ij} = \sum_k a_{ik} b_{kj} \)</p>
+  <p>Transpose of \( C \): \( C^T = [C]_{j \times i} = [C]_{ji} \)</p>
+
+  <h2>1. Transpose of a Product</h2>
+  <h3>1.a</h3>
+  <p>\( (AB)^T = B^T A^T \)</p>
+  <p>\( (AB)^T_{ij} = (AB)_{ji} = \sum_k a_{jk} b_{ki} = \sum_k b^T_{ik} a^T_{kj} = (B^T A^T)_{ij} \)</p>
+
+  <h3>1.b</h3>
+  <p>\( B^T A^T = (AB)^T \)</p>
+  <p>\( (B^T A^T)_{ij} = \sum_k b^T_{ik} a^T_{kj} = \sum_k b_{ki} a_{jk} = (AB)_{ji} = (AB)^T_{ij} \)</p>
+
+  <h2>2. Cofactor and Adjoint</h2>
+  <h3>Cofactor Matrix</h3>
+  <p>\( \text{CO}_{ij} = (-1)^{i+j} M_{ij} \)</p>
+
+  <h3>Adjoint</h3>
+  <p>\( \text{Adj}(A) = [\text{CO}_{ij}]^T \)</p>
+
+  <h2>3. Inverse of a Matrix</h2>
+  <p>If invertible: \( A^{-1} = \frac{\text{Adj}(A)}{\det(A)} \)</p>
+
+  <h2>4. Inverse of a Product</h2>
+  <p>\( (AB)^{-1} = B^{-1} A^{-1} \)</p>
+  <p>\( (AB)(AB)^{-1} = I \)</p>
+  <p>Pre-multiply by \( A^{-1} \): \( A^{-1}(AB)(AB)^{-1} = A^{-1} \Rightarrow B(AB)^{-1} = A^{-1} \)</p>
+  <p>Pre-multiply by \( B^{-1} \): \( (AB)^{-1} = B^{-1} A^{-1} \)</p>
+
+  <h2>5. Adjoint of a Product</h2>
+  <p>\( \text{Adj}(AB) = \text{Adj}(B) \cdot \text{Adj}(A) \)</p>
+  <p>Using: \( (AB)^{-1} = \frac{\text{Adj}(AB)}{\det(AB)} \)</p>
+  <p>\( (AB)^{-1} = B^{-1} A^{-1}, \quad \det(AB) = \det(A) \cdot \det(B) \)</p>
+  <p>\( A^{-1} = \frac{\text{Adj}(A)}{\det(A)}, \quad B^{-1} = \frac{\text{Adj}(B)}{\det(B)} \)</p>
+  <p>\( \text{Adj}(B) \cdot \text{Adj}(A) = \det(A) \cdot \det(B) \cdot B^{-1} \cdot A^{-1} \)</p>
+  <p>Thus, \( \text{Adj}(AB) = \text{Adj}(B) \cdot \text{Adj}(A) \)</p>
 <p>
 				<strong>Eigenvalue and Eigenvector</strong>
 			</p>
