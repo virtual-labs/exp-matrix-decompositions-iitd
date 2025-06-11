@@ -23,8 +23,6 @@
         </div></div>
 <br/><br/>
   <h2>Properties of Matrix Operations</h2>
-  <br/>
-
   <h2>Properties of Matrix Addition</h2>
   <p>The fundamental properties of real number addition also apply to matrices.</p>
   <p>Let \( A \), \( B \), and \( C \) be \( m \times n \) matrices:</p>
@@ -34,8 +32,6 @@
     <li><strong>Additive Identity</strong>: There exists a unique \( m \times n \) zero matrix \( O \) such that \( A + O = A \)</li>
     <li><strong>Additive Inverse</strong>: For every matrix \( A \), there exists \( -A \) such that \( A + (-A) = O \)</li>
   </ol>
-
-  <br/>
   <h2>Properties of Matrix Multiplication</h2>
   <p>Unlike addition, not all multiplication properties of real numbers apply to matrices.</p>
   <ul>
@@ -49,8 +45,6 @@
     <li><strong>Right Distributive Property</strong>: \( (A + B)C = AC + BC \)</li>
     <li><strong>Multiplicative Identity</strong>: \( I_m A = A \), \( A I_n = A \)</li>
   </ol>
-
-  <br/>
   <h2>Properties of Scalar Multiplication</h2>
   <p>Let \( r \), \( s \) be real numbers, and \( A \), \( B \) be matrices:</p>
   <ol>
@@ -59,8 +53,6 @@
     <li>\( r(A + B) = rA + rB \)</li>
     <li>\( A(rB) = r(AB) = (rA)B \) (if defined)</li>
   </ol>
-
-  <br/>
   <h2>Properties of the Transpose of a Matrix</h2>
   <p>Let \( r \) be real, and \( A \), \( B \) be matrices:</p>
   <ol>
@@ -69,8 +61,6 @@
     <li>\( (AB)^T = B^T A^T \)</li>
     <li>\( (rA)^T = rA^T \)</li>
   </ol>
-
-  <br/>
   <h2>Properties of Determinants</h2>
   <ol>
     <li>\( \det(A) = \det(A^T) \)</li>
@@ -80,7 +70,6 @@
   </ol>
 
 <h2>Matrix Theory: Minor, Cofactor, Adjoint, and Inverse</h2>
-<br/>
 
 <h2>Matrix Multiplication Representation</h2>
 <p>Let matrix \( A \) be of size \( i \times k \), and matrix \( B \) be of size \( k \times j \). Their product \( C = A \cdot B \) will result in a matrix of size \( i \times j \).</p>
@@ -147,9 +136,7 @@
 <p>Thus, from the original inverse formula:</p>
 <p>\( \text{Adj}(AB) = \text{Adj}(B) \cdot \text{Adj}(A) \)</p>
 
-<p>
-				<strong>Eigenvalue and Eigenvector</strong>
-			</p>
+<h2>Eigenvalue and Eigenvector</h2>
 			<p>
 				Let’s assume a square matrix <strong>A</strong>
 			</p>
@@ -291,9 +278,7 @@
 			<p>
 				&#xa0;
 			</p>
-			<p>
-				<strong>Singular Value Decomposition (SVD)</strong>
-			</p>
+			<h2>Singular Value Decomposition (SVD)</h2>
 			<p>
 				<strong>Theory:</strong>
 			</p>
@@ -399,9 +384,7 @@
 			<p>
 				&#xa0;
 			</p>
-			<p>
-				<strong>LU Decomposition</strong>
-			</p>
+			<h2>LU Decomposition</h2>
 			<p>
 				LU Decomposition is a method to find solutions of linear equations.
 			</p>
@@ -571,9 +554,7 @@
 			<p>
 				&#xa0;
 			</p>
-			<p>
-				<strong>Row Echelon Form</strong>
-			</p>
+			<h2>Row Echelon Form</h2>
 			<p>
 				A matrix is in row echelon form if
 			</p>
@@ -636,98 +617,7 @@
 			<p>
 				&#xa0;
 			</p>
-			<p>
-				<strong>Reduced Row Echelon Form (RREF)</strong>
-			</p>
-			<p>
-				<strong>Procedure</strong>
-			</p>
-			<ol>
-				<li>
-					Choose an m X n matrix
-				</li>
-				<li>
-					All zero rows are at the bottom. 
-				</li>
-				<li>
-					Choose the leading entry in the first non-zero row and swap it with the first row if necessary.
-				</li>
-				<li>
-					Divide the first row by the leading entry so that the leading entry becomes 1.
-				</li>
-				<li>
-					Use row operations to make all entries in the first column above and below the leading entry equal to 0.
-				</li>
-				<li>
-					Repeat steps 3 through 5 for each subsequent row, working from top to bottom.
-				</li>
-				<li>
-					After all, rows have been processed, the matrix is in reduced row echelon form.
-				</li>
-			</ol>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong>Example:</strong>
-			</p>
-			<p>
-				Given matrix <strong>A </strong>= <img src="1739254504_matrix-theory/1739254504_matrix-theory-60.png" width="94" height="61" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				R2 ← R2 – 2*R1 <em>(R1 denotes row 1 and so on)</em>
-			</p>
-			<p>
-				<img src="1739254504_matrix-theory/1739254504_matrix-theory-61.png" width="94" height="61" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				R3 ← R3 – 3*R1
-			</p>
-			<p>
-				<img src="1739254504_matrix-theory/1739254504_matrix-theory-62.png" width="83" height="61" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				R1 ← R1 – 2*R2
-			</p>
-			<p>
-				<img src="1739254504_matrix-theory/1739254504_matrix-theory-63.png" width="83" height="61" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				R1 ← R1 – R3
-			</p>
-			<p>
-				<img src="1739254504_matrix-theory/1739254504_matrix-theory-64.png" width="83" height="61" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				R2 ← R2 – R3
-			</p>
-			<p>
-				<img src="1739254504_matrix-theory/1739254504_matrix-theory-65.png" width="83" height="61" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong>Rank of a Matrix</strong>
-			</p>
+			<h2>Rank of a Matrix</h2>
 			<p>
 				<strong>Theory:</strong>
 			</p>
@@ -775,47 +665,5 @@
 			<p>
 				&#xa0;
 			</p>
-			<p>
-				<strong>Rank of a Matrix in Reduced Row Echelon Form (RREF)</strong>
-			</p>
-			<p>
-				<strong>Theory:</strong>
-			</p>
-			<ol>
-				<li>
-					<strong>Reduced Row Echelon Form (RREF)</strong>: A matrix is in reduced row echelon form when:
-					<ul>
-						<li>
-							It is in row echelon form (REF).
-						</li>
-						<li>
-							Each leading entry (pivot) is 1.
-						</li>
-						<li>
-							Each leading 1 is the only non-zero entry in its column.
-						</li>
-						<li>
-							All rows with leading 1s are above rows of all zeros.
-						</li>
-					</ul>
-				</li>
-			</ol>
-			<p>
-				&#xa0;
-			</p>
-			<ol start="2">
-				<li>
-					<strong>Finding the Rank</strong>:
-					<ul>
-						<li>
-							<strong>Count Leading 1s</strong>: In RREF, the rank of the matrix is equal to the number of leading 1s. Each leading 1 represents a pivot position in a linearly independent row.
-						</li>
-						<li>
-							<strong>Process</strong>: Convert the matrix to RREF using row operations (pivoting, scaling, and clearing entries above and below pivots) and count the number of leading 1s to determine the rank.
-						</li>
-					</ul>
-				</li>
-			</ol>
- 
 </body>
 </html>
