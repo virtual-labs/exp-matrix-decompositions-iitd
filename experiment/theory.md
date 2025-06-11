@@ -22,8 +22,8 @@
         <p>These foundational matrices enable efficient computation, representation, and manipulation of signals, serving as the building blocks for more complex signal processing tasks.</p>
         </div></div>
 <br/><br/>
-  <h1>Properties of Matrix Operations</h1>
-  <hr>
+  <h2>Properties of Matrix Operations</h2>
+  <br/>
 
   <h2>Properties of Matrix Addition</h2>
   <p>The fundamental properties of real number addition also apply to matrices.</p>
@@ -35,7 +35,7 @@
     <li><strong>Additive Inverse</strong>: For every matrix \( A \), there exists \( -A \) such that \( A + (-A) = O \)</li>
   </ol>
 
-  <hr>
+  <br/>
   <h2>Properties of Matrix Multiplication</h2>
   <p>Unlike addition, not all multiplication properties of real numbers apply to matrices.</p>
   <ul>
@@ -50,7 +50,7 @@
     <li><strong>Multiplicative Identity</strong>: \( I_m A = A \), \( A I_n = A \)</li>
   </ol>
 
-  <hr>
+  <br/>
   <h2>Properties of Scalar Multiplication</h2>
   <p>Let \( r \), \( s \) be real numbers, and \( A \), \( B \) be matrices:</p>
   <ol>
@@ -60,7 +60,7 @@
     <li>\( A(rB) = r(AB) = (rA)B \) (if defined)</li>
   </ol>
 
-  <hr>
+  <br/>
   <h2>Properties of the Transpose of a Matrix</h2>
   <p>Let \( r \) be real, and \( A \), \( B \) be matrices:</p>
   <ol>
@@ -70,7 +70,7 @@
     <li>\( (rA)^T = rA^T \)</li>
   </ol>
 
-  <hr>
+  <br/>
   <h2>Properties of Determinants</h2>
   <ol>
     <li>\( \det(A) = \det(A^T) \)</li>
@@ -79,46 +79,74 @@
     <li>If matrix is upper/lower triangular, \( \det = \) product of diagonal elements</li>
   </ol>
 
-  <h1>Matrix Theory: Minor, Cofactor, Adjoint, and Inverse</h1>
-  <hr>
+<h2>Matrix Theory: Minor, Cofactor, Adjoint, and Inverse</h2>
+<br/>
 
-  <h2>Matrix Multiplication Representation</h2>
-  <p>Given two matrices \( [A]_{i \times k} \), \( [B]_{k \times j} \):</p>
-  <p>\( [A] \cdot [B] = [C]_{i \times j} \), where \( c_{ij} = \sum_k a_{ik} b_{kj} \)</p>
-  <p>Transpose of \( C \): \( C^T = [C]_{j \times i} = [C]_{ji} \)</p>
+<h2>Matrix Multiplication Representation</h2>
+<p>Let matrix \( A \) be of size \( i \times k \), and matrix \( B \) be of size \( k \times j \). Their product \( C = A \cdot B \) will result in a matrix of size \( i \times j \).</p>
+<p>The element in the \( i^{\text{th}} \) row and \( j^{\text{th}} \) column of the resulting matrix \( C \), denoted by \( c_{ij} \), is calculated as:</p>
+<p>\( c_{ij} = \sum_k a_{ik} \cdot b_{kj} \)</p>
+<p>The transpose of matrix \( C \), denoted as \( C^T \), swaps rows and columns, resulting in a matrix of size \( j \times i \):</p>
+<p>\( C^T = [C]_{j \times i} \), where \( C^T_{ji} = C_{ij} \)</p>
 
-  <h2>1. Transpose of a Product</h2>
-  <h3>1.a</h3>
-  <p>\( (AB)^T = B^T A^T \)</p>
-  <p>\( (AB)^T_{ij} = (AB)_{ji} = \sum_k a_{jk} b_{ki} = \sum_k b^T_{ik} a^T_{kj} = (B^T A^T)_{ij} \)</p>
+<h2>1. Transpose of a Product</h2>
 
-  <h3>1.b</h3>
-  <p>\( B^T A^T = (AB)^T \)</p>
-  <p>\( (B^T A^T)_{ij} = \sum_k b^T_{ik} a^T_{kj} = \sum_k b_{ki} a_{jk} = (AB)_{ji} = (AB)^T_{ij} \)</p>
+<h3>1.a. Proof that \( (AB)^T = B^T A^T \)</h3>
+<p>The transpose of a product of two matrices equals the product of their transposes in reverse order. That is:</p>
+<p>\( (AB)^T = B^T A^T \)</p>
+<p>To see why this is true, consider the element at position \( (i, j) \) in \( (AB)^T \):</p>
+<p>\( (AB)^T_{ij} = (AB)_{ji} = \sum_k a_{jk} \cdot b_{ki} \)</p>
+<p>On the other hand, consider the element \( (i, j) \) in \( B^T A^T \):</p>
+<p>\( (B^T A^T)_{ij} = \sum_k b^T_{ik} \cdot a^T_{kj} = \sum_k b_{ki} \cdot a_{jk} \)</p>
+<p>Since both expressions are the same, we conclude:</p>
+<p>\( (AB)^T = B^T A^T \)</p>
 
-  <h2>2. Cofactor and Adjoint</h2>
-  <h3>Cofactor Matrix</h3>
-  <p>\( \text{CO}_{ij} = (-1)^{i+j} M_{ij} \)</p>
+<h3>1.b. Reverse Direction \( B^T A^T = (AB)^T \)</h3>
+<p>We can also prove this identity starting from the right-hand side:</p>
+<p>\( (B^T A^T)_{ij} = \sum_k b^T_{ik} \cdot a^T_{kj} = \sum_k b_{ki} \cdot a_{jk} = (AB)_{ji} = (AB)^T_{ij} \)</p>
 
-  <h3>Adjoint</h3>
-  <p>\( \text{Adj}(A) = [\text{CO}_{ij}]^T \)</p>
+<h2>2. Cofactor and Adjoint</h2>
 
-  <h2>3. Inverse of a Matrix</h2>
-  <p>If invertible: \( A^{-1} = \frac{\text{Adj}(A)}{\det(A)} \)</p>
+<h3>Cofactor Matrix</h3>
+<p>The cofactor of the element in the \( i^{\text{th}} \) row and \( j^{\text{th}} \) column of a square matrix \( A \) is given by:</p>
+<p>\( \text{CO}_{ij} = (-1)^{i+j} \cdot M_{ij} \)</p>
+<p>Where \( M_{ij} \) is the <strong>minor</strong> of the element, i.e., the determinant of the submatrix formed by deleting the \( i^{\text{th}} \) row and \( j^{\text{th}} \) column from \( A \).</p>
 
-  <h2>4. Inverse of a Product</h2>
-  <p>\( (AB)^{-1} = B^{-1} A^{-1} \)</p>
-  <p>\( (AB)(AB)^{-1} = I \)</p>
-  <p>Pre-multiply by \( A^{-1} \): \( A^{-1}(AB)(AB)^{-1} = A^{-1} \Rightarrow B(AB)^{-1} = A^{-1} \)</p>
-  <p>Pre-multiply by \( B^{-1} \): \( (AB)^{-1} = B^{-1} A^{-1} \)</p>
+<h3>Adjoint</h3>
+<p>The adjoint (or adjugate) of a square matrix \( A \) is the transpose of the matrix of cofactors:</p>
+<p>\( \text{Adj}(A) = [\text{CO}_{ij}]^T \)</p>
 
-  <h2>5. Adjoint of a Product</h2>
-  <p>\( \text{Adj}(AB) = \text{Adj}(B) \cdot \text{Adj}(A) \)</p>
-  <p>Using: \( (AB)^{-1} = \frac{\text{Adj}(AB)}{\det(AB)} \)</p>
-  <p>\( (AB)^{-1} = B^{-1} A^{-1}, \quad \det(AB) = \det(A) \cdot \det(B) \)</p>
-  <p>\( A^{-1} = \frac{\text{Adj}(A)}{\det(A)}, \quad B^{-1} = \frac{\text{Adj}(B)}{\det(B)} \)</p>
-  <p>\( \text{Adj}(B) \cdot \text{Adj}(A) = \det(A) \cdot \det(B) \cdot B^{-1} \cdot A^{-1} \)</p>
-  <p>Thus, \( \text{Adj}(AB) = \text{Adj}(B) \cdot \text{Adj}(A) \)</p>
+<h2>3. Inverse of a Matrix</h2>
+<p>If matrix \( A \) is invertible (i.e., \( \det(A) \ne 0 \)), then the inverse of \( A \) is given by:</p>
+<p>\( A^{-1} = \frac{\text{Adj}(A)}{\det(A)} \)</p>
+
+<h2>4. Inverse of a Product</h2>
+<p>The inverse of a product of two invertible matrices is the product of their inverses in reverse order:</p>
+<p>\( (AB)^{-1} = B^{-1} A^{-1} \)</p>
+<p><strong>Proof:</strong></p>
+<p>Start with the identity:</p>
+<p>\( (AB)(AB)^{-1} = I \)</p>
+<p>Pre-multiply both sides by \( A^{-1} \):</p>
+<p>\( A^{-1}(AB)(AB)^{-1} = A^{-1} \Rightarrow B(AB)^{-1} = A^{-1} \)</p>
+<p>Now pre-multiply both sides by \( B^{-1} \):</p>
+<p>\( B^{-1}B(AB)^{-1} = B^{-1}A^{-1} \Rightarrow (AB)^{-1} = B^{-1}A^{-1} \)</p>
+
+<h2>5. Adjoint of a Product</h2>
+<p>The adjoint of the product of two matrices equals the product of their adjoints in reverse order:</p>
+<p>\( \text{Adj}(AB) = \text{Adj}(B) \cdot \text{Adj}(A) \)</p>
+
+<p><strong>Why this works:</strong></p>
+<p>From the inverse formula:</p>
+<p>\( (AB)^{-1} = \frac{\text{Adj}(AB)}{\det(AB)} \)</p>
+<p>We also have:</p>
+<p>\( (AB)^{-1} = B^{-1} A^{-1} \), and \( \det(AB) = \det(A) \cdot \det(B) \)</p>
+<p>Substitute the inverse formulas:</p>
+<p>\( A^{-1} = \frac{\text{Adj}(A)}{\det(A)} \), and \( B^{-1} = \frac{\text{Adj}(B)}{\det(B)} \)</p>
+<p>Multiply the adjoints accordingly:</p>
+<p>\( \text{Adj}(B) \cdot \text{Adj}(A) = \det(A) \cdot \det(B) \cdot B^{-1} \cdot A^{-1} \)</p>
+<p>Thus, from the original inverse formula:</p>
+<p>\( \text{Adj}(AB) = \text{Adj}(B) \cdot \text{Adj}(A) \)</p>
+
 <p>
 				<strong>Eigenvalue and Eigenvector</strong>
 			</p>
@@ -565,35 +593,6 @@
 			</ul>
 			<p>
 				&#xa0;
-			</p>
-			<p>
-				<strong>Procedure</strong>
-			</p>
-			<ol>
-				<li>
-					Choose an m X n matrix
-				</li>
-				<li>
-					All zero rows are at the bottom. 
-				</li>
-				<li>
-					Choose the leading entry in the first non-zero row and swap it with the first row if necessary. Or, the leading entry/element in the first row must be non-zero.
-				</li>
-				<li>
-					Divide the first row by the leading entry so that the leading entry becomes 1.
-				</li>
-				<li>
-					Use row operations to make all entries in the first column below the leading entry equal to 0.
-				</li>
-				<li>
-					Repeat steps 3 through 5 for each subsequent row, working from top to bottom.
-				</li>
-			</ol>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				These conditions also imply that all entries in a column below a leading coefficient are zeros
 			</p>
 			<p>
 				&#xa0;
