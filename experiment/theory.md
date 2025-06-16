@@ -136,7 +136,7 @@
 <p>Thus, from the original inverse formula:</p>
 <p>\( \text{Adj}(AB) = \text{Adj}(B) \cdot \text{Adj}(A) \)</p>
 
-<h2>Eigenvalue and Eigenvector</h2>
+<h2 id = "ev">Eigenvalue and Eigenvector</h2>
 			<p>
 				Let’s assume a square matrix <strong>A</strong>
 			</p>
@@ -278,7 +278,7 @@
 			<p>
 				&#xa0;
 			</p>
-			<h2>Singular Value Decomposition (SVD)</h2>
+			<h2 id = "svd">Singular Value Decomposition (SVD)</h2>
 			<p>
 				<strong>Theory:</strong>
 			</p>
@@ -384,7 +384,7 @@
 			<p>
 				&#xa0;
 			</p>
-			<h2>LU Decomposition</h2>
+			<h2 id = "lu">LU Decomposition</h2>
 			<p>
 				LU Decomposition is a method to find solutions of linear equations.
 			</p>
