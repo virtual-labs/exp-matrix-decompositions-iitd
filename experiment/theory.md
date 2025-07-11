@@ -638,8 +638,6 @@
 				&#xa0;
 			</p>
 			<p>Let’s consider the matrix:</p>
-   </body>
-   </html>
 	   
 			<div class="math-left">
 			  A = 
