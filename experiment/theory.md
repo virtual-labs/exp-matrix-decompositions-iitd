@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 <!-- MathJax v3 CDN -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -23,8 +18,7 @@
 	text-align: left;
   }
 </style>
-</head>
-<body>
+
       <div class="px-6 pb-6 flex-1">
         <div
           class="w-full text-[#007bff] font-normal text-[19.2px]"
@@ -661,5 +655,3 @@
 			</div>		  
 			<p>There are no non-zero rows.</p>
 			<p><strong>Rank(B) = 0</strong></p>
-</body>
-</html>
