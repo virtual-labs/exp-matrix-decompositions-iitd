@@ -21,4 +21,5 @@ Fill a brief description of this experiment here
 SrNo | Name | Faculty or Student | Department| Institute | Email id
 :--|:--|:--|:--|:--|:--|
 1 | Prof Monika Aggarwal| Faculty | CARE | IIT Delhi | maggarwal@iitd.care.ac.in
-2 | Abhishek Ranakoti | Student | Electrical | IIT Delhi | abhishek.ranakoti@iitd.ee.ac.in
+2 | Salim Mia | Project Staff | CARE | IIT Delhi | salim.cstaff@iitd.ac.in iamsalim002@gmail.com
+3 | Abhishek Ranakoti | Student | Electrical | IIT Delhi | abhishek.ranakoti@iitd.ee.ac.in
