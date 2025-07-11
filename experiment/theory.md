@@ -35,7 +35,7 @@
         <p>Row echelon form is a fundamental tool in linear algebra that supports various signal processing applications by simplifying the analysis and solution of linear systems, determining matrix rank, etc.</p>
         <p>These foundational matrices enable efficient computation, representation, and manipulation of signals, serving as the building blocks for more complex signal processing tasks.</p>
         </div></div>
-<br/><br/>
+
   <h2>Properties of Matrix Operations</h2>
   <h2>Properties of Matrix Addition</h2>
   <p>The fundamental properties of real number addition also apply to matrices.</p>
