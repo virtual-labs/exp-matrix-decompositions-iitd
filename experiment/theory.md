@@ -562,7 +562,7 @@
 			</p>
 			<ol start="6">
 				<li>
-					<strong>Before showing the final result, all intermediate steps must be displayed.</strong>
+
 				</li>
 			</ol>
 			<p>
