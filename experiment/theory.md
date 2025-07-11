@@ -9,6 +9,20 @@
 <script id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+		onload="renderMathInElement(document.body, {displayMode: false});"></script>
+
+<style>
+  .math-left {
+	font-family: KaTeX_Main, serif;
+	font-size: 1.1em;
+	white-space: pre-wrap;
+	text-align: left;
+  }
+</style>
 </head>
 <body>
       <div class="px-6 pb-6 flex-1">
@@ -627,43 +641,31 @@
 			<p>
 				&#xa0;
 			</p>
-			<p>
-				<strong>Rank of a Matrix in Row Echelon Form (REF)</strong>
-			</p>
-			<ol>
-				<li>
-					<strong>Row Echelon Form (REF)</strong>: A matrix is in row echelon form when:
-					<ul>
-						<li>
-							All non-zero rows are above any rows of all zeros.
-						</li>
-						<li>
-							The leading entry (pivot) of each non-zero row is to the right of the leading entry of the row above it.
-						</li>
-						<li>
-							All entries below a pivot are zero.
-						</li>
-					</ul>
-				</li>
-			</ol>
-			<p>
-				&#xa0;
-			</p>
-			<ol start="2">
-				<li>
-					<strong>Finding the Rank</strong>:
-					<ul>
-						<li>
-							<strong>Identify Non-Zero Rows</strong>: In REF, the rank of the matrix is equal to the number of non-zero rows. This is because each non-zero row represents a linearly independent vector in the row space of the matrix.
-						</li>
-						<li>
-							<strong>Process</strong>: Convert the matrix to REF using row operations (row swapping, scaling rows, adding/subtracting multiples of rows) and count the number of non-zero rows to determine the rank.
-						</li>
-					</ul>
-				</li>
-			</ol>
-			<p>
-				&#xa0;
-			</p>
+			<p>Let’s consider the matrix:</p>
+			<div class="math-left">
+			  A = 
+			  \( \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{bmatrix} \)
+			</div>
+		  
+			<p>Convert it to REF:</p>
+			<div class="math-left">
+			  REF(A) = 
+			  \( \begin{bmatrix} 1 & 2 & 3 \\ 0 & -3 & -6 \\ 0 & 0 & 0 \end{bmatrix} \)
+			</div>
+		  
+			<p>This matrix has <strong>2 non-zero rows</strong>, so:</p>
+			<p><strong>Rank(A) = 2</strong></p>
+		  
+			<hr>
+		  
+			<h3>Example 2: Zero Matrix (No Rank)</h3>
+			<div class="math-left">
+			  B = 
+			  \( \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} \)
+			</div>
+		  
+			<p>There are no non-zero rows.</p>
+			<p><strong>Rank(B) = 0</strong></p>
+
 </body>
 </html>
