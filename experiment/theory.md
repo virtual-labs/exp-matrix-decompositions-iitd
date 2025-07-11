@@ -645,27 +645,21 @@
 			<div class="math-left">
 			  A = 
 			  \( \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{bmatrix} \)
-			</div>
-		  
+			</div>		  
 			<p>Convert it to REF:</p>
 			<div class="math-left">
 			  REF(A) = 
 			  \( \begin{bmatrix} 1 & 2 & 3 \\ 0 & -3 & -6 \\ 0 & 0 & 0 \end{bmatrix} \)
-			</div>
-		  
+			</div>	  
 			<p>This matrix has <strong>2 non-zero rows</strong>, so:</p>
-			<p><strong>Rank(A) = 2</strong></p>
-		  
-			<hr>
-		  
+			<p><strong>Rank(A) = 2</strong></p>	  
+			<hr>		  
 			<h3>Example 2: Zero Matrix (No Rank)</h3>
 			<div class="math-left">
 			  B = 
 			  \( \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} \)
-			</div>
-		  
+			</div>		  
 			<p>There are no non-zero rows.</p>
 			<p><strong>Rank(B) = 0</strong></p>
-
 </body>
 </html>
