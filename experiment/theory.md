@@ -150,482 +150,249 @@
 <p>Thus, from the original inverse formula:</p>
 <p>\( \text{Adj}(AB) = \text{Adj}(B) \cdot \text{Adj}(A) \)</p>
 
-<h2 id = "ev">Eigenvalue and Eigenvector</h2>
-			<p>
-				Let’s assume a square matrix <strong>A</strong>
-			</p>
-			<p>
-				The characteristic equation,
-			</p>
-			<p>
-				<strong>| A – </strong>λ*<strong>I | = </strong>0&#xa0;&#xa0; 
-			</p>
-			<p>
-				<em>(where </em><strong><em>I </em></strong><em>is an identity matrix)</em>
-			</p>
-			<p>
-				After calculating the values of λs we attempt to find eigenvectors for corresponding eigenvalues like this
-			</p>
-			<p>
-				For eigenvalue, λ = λ<sub>1</sub>
-			</p>
-			<p>
-				<strong>A*x</strong> = λ<sub>1</sub>*<strong>I*x</strong><strong>&#xa0;&#xa0; </strong><em>(where, </em><strong><em>x</em></strong><em> is an unknown vector)</em>
-			</p>
-			<p>
-				Or, (<strong>A</strong> - λ<sub>1</sub>*<strong>I</strong>)*<strong>x</strong> = 0
-			</p>
-			<p>
-				The value of <strong>x </strong>is the corresponding eigenvector of λ<sub>1</sub>
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong>Power Method for Dominant Eigenvalue</strong>
-			</p>
-			<p>
-				Let λ<sub>1</sub>, λ<sub>2</sub>, λ<sub>3</sub>, and λ<sub>n</sub> be the eigenvalues of an <strong>n X n </strong>matrix <strong>A</strong>.&#xa0; λ<sub>1 </sub>is called the dominant eigenvalue of <strong>A</strong> if
-			</p>
-			<p>
-				| λ<sub>1</sub>| &gt; | λ<sub>i </sub>|,&#xa0;&#xa0; <em>i = 2, 3, ... , n</em>
-			</p>
-			<p>
-				The eigenvectors corresponding to λ<sub>1 </sub>are called dominant eigenvectors of <strong>A</strong>.
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong>Example</strong>
-			</p>
-			<p>
-				A = <img src="1739254504_matrix-theory/1739254504_matrix-theory-7.png" width="82" height="42" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				We begin with an initial nonzero approximation of
-			</p>
-			<p>
-				<strong>x</strong><strong><sub>0</sub></strong> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-8.png" width="24" height="42" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				We then obtain the following approximations
-			</p>
-			<p>
-				<strong>x</strong><strong><sub>1</sub></strong><strong> = Ax</strong><strong><sub>0 </sub></strong><strong>= </strong><img src="1739254504_matrix-theory/1739254504_matrix-theory-9.png" width="106" height="42" alt="" /> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-10.png" width="53" height="42" alt="" /> = -4<img src="1739254504_matrix-theory/1739254504_matrix-theory-11.png" width="49" height="42" alt="" />
-			</p>
-			<p>
-				<strong>&#xa0;</strong>
-			</p>
-			<p>
-				<strong>x</strong><strong><sub>2</sub></strong><strong> = Ax</strong><strong><sub>1 </sub></strong><strong>= </strong><img src="1739254504_matrix-theory/1739254504_matrix-theory-12.png" width="134" height="42" alt="" /> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-13.png" width="35" height="42" alt="" /> = 10<img src="1739254504_matrix-theory/1739254504_matrix-theory-14.png" width="49" height="42" alt="" />
-			</p>
-			<p>
-				<strong>x</strong><strong><sub>3</sub></strong><strong> = Ax</strong><strong><sub>2 </sub></strong><strong>= </strong><img src="1739254504_matrix-theory/1739254504_matrix-theory-15.png" width="116" height="42" alt="" /> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-16.png" width="53" height="42" alt="" /> = -22<img src="1739254504_matrix-theory/1739254504_matrix-theory-17.png" width="49" height="42" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong>x</strong><strong><sub>4</sub></strong><strong> = Ax</strong><strong><sub>3 </sub></strong><strong>= </strong><img src="1739254504_matrix-theory/1739254504_matrix-theory-18.png" width="134" height="42" alt="" /> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-19.png" width="45" height="42" alt="" /> = 46<img src="1739254504_matrix-theory/1739254504_matrix-theory-20.png" width="49" height="42" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong>x</strong><strong><sub>5</sub></strong><strong> = Ax</strong><strong><sub>4 </sub></strong><strong>= </strong><img src="1739254504_matrix-theory/1739254504_matrix-theory-21.png" width="127" height="42" alt="" /> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-22.png" width="63" height="42" alt="" /> = -94<img src="1739254504_matrix-theory/1739254504_matrix-theory-23.png" width="49" height="42" alt="" />
-			</p>
-			<p>
-				<strong>x</strong><strong><sub>6</sub></strong><strong> = Ax</strong><strong><sub>5 </sub></strong><strong>= </strong><img src="1739254504_matrix-theory/1739254504_matrix-theory-24.png" width="145" height="42" alt="" /> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-25.png" width="45" height="42" alt="" /> = 190<img src="1739254504_matrix-theory/1739254504_matrix-theory-26.png" width="49" height="42" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				Note that the approximations in Example appear to be approaching scalar multiples of <img src="1739254504_matrix-theory/1739254504_matrix-theory-27.png" width="24" height="42" alt="" />
-			</p>
-			<p>
-				So, the obtained dominant eigenvector from the above iterations is
-			</p>
-			<p>
-				<strong>x</strong> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-27.png" width="24" height="42" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				Now, we’ll find the corresponding eigenvalue from the obtained eigenvector
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong>Formula</strong>
-			</p>
-			<p>
-				If <strong>x </strong>is an eigenvector of <strong>A</strong>, then its corresponding eigenvalue is given by 
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				λ = (<strong>Ax.x / x.x</strong>)
-			</p>
-			<p>
-				<strong>Ax </strong>= <img src="1739254504_matrix-theory/1739254504_matrix-theory-28.png" width="130" height="42" alt="" /> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-29.png" width="67" height="42" alt="" />
-			</p>
-			<p>
-				Then, <strong>Ax.x = </strong><img src="1739254504_matrix-theory/1739254504_matrix-theory-30.png" width="116" height="42" alt="" /> = -20.0 (approx.)
-			</p>
-			<p>
-				And <strong>x.x </strong>= <img src="1739254504_matrix-theory/1739254504_matrix-theory-31.png" width="97" height="42" alt="" /> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-26.png" width="49" height="42" alt="" /> = 9.94 (approx.)
-			</p>
-			<p>
-				So, the corresponding eigenvalue, λ = (-20.0 / 9.94) = -2 (approx.)
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<h2 id = "svd">Singular Value Decomposition (SVD)</h2>
-			<p>
-				<strong>Theory:</strong>
-			</p>
-			<p>
-				Singular Value Decomposition (SVD) is a matrix factorization technique that decomposes any m×n matrix A into three matrices: A=UΣV<sup>T</sup> 
-			</p>
-			<p>
-				Where:
-			</p>
+<hr>
+<h2>Eigenvalue and Eigenvector</h2>
+
+<p>Let’s assume a square matrix \( A \).</p>
+
+<p>The characteristic equation is:</p>
+<div class="math-left">\( |A - \lambda I| = 0 \)</div>
+<p>where \( I \) is the identity matrix and \( \lambda \) are eigenvalues.</p>
+
+<p>For eigenvalue \( \lambda = \lambda_1 \), the corresponding eigenvector \( x \) satisfies:</p>
+<div class="math-left">\( (A - \lambda_1 I)x = 0 \)</div>
+
+<hr>
+
+<h2>Power Method for Dominant Eigenvalue</h2>
+<p>The <strong>dominant eigenvalue</strong> \( \lambda_1 \) is the one with the largest magnitude:</p>
+<div class="math-left">\( |\lambda_1| > |\lambda_i| \quad \text{for all } i = 2, 3, \ldots, n \)</div>
+
+<h3>Example Matrix</h3>
+<div class="math-left">
+  \( A = \begin{bmatrix} 2 & -12 \\ 1 & -5 \end{bmatrix} \)
+</div>
+
+<p>Initial guess:</p>
+<div class="math-left">
+  \( x_0 = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \)
+</div>
+
+<h3>Iterations</h3>
+<div class="math-left">
+  \( x_1 = Ax_0 = \begin{bmatrix} -10 \\ -4 \end{bmatrix} \) <br>
+  \( x_2 = Ax_1 = \begin{bmatrix} 28 \\ 10 \end{bmatrix} \) <br>
+  \( x_3 = Ax_2 = \begin{bmatrix} -64 \\ -22 \end{bmatrix} \) <br>
+  \( x_4 = Ax_3 = \begin{bmatrix} 136 \\ 46 \end{bmatrix} \)
+</div>
+
+<h3>Observation</h3>
+<p>Each new vector is approaching a scalar multiple of the previous one. This shows convergence toward the dominant eigenvector.</p>
+
+<h3>Estimate Eigenvalue</h3>
+<p>We use the Rayleigh quotient:</p>
+<div class="math-left">
+  \( \lambda \approx \frac{(Ax) \cdot x}{x \cdot x} \)
+</div>
+
+<p>Let’s use \( x = \begin{bmatrix} 28 \\ 10 \end{bmatrix} \), and compute:</p>
+<div class="math-left">
+  \( Ax = \begin{bmatrix} -64 \\ -22 \end{bmatrix} \) <br>
+  \( Ax \cdot x = -1792 - 220 = -2012 \) <br>
+  \( x \cdot x = 784 + 100 = 884 \) <br>
+  \( \lambda \approx \frac{-2012}{884} \approx -2.276 \)
+</div>
+
+<hr>
+<h2>Singular Value Decomposition (SVD)</h2>
+
+<p>SVD is a powerful matrix decomposition technique that expresses any matrix \( A \in \mathbb{R}^{m \times n} \) as:</p>
+<div class="math-block">\( A = U \Sigma V^T \)</div>
+<ul>
+  <li>\( U \): Orthogonal matrix (size \( m \times m \))</li>
+  <li>\( \Sigma \): Diagonal matrix with singular values</li>
+  <li>\( V^T \): Transpose of orthogonal matrix \( V \)</li>
+</ul>
+
+<h3>Step 1: Define the matrix</h3>
+<p>We are using the matrix:</p>
+<div class="math-block">
+  \( A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \)
+</div>
+
+<h3>Step 2: Compute \( A^T A \) and \( A A^T \)</h3>
+<div class="math-block">
+  \( A^T A = \begin{bmatrix} 1 & 3 \\ 2 & 4 \end{bmatrix} \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} = \begin{bmatrix} 10 & 14 \\ 14 & 20 \end{bmatrix} \)
+</div>
+<div class="math-block">
+  \( A A^T = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \begin{bmatrix} 1 & 3 \\ 2 & 4 \end{bmatrix} = \begin{bmatrix} 5 & 11 \\ 11 & 25 \end{bmatrix} \)
+</div>
+
+<h3>Step 3: Find eigenvalues of \( A^T A \)</h3>
+<p>We solve the characteristic equation:</p>
+<div class="math-block">
+  \( \text{det}(A^T A - \lambda I) = 0 \)
+</div>
+<p>For \( A^T A = \begin{bmatrix} 10 & 14 \\ 14 & 20 \end{bmatrix} \), the eigenvalues are:</p>
+<ul>
+  <li>λ₁ ≈ 29.866</li>
+  <li>λ₂ ≈ 0.134</li>
+</ul>
+
+<h3>Step 4: Singular Values</h3>
+<p>Take square roots of eigenvalues to get singular values:</p>
+<ul>
+  <li>σ₁ = \( \sqrt{29.866} \approx 5.466 \)</li>
+  <li>σ₂ = \( \sqrt{0.134} \approx 0.366 \)</li>
+</ul>
+
+<h3>Step 5: Eigenvectors of \( A^T A \) and \( A A^T \)</h3>
+<p>Let \( v_1 \), \( v_2 \) be eigenvectors of \( A^T A \). These form the columns of \( V \).</p>
+<p>To get \( u_1, u_2 \):</p>
+<div class="math-block">
+  \( u_i = \frac{A v_i}{\sigma_i} \)
+</div>
+<p>These form the columns of \( U \).</p>
+
+<h3>Step 6: Final Decomposition</h3>
+<p>Putting everything together:</p>
+<div class="math-block">
+  \( U \approx \begin{bmatrix} 0.404 & -0.915 \\ 0.915 & 0.404 \end{bmatrix} \quad
+  \Sigma = \begin{bmatrix} 5.466 & 0 \\ 0 & 0.366 \end{bmatrix} \quad
+  V^T \approx \begin{bmatrix} 0.576 & 0.817 \\ -0.817 & 0.576 \end{bmatrix} \)
+</div>
+
+			<hr>
+
+			<h2>LU Decomposition</h2>
+
+			<p>LU Decomposition is the process of factoring a matrix \( A \) into two triangular matrices: a lower triangular matrix \( L \) and an upper triangular matrix \( U \), such that:</p>
+			<div class="math-block">\( A = L \cdot U \)</div>
+		  
+			<h3>Matrix A</h3>
+			<div class="math-block">
+			  \( A = \begin{bmatrix}
+			  2 & 4 & 3 & 5 \\
+			  -4 & -7 & -5 & -8 \\
+			  6 & 8 & 2 & 9 \\
+			  4 & 9 & -2 & 14
+			  \end{bmatrix} \)
+			</div>
+		  
+			<h3>Step 1: First Column Elimination</h3>
+			<p>We eliminate the entries below the first pivot (2 in row 1):</p>
 			<ul>
-				<li>
-					U is an m×m orthogonal matrix (or unitary if complex).
-				</li>
-				<li>
-					Σ is m×n diagonal matrix with non-negative real numbers on the diagonal (singular values).
-				</li>
-				<li>
-					V<sup>T</sup> is an n×n orthogonal matrix (or unitary if complex), and V<sup>T</sup> is the transpose of V.
-				</li>
+			  <li>\( R_2 \leftarrow R_2 + 2 \cdot R_1 \) → Multiplier: -2</li>
+			  <li>\( R_3 \leftarrow R_3 - 3 \cdot R_1 \) → Multiplier: 3</li>
+			  <li>\( R_4 \leftarrow R_4 - 2 \cdot R_1 \) → Multiplier: 2</li>
 			</ul>
-			<p>
-				<strong>Example</strong>
-			</p>
-			<p>
-				A = <img src="1739254504_matrix-theory/1739254504_matrix-theory-32.png" width="53" height="42" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				Compute A<sup>T</sup>A and AA<sup>T</sup>
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				A<sup>T</sup>A = <img src="1739254504_matrix-theory/1739254504_matrix-theory-33.png" width="111" height="42" alt="" /> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-34.png" width="74" height="42" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				AA<sup>T</sup> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-35.png" width="111" height="42" alt="" /> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-36.png" width="74" height="42" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong>Find Eigenvalues and Eigenvectors</strong>:
-			</p>
-			<p>
-				For A<sup>T</sup>A:
-			</p>
+		  
+			<p>Updated matrix U:</p>
+			<div class="math-block">
+			  \( U_1 = \begin{bmatrix}
+			  2 & 4 & 3 & 5 \\
+			  0 & 1 & 1 & 2 \\
+			  0 & -4 & -7 & -6 \\
+			  0 & 1 & -8 & 4
+			  \end{bmatrix} \)
+			</div>
+		  
+			<p>Partial L matrix:</p>
+			<div class="math-block">
+			  \( L = \begin{bmatrix}
+			  1 & 0 & 0 & 0 \\
+			  -2 & 1 & 0 & 0 \\
+			  3 & 0 & 1 & 0 \\
+			  2 & 0 & 0 & 1
+			  \end{bmatrix} \)
+			</div>
+		  
+			<h3>Step 2: Second Column Elimination</h3>
 			<ul>
-				<li>
-					Eigenvalues are λ1= 29.8661 and λ2 = 0.1339
-				</li>
-				<li>
-					Corresponding eigenvectors (normalized) are v1 = <img src="1739254504_matrix-theory/1739254504_matrix-theory-37.png" width="92" height="42" alt="" />and v2 = <img src="1739254504_matrix-theory/1739254504_matrix-theory-38.png" width="88" height="42" alt="" />
-				</li>
+			  <li>\( R_3 \leftarrow R_3 + 4 \cdot R_2 \) → Multiplier: -4</li>
+			  <li>\( R_4 \leftarrow R_4 - 1 \cdot R_2 \) → Multiplier: 1</li>
 			</ul>
-			<p>
-				For AA<sup>T</sup>:
-			</p>
+		  
+			<p>Updated matrix U:</p>
+			<div class="math-block">
+			  \( U_2 = \begin{bmatrix}
+			  2 & 4 & 3 & 5 \\
+			  0 & 1 & 1 & 2 \\
+			  0 & 0 & -3 & 2 \\
+			  0 & 0 & -9 & 2
+			  \end{bmatrix} \)
+			</div>
+		  
+			<p>Updated L matrix:</p>
+			<div class="math-block">
+			  \( L = \begin{bmatrix}
+			  1 & 0 & 0 & 0 \\
+			  -2 & 1 & 0 & 0 \\
+			  3 & -4 & 1 & 0 \\
+			  2 & 1 & 0 & 1
+			  \end{bmatrix} \)
+			</div>
+		  
+			<h3>Step 3: Third Column Elimination</h3>
 			<ul>
-				<li>
-					Eigenvalues are λ1= 29.8661 and λ2 = 0.1339
-				</li>
-				<li>
-					Corresponding eigenvectors (normalized) are u1 = <img src="1739254504_matrix-theory/1739254504_matrix-theory-39.png" width="92" height="42" alt="" />and u2 = <img src="1739254504_matrix-theory/1739254504_matrix-theory-40.png" width="88" height="42" alt="" />
-				</li>
+			  <li>\( R_4 \leftarrow R_4 - 3 \cdot R_3 \) → Multiplier: 3</li>
 			</ul>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong>Compute Singular Values</strong>:
-			</p>
-			<p>
-				Singular values are σ1 = √ 29.8661= 5.4650
-			</p>
-			<p>
-				And σ1 = √ 0.1339 = 0.3660
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong>Final SVD:</strong>
-			</p>
-			<p>
-				A=UΣV<sup>T</sup>
-			</p>
-			<p>
-				Where: 
-			</p>
-			<p>
-				U = <img src="1739254504_matrix-theory/1739254504_matrix-theory-41.png" width="185" height="42" alt="" />&#xa0; Σ = <img src="1739254504_matrix-theory/1739254504_matrix-theory-42.png" width="149" height="42" alt="" />&#xa0; 
-			</p>
-			<p>
-				V<sup>T</sup> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-43.png" width="180" height="42" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<h2 id = "lu">LU Decomposition</h2>
-			<p>
-				LU Decomposition is a method to find solutions of linear equations.
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				Using Gauss Elimination Method 
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				Consider a matrix&#xa0;𝐴. If all entries below the diagonal entries are zero, then the matrix is called “upper triangular.” If all entries above the diagonal entries are zero, then the matrix is called “lower triangular.” 
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; And <strong>A = L*U</strong>
-			</p>
-			<p>
-				<strong>L</strong> =<img src="1739254504_matrix-theory/1739254504_matrix-theory-44.png" width="201" height="79" alt="" />&#xa0; ;&#xa0;&#xa0; <strong>U</strong> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-45.png" width="178" height="79" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong><em>L= lower triangular matrix; U= upper triangular matrix</em></strong>
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<ol start="5">
-				<li>
-					For a given matrix
-				</li>
-			</ol>
-			<p>
-				<strong>A</strong> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-46.png" width="186" height="79" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong>A=L*U</strong>
-			</p>
-			<p>
-				Or, <strong>A</strong>=<img src="1739254504_matrix-theory/1739254504_matrix-theory-47.png" width="117" height="79" alt="" />* <img src="1739254504_matrix-theory/1739254504_matrix-theory-46.png" width="186" height="79" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong><em>L= lower triangular matrix; U= upper triangular matrix</em></strong>
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				After doing the row&#xa0;operation "R2 - (-2)*R1," we get,
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				Or, <strong>A</strong> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-48.png" width="135" height="79" alt="" />* <img src="1739254504_matrix-theory/1739254504_matrix-theory-49.png" width="142" height="79" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				After row operation in matrix <strong>U</strong>, we've set (-2) to the same place of the<strong> L</strong> matrix and the (2, 1)<sup>th</sup> position of the U matrix, which is now zero.
-			</p>
-			<p>
-				Firstly, try the first column elements of matrix <strong>U</strong> below diagonal elements to make zeroes,
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				After doing,&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ‘R2-(-2)*R1’ <em>(as demonstrated above)</em>
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ‘R3-(3)*R1’ and
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ‘R4-(2)*R1’
-			</p>
-			<p>
-				We get,
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong>A</strong> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-50.png" width="135" height="79" alt="" />* <img src="1739254504_matrix-theory/1739254504_matrix-theory-51.png" width="167" height="79" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				In a same way, we will now employ row operations to set the elements of the second column of matrix <strong>U</strong> to zero.
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				Calculate,&#xa0;&#xa0;&#xa0; ‘R3-(-4)*R2’ and
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ‘R4-(1)*R2’
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				We get,
-			</p>
-			<p>
-				<strong>A</strong> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-52.png" width="153" height="79" alt="" />* <img src="1739254504_matrix-theory/1739254504_matrix-theory-53.png" width="149" height="79" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				Now, we'll apply row operations to convert the elements of the third column of matrix <strong>U</strong> to zeroes.
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				Now calculate "R4-(3)*R2"
-			</p>
-			<p>
-				We get,
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong>A</strong> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-54.png" width="153" height="79" alt="" />* <img src="1739254504_matrix-theory/1739254504_matrix-theory-55.png" width="149" height="79" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				So, 
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong>L</strong> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-54.png" width="153" height="79" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong>U</strong> = <img src="1739254504_matrix-theory/1739254504_matrix-theory-55.png" width="149" height="79" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<h2>Row Echelon Form</h2>
-			<p>
-				A matrix is in row echelon form if
-			</p>
+		  
+			<p>Final matrix U:</p>
+			<div class="math-block">
+			  \( U = \begin{bmatrix}
+			  2 & 4 & 3 & 5 \\
+			  0 & 1 & 1 & 2 \\
+			  0 & 0 & -3 & 2 \\
+			  0 & 0 & 0 & -4
+			  \end{bmatrix} \)
+			</div>
+		  
+			<p>Final L matrix:</p>
+			<div class="math-block">
+			  \( L = \begin{bmatrix}
+			  1 & 0 & 0 & 0 \\
+			  -2 & 1 & 0 & 0 \\
+			  3 & -4 & 1 & 0 \\
+			  2 & 1 & 3 & 1
+			  \end{bmatrix} \)
+			</div>
+
+			<hr>
+
+			<h2>Row Echelon Form (REF)</h2>
+
+			<p>A matrix is in <strong>Row Echelon Form</strong> if:</p>
 			<ul>
-				<li>
-					All rows consisting of only zeroes are at the bottom.
-				</li>
-				<li>
-					The leading entry (that is the left-most nonzero entry) of every nonzero row is to the right of the leading entry of every row above
-				</li>
-				<li>
-					Some texts add the condition that the leading coefficient must be 1 while others regard this as reduced row echelon form
-				</li>
-				<li>
-					These two conditions imply that all entries in a column below a leading coefficient are zeros
-				</li>
+			  <li>All rows of all zeroes are at the bottom.</li>
+			  <li>The leading entry of each non-zero row is to the right of the leading entry of the row above it.</li>
+			  <li>All entries below a pivot are zeros.</li>
 			</ul>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				<strong>Example</strong>
-			</p>
-			<p>
-				Given matrix,
-			</p>
-			<p>
-				<strong>A = </strong><img src="1739254504_matrix-theory/1739254504_matrix-theory-56.png" width="104" height="61" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				R2 ← R2 – R1
-			</p>
-			<p>
-				<img src="1739254504_matrix-theory/1739254504_matrix-theory-57.png" width="100" height="61" alt="" />
-			</p>
-			<p>
-				<strong>&#xa0;</strong>
-			</p>
-			<p>
-				R3 ← R3 + 2*R2
-			</p>
-			<p>
-				<img src="1739254504_matrix-theory/1739254504_matrix-theory-58.png" width="100" height="61" alt="" />
-			</p>
-			<p>
-				<strong>&#xa0;</strong>
-			</p>
-			<p>
-				R3 ← R3 / 4
-			</p>
-			<p>
-				<img src="1739254504_matrix-theory/1739254504_matrix-theory-59.png" width="100" height="61" alt="" />
-			</p>
-			<p>
-				&#xa0;
-			</p>
+		  
+			<h3>Input Matrix:</h3>
+			<div class="math-block">
+			  \( A = \begin{bmatrix} 1 & -2 & 1 \\ 1 & -1 & 2 \\ 0 & -2 & 2 \end{bmatrix} \)
+			</div>
+		  
+			<h3>Step 1: Eliminate below first pivot</h3>
+			<p>Apply \( R_2 \leftarrow R_2 - R_1 \)</p>
+			<div class="math-block">
+			  \( \begin{bmatrix} 1 & -2 & 1 \\ 0 & 1 & 1 \\ 0 & -2 & 2 \end{bmatrix} \)
+			</div>
+		  
+			<h3>Step 2: Eliminate below pivot in 2nd column</h3>
+			<p>Apply \( R_3 \leftarrow R_3 + 2R_2 \)</p>
+			<div class="math-block">
+			  \( \begin{bmatrix} 1 & -2 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 4 \end{bmatrix} \)
+			</div>
+		  
+			<h3>Final REF:</h3>
+			<div class="math-block">
+			  \( \text{REF}(A) = \begin{bmatrix} 1 & -2 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 4 \end{bmatrix} \)
+			</div>
+		  
+			<p>This matrix is now in row echelon form.</p>
+			<hr>
 			<h2>Rank of a Matrix</h2>
 			<p>
 				<strong>Theory:</strong>
