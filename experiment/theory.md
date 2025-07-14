@@ -261,146 +261,146 @@
   \Sigma = \begin{bmatrix} 5.466 & 0 \\ 0 & 0.366 \end{bmatrix} \quad
   V^T \approx \begin{bmatrix} 0.576 & 0.817 \\ -0.817 & 0.576 \end{bmatrix} \)
 </div>
-			<hr>
-			<h2>LU Decomposition</h2>
-			<p>LU Decomposition is the process of factoring a matrix \( A \) into two triangular matrices: a lower triangular matrix \( L \) and an upper triangular matrix \( U \), such that:</p>
-			<div class="math-block">\( A = L \cdot U \)</div>	  
-			<h3>Matrix A</h3>
-			<div class="math-block">
-			  \( A = \begin{bmatrix}
-			  2 & 4 & 3 & 5 \\
-			  -4 & -7 & -5 & -8 \\
-			  6 & 8 & 2 & 9 \\
-			  4 & 9 & -2 & 14
-			  \end{bmatrix} \)
-			</div>
-			<h3>Step 1: First Column Elimination</h3>
-			<p>We eliminate the entries below the first pivot (2 in row 1):</p>
-			<ul>
-			  <li>\( R_2 \leftarrow R_2 + 2 \cdot R_1 \) → Multiplier: -2</li>
-			  <li>\( R_3 \leftarrow R_3 - 3 \cdot R_1 \) → Multiplier: 3</li>
-			  <li>\( R_4 \leftarrow R_4 - 2 \cdot R_1 \) → Multiplier: 2</li>
-			</ul>
-			<p>Updated matrix U:</p>
-			<div class="math-block">
-			  \( U_1 = \begin{bmatrix}
-			  2 & 4 & 3 & 5 \\
-			  0 & 1 & 1 & 2 \\
-			  0 & -4 & -7 & -6 \\
-			  0 & 1 & -8 & 4
-			  \end{bmatrix} \)
-			</div>
-			<p>Partial L matrix:</p>
-			<div class="math-block">
-			  \( L = \begin{bmatrix}
-			  1 & 0 & 0 & 0 \\
-			  -2 & 1 & 0 & 0 \\
-			  3 & 0 & 1 & 0 \\
-			  2 & 0 & 0 & 1
-			  \end{bmatrix} \)
-			</div>
-			<h3>Step 2: Second Column Elimination</h3>
-			<ul>
-			  <li>\( R_3 \leftarrow R_3 + 4 \cdot R_2 \) → Multiplier: -4</li>
-			  <li>\( R_4 \leftarrow R_4 - 1 \cdot R_2 \) → Multiplier: 1</li>
-			</ul>
-			<p>Updated matrix U:</p>
-			<div class="math-block">
-			  \( U_2 = \begin{bmatrix}
-			  2 & 4 & 3 & 5 \\
-			  0 & 1 & 1 & 2 \\
-			  0 & 0 & -3 & 2 \\
-			  0 & 0 & -9 & 2
-			  \end{bmatrix} \)
-			</div>
-			<p>Updated L matrix:</p>
-			<div class="math-block">
-			  \( L = \begin{bmatrix}
-			  1 & 0 & 0 & 0 \\
-			  -2 & 1 & 0 & 0 \\
-			  3 & -4 & 1 & 0 \\
-			  2 & 1 & 0 & 1
-			  \end{bmatrix} \)
-			</div>
-			<h3>Step 3: Third Column Elimination</h3>
-			<ul>
-			  <li>\( R_4 \leftarrow R_4 - 3 \cdot R_3 \) → Multiplier: 3</li>
-			</ul>	  
-			<p>Final matrix U:</p>
-			<div class="math-block">
-			  \( U = \begin{bmatrix}
-			  2 & 4 & 3 & 5 \\
-			  0 & 1 & 1 & 2 \\
-			  0 & 0 & -3 & 2 \\
-			  0 & 0 & 0 & -4
-			  \end{bmatrix} \)
-			</div>
-			<p>Final L matrix:</p>
-			<div class="math-block">
-			  \( L = \begin{bmatrix}
-			  1 & 0 & 0 & 0 \\
-			  -2 & 1 & 0 & 0 \\
-			  3 & -4 & 1 & 0 \\
-			  2 & 1 & 3 & 1
-			  \end{bmatrix} \)
-			</div>
-		<hr>
-			<h2>Row Echelon Form (REF)</h2>
-			<p>A matrix is in <strong>Row Echelon Form</strong> if:</p>
-			<ul>
-			  <li>All rows of all zeroes are at the bottom.</li>
-			  <li>The leading entry of each non-zero row is to the right of the leading entry of the row above it.</li>
-			  <li>All entries below a pivot are zeros.</li>
-			</ul>		  
-			<h3>Input Matrix:</h3>
-			<div class="math-block">
-			  \( A = \begin{bmatrix} 1 & -2 & 1 \\ 1 & -1 & 2 \\ 0 & -2 & 2 \end{bmatrix} \)
-			</div>		  
-			<h3>Step 1: Eliminate below first pivot</h3>
-			<p>Apply \( R_2 \leftarrow R_2 - R_1 \)</p>
-			<div class="math-block">
-			  \( \begin{bmatrix} 1 & -2 & 1 \\ 0 & 1 & 1 \\ 0 & -2 & 2 \end{bmatrix} \)
-			</div>		  
-			<h3>Step 2: Eliminate below pivot in 2nd column</h3>
-			<p>Apply \( R_3 \leftarrow R_3 + 2R_2 \)</p>
-			<div class="math-block">
-			  \( \begin{bmatrix} 1 & -2 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 4 \end{bmatrix} \)
-			</div>		  
-			<h3>Final REF:</h3>
-			<div class="math-block">
-			  \( \text{REF}(A) = \begin{bmatrix} 1 & -2 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 4 \end{bmatrix} \)
-			</div>		  
-			<p>This matrix is now in row echelon form.</p>
-			<hr>
-			<h2>Rank of a Matrix</h2>
-			<p>
-				<strong>Theory:</strong>
-			</p>
-			<p>
-				<strong>Definition</strong>: The rank of a matrix is defined as the maximum number of linearly independent rows (or columns) in the matrix. It can also be seen as the dimension of the row space or column space of the matrix.
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>Let’s consider the matrix:</p>
-			<div class="math-left">
-			  A = 
-			  \( \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{bmatrix} \)
-			</div>		  
-			<p>Convert it to REF:</p>
-			<div class="math-left">
-			  REF(A) = 
-			  \( \begin{bmatrix} 1 & 2 & 3 \\ 0 & -3 & -6 \\ 0 & 0 & 0 \end{bmatrix} \)
-			</div>	  
-			<p>This matrix has <strong>2 non-zero rows</strong>, so:</p>
-			<p><strong>Rank(A) = 2</strong></p>	  
-			<hr>		  
-			<h3>Example 2: Zero Matrix (No Rank)</h3>
-			<div class="math-left">
-			  B = 
-			  \( \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} \)
-			</div>		  
-			<p>There are no non-zero rows.</p>
-			<p><strong>Rank(B) = 0</strong></p>
+<hr>
+<h2>LU Decomposition</h2>
+<p>LU Decomposition is the process of factoring a matrix \( A \) into two triangular matrices: a lower triangular matrix \( L \) and an upper triangular matrix \( U \), such that:</p>
+<div class="math-block">\( A = L \cdot U \)</div>	  
+<h3>Matrix A</h3>
+<div class="math-block">
+	\( A = \begin{bmatrix}
+	2 & 4 & 3 & 5 \\
+	-4 & -7 & -5 & -8 \\
+	6 & 8 & 2 & 9 \\
+	4 & 9 & -2 & 14
+	\end{bmatrix} \)
+</div>
+<h3>Step 1: First Column Elimination</h3>
+<p>We eliminate the entries below the first pivot (2 in row 1):</p>
+<ul>
+	<li>\( R_2 \leftarrow R_2 + 2 \cdot R_1 \) → Multiplier: -2</li>
+	<li>\( R_3 \leftarrow R_3 - 3 \cdot R_1 \) → Multiplier: 3</li>
+	<li>\( R_4 \leftarrow R_4 - 2 \cdot R_1 \) → Multiplier: 2</li>
+</ul>
+<p>Updated matrix U:</p>
+<div class="math-block">
+	\( U_1 = \begin{bmatrix}
+	2 & 4 & 3 & 5 \\
+	0 & 1 & 1 & 2 \\
+	0 & -4 & -7 & -6 \\
+	0 & 1 & -8 & 4
+	\end{bmatrix} \)
+</div>
+<p>Partial L matrix:</p>
+<div class="math-block">
+	\( L = \begin{bmatrix}
+	1 & 0 & 0 & 0 \\
+	-2 & 1 & 0 & 0 \\
+	3 & 0 & 1 & 0 \\
+	2 & 0 & 0 & 1
+	\end{bmatrix} \)
+</div>
+<h3>Step 2: Second Column Elimination</h3>
+<ul>
+	<li>\( R_3 \leftarrow R_3 + 4 \cdot R_2 \) → Multiplier: -4</li>
+	<li>\( R_4 \leftarrow R_4 - 1 \cdot R_2 \) → Multiplier: 1</li>
+</ul>
+<p>Updated matrix U:</p>
+<div class="math-block">
+	\( U_2 = \begin{bmatrix}
+	2 & 4 & 3 & 5 \\
+	0 & 1 & 1 & 2 \\
+	0 & 0 & -3 & 2 \\
+	0 & 0 & -9 & 2
+	\end{bmatrix} \)
+</div>
+<p>Updated L matrix:</p>
+<div class="math-block">
+	\( L = \begin{bmatrix}
+	1 & 0 & 0 & 0 \\
+	-2 & 1 & 0 & 0 \\
+	3 & -4 & 1 & 0 \\
+	2 & 1 & 0 & 1
+	\end{bmatrix} \)
+</div>
+<h3>Step 3: Third Column Elimination</h3>
+<ul>
+	<li>\( R_4 \leftarrow R_4 - 3 \cdot R_3 \) → Multiplier: 3</li>
+</ul>	  
+<p>Final matrix U:</p>
+<div class="math-block">
+	\( U = \begin{bmatrix}
+	2 & 4 & 3 & 5 \\
+	0 & 1 & 1 & 2 \\
+	0 & 0 & -3 & 2 \\
+	0 & 0 & 0 & -4
+	\end{bmatrix} \)
+</div>
+<p>Final L matrix:</p>
+<div class="math-block">
+	\( L = \begin{bmatrix}
+	1 & 0 & 0 & 0 \\
+	-2 & 1 & 0 & 0 \\
+	3 & -4 & 1 & 0 \\
+	2 & 1 & 3 & 1
+	\end{bmatrix} \)
+</div>
+<hr>
+<h2>Row Echelon Form (REF)</h2>
+<p>A matrix is in <strong>Row Echelon Form</strong> if:</p>
+<ul>
+	<li>All rows of all zeroes are at the bottom.</li>
+	<li>The leading entry of each non-zero row is to the right of the leading entry of the row above it.</li>
+	<li>All entries below a pivot are zeros.</li>
+</ul>		  
+<h3>Input Matrix:</h3>
+<div class="math-block">
+	\( A = \begin{bmatrix} 1 & -2 & 1 \\ 1 & -1 & 2 \\ 0 & -2 & 2 \end{bmatrix} \)
+</div>		  
+<h3>Step 1: Eliminate below first pivot</h3>
+<p>Apply \( R_2 \leftarrow R_2 - R_1 \)</p>
+<div class="math-block">
+	\( \begin{bmatrix} 1 & -2 & 1 \\ 0 & 1 & 1 \\ 0 & -2 & 2 \end{bmatrix} \)
+</div>		  
+<h3>Step 2: Eliminate below pivot in 2nd column</h3>
+<p>Apply \( R_3 \leftarrow R_3 + 2R_2 \)</p>
+<div class="math-block">
+	\( \begin{bmatrix} 1 & -2 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 4 \end{bmatrix} \)
+</div>		  
+<h3>Final REF:</h3>
+<div class="math-block">
+	\( \text{REF}(A) = \begin{bmatrix} 1 & -2 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 4 \end{bmatrix} \)
+</div>		  
+<p>This matrix is now in row echelon form.</p>
+<hr>
+<h2>Rank of a Matrix</h2>
+<p>
+	<strong>Theory:</strong>
+</p>
+<p>
+	<strong>Definition</strong>: The rank of a matrix is defined as the maximum number of linearly independent rows (or columns) in the matrix. It can also be seen as the dimension of the row space or column space of the matrix.
+</p>
+<p>
+	&#xa0;
+</p>
+<p>Let’s consider the matrix:</p>
+<div class="math-left">
+	A = 
+	\( \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{bmatrix} \)
+</div>		  
+<p>Convert it to REF:</p>
+<div class="math-left">
+	REF(A) = 
+	\( \begin{bmatrix} 1 & 2 & 3 \\ 0 & -3 & -6 \\ 0 & 0 & 0 \end{bmatrix} \)
+</div>	  
+<p>This matrix has <strong>2 non-zero rows</strong>, so:</p>
+<p><strong>Rank(A) = 2</strong></p>	  
+<hr>		  
+<h3>Example 2: Zero Matrix (No Rank)</h3>
+<div class="math-left">
+	B = 
+	\( \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} \)
+</div>		  
+<p>There are no non-zero rows.</p>
+<p><strong>Rank(B) = 0</strong></p>
 </body>
 </html>
