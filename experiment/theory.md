@@ -35,16 +35,16 @@
         <p>These foundational matrices enable efficient computation, representation, and manipulation of signals, serving as the building blocks for more complex signal processing tasks.</p>
         <br/>
 <ul>
-  <li><a href="/properties">1. Properties of Matrix Operations</a></li>
-  <li><a href="/minor">2. Minor, Cofactor, and Adjoint</a></li>
-  <li><a href="/ev">3. Eigenvalue and Eigenvector</a></li>
-  <li><a href="/svd">4. Singular Value Decomposition (SVD)</a></li>
-  <li><a href="/lu">5. LU Decomposition</a></li>
-  <li><a href="/ref">6. Row Echelon Form (REF)</a></li>
-  <li><a href="/rank">7. Rank of a Matrix</a></li>
+  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html/properties">1. Properties of Matrix Operations</a></li>
+  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html/minor">2. Minor, Cofactor, and Adjoint</a></li>
+  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html/ev">3. Eigenvalue and Eigenvector</a></li>
+  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html/svd">4. Singular Value Decomposition (SVD)</a></li>
+  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html/lu">5. LU Decomposition</a></li>
+  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html/ref">6. Row Echelon Form (REF)</a></li>
+  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html/rank">7. Rank of a Matrix</a></li>
 </ul>
         </div></div>
-<br/><br/>
+<br/>
   <h2 id = "properties">Properties of Matrix Operations</h2>
   <h2>Properties of Matrix Addition</h2>
   <p>The fundamental properties of real number addition also apply to matrices.</p>
