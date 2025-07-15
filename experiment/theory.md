@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -34,9 +33,19 @@
         <p>LU decomposition is essential for solving linear equations, inverting matrices, and computing determinants. In signal processing, linear equations are crucial for various tasks, including filter design, system identification, and signal reconstruction. They are used to model and solve problems such as noise reduction, linear filtering, and Fourier transforms. Linear systems also underpin techniques like Principal Component Analysis (PCA) and Kalman filtering for estimation and prediction. Essentially, they provide the mathematical framework for manipulating and analyzing signals efficiently.</p>
         <p>Row echelon form is a fundamental tool in linear algebra that supports various signal processing applications by simplifying the analysis and solution of linear systems, determining matrix rank, etc.</p>
         <p>These foundational matrices enable efficient computation, representation, and manipulation of signals, serving as the building blocks for more complex signal processing tasks.</p>
+        <br/>
+<ul>
+  <li><a href="/properties">1. Properties of Matrix Operations</a></li>
+  <li><a href="/minor">2. Minor, Cofactor, and Adjoint</a></li>
+  <li><a href="/ev">3. Eigenvalue and Eigenvector</a></li>
+  <li><a href="/svd">4. Singular Value Decomposition (SVD)</a></li>
+  <li><a href="/lu">5. LU Decomposition</a></li>
+  <li><a href="/ref">6. Row Echelon Form (REF)</a></li>
+  <li><a href="/rank">7. Rank of a Matrix</a></li>
+</ul>
         </div></div>
 <br/><br/>
-  <h2>Properties of Matrix Operations</h2>
+  <h2 id = "properties">Properties of Matrix Operations</h2>
   <h2>Properties of Matrix Addition</h2>
   <p>The fundamental properties of real number addition also apply to matrices.</p>
   <p>Let \( A \), \( B \), and \( C \) be \( m \times n \) matrices:</p>
@@ -83,7 +92,7 @@
     <li>If matrix is upper/lower triangular, \( \det = \) product of diagonal elements</li>
   </ol>
 
-<h2>Matrix Theory: Minor, Cofactor, Adjoint, and Inverse</h2>
+<h2 id = "minor">Matrix Theory: Minor, Cofactor, Adjoint, and Inverse</h2>
 
 <h2>Matrix Multiplication Representation</h2>
 <p>Let matrix \( A \) be of size \( i \times k \), and matrix \( B \) be of size \( k \times j \). Their product \( C = A \cdot B \) will result in a matrix of size \( i \times j \).</p>
@@ -151,7 +160,7 @@
 <p>\( \text{Adj}(AB) = \text{Adj}(B) \cdot \text{Adj}(A) \)</p>
 
 <hr>
-<h2>Eigenvalue and Eigenvector</h2>
+<h2 id = "ev">Eigenvalue and Eigenvector</h2>
 
 <p>Let’s assume a square matrix \( A \).</p>
 
@@ -204,7 +213,7 @@
 </div>
 
 <hr>
-<h2>Singular Value Decomposition (SVD)</h2>
+<h2 id = "svd">Singular Value Decomposition (SVD)</h2>
 
 <p>SVD is a powerful matrix decomposition technique that expresses any matrix \( A \in \mathbb{R}^{m \times n} \) as:</p>
 <div class="math-block">\( A = U \Sigma V^T \)</div>
@@ -262,7 +271,7 @@
   V^T \approx \begin{bmatrix} 0.576 & 0.817 \\ -0.817 & 0.576 \end{bmatrix} \)
 </div>
 <hr>
-<h2>LU Decomposition</h2>
+<h2  id = "lu">LU Decomposition</h2>
 <p>LU Decomposition is the process of factoring a matrix \( A \) into two triangular matrices: a lower triangular matrix \( L \) and an upper triangular matrix \( U \), such that:</p>
 <div class="math-block">\( A = L \cdot U \)</div>	  
 <h3>Matrix A</h3>
@@ -345,7 +354,7 @@
 	\end{bmatrix} \)
 </div>
 <hr>
-<h2>Row Echelon Form (REF)</h2>
+<h2 id = "ref">Row Echelon Form (REF)</h2>
 <p>A matrix is in <strong>Row Echelon Form</strong> if:</p>
 <ul>
 	<li>All rows of all zeroes are at the bottom.</li>
@@ -372,7 +381,7 @@
 </div>		  
 <p>This matrix is now in row echelon form.</p>
 <hr>
-<h2>Rank of a Matrix</h2>
+<h2 id = "rank">Rank of a Matrix</h2>
 <p>
 	<strong>Theory:</strong>
 </p>
