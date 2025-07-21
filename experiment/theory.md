@@ -34,7 +34,7 @@
         <p>These foundational matrices enable efficient computation, representation, and manipulation of signals, serving as the building blocks for more complex signal processing tasks.</p>
         <br/>
 <ul>
-  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/properties.html">1. Properties of Matrix Operations</a></li>
+  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory/properties.html">1. Properties of Matrix Operations</a></li>
   <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#minor">2. Minor, Cofactor, and Adjoint</a></li>
   <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#ev">3. Eigenvalue and Eigenvector</a></li>
   <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#svd">4. Singular Value Decomposition (SVD)</a></li>
