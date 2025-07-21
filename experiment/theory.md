@@ -1,4 +1,3 @@
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,13 +34,14 @@
         <p>These foundational matrices enable efficient computation, representation, and manipulation of signals, serving as the building blocks for more complex signal processing tasks.</p>
         <br/>
 <ul>
-  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#properties">1. Properties of Matrix Operations</a></li>
+  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/properties.html">1. Properties of Matrix Operations</a></li>
   <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#minor">2. Minor, Cofactor, and Adjoint</a></li>
   <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#ev">3. Eigenvalue and Eigenvector</a></li>
   <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#svd">4. Singular Value Decomposition (SVD)</a></li>
   <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#lu">5. LU Decomposition</a></li>
   <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#ref">6. Row Echelon Form (REF)</a></li>
   <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#rank">7. Rank of a Matrix</a></li>
+    <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#system">8. System of Linear Equations</a></li>
 </ul>
         </div></div>
 <br/>
@@ -92,18 +92,11 @@
     <li>If matrix is upper/lower triangular, \( \det = \) product of diagonal elements</li>
   </ol>
 
-<h2 id = "minor">Matrix Theory: Minor, Cofactor, Adjoint, and Inverse</h2>
+<h2 id = "minor">Minor, Cofactor, Adjoint, and Inverse</h2>
 
-<h2>Matrix Multiplication Representation</h2>
-<p>Let matrix \( A \) be of size \( i \times k \), and matrix \( B \) be of size \( k \times j \). Their product \( C = A \cdot B \) will result in a matrix of size \( i \times j \).</p>
-<p>The element in the \( i^{\text{th}} \) row and \( j^{\text{th}} \) column of the resulting matrix \( C \), denoted by \( c_{ij} \), is calculated as:</p>
-<p>\( c_{ij} = \sum_k a_{ik} \cdot b_{kj} \)</p>
-<p>The transpose of matrix \( C \), denoted as \( C^T \), swaps rows and columns, resulting in a matrix of size \( j \times i \):</p>
-<p>\( C^T = [C]_{j \times i} \), where \( C^T_{ji} = C_{ij} \)</p>
+<h2>Transpose of a Product</h2>
 
-<h2>1. Transpose of a Product</h2>
-
-<h3>1.a. Proof that \( (AB)^T = B^T A^T \)</h3>
+<h3>Proof that \( (AB)^T = B^T A^T \)</h3>
 <p>The transpose of a product of two matrices equals the product of their transposes in reverse order. That is:</p>
 <p>\( (AB)^T = B^T A^T \)</p>
 <p>To see why this is true, consider the element at position \( (i, j) \) in \( (AB)^T \):</p>
@@ -113,11 +106,16 @@
 <p>Since both expressions are the same, we conclude:</p>
 <p>\( (AB)^T = B^T A^T \)</p>
 
-<h3>1.b. Reverse Direction \( B^T A^T = (AB)^T \)</h3>
+<h3>Reverse Direction \( B^T A^T = (AB)^T \)</h3>
 <p>We can also prove this identity starting from the right-hand side:</p>
 <p>\( (B^T A^T)_{ij} = \sum_k b^T_{ik} \cdot a^T_{kj} = \sum_k b_{ki} \cdot a_{jk} = (AB)_{ji} = (AB)^T_{ij} \)</p>
 
-<h2>2. Cofactor and Adjoint</h2>
+<h2>Minor, Cofactor and Adjoint</h2>
+
+<h3>Minor Matrix</h3>
+<p>The <strong>minor</strong> of the element in the \( i^{\text{th}} \) row and \( j^{\text{th}} \) column of a square matrix \( A \) is denoted by \( M_{ij} \) and defined as:</p>
+<p>\( M_{ij} = \left| A_{ij} \right| \)</p>
+<p>Where \( A_{ij} \) is the submatrix formed by deleting the \( i^{\text{th}} \) row and \( j^{\text{th}} \) column from the original matrix \( A \), and \( \left| A_{ij} \right| \) is its determinant.</p>
 
 <h3>Cofactor Matrix</h3>
 <p>The cofactor of the element in the \( i^{\text{th}} \) row and \( j^{\text{th}} \) column of a square matrix \( A \) is given by:</p>
@@ -128,11 +126,11 @@
 <p>The adjoint (or adjugate) of a square matrix \( A \) is the transpose of the matrix of cofactors:</p>
 <p>\( \text{Adj}(A) = [\text{CO}_{ij}]^T \)</p>
 
-<h2>3. Inverse of a Matrix</h2>
+<h2>Inverse of a Matrix</h2>
 <p>If matrix \( A \) is invertible (i.e., \( \det(A) \ne 0 \)), then the inverse of \( A \) is given by:</p>
 <p>\( A^{-1} = \frac{\text{Adj}(A)}{\det(A)} \)</p>
 
-<h2>4. Inverse of a Product</h2>
+<h2>Inverse of a Product</h2>
 <p>The inverse of a product of two invertible matrices is the product of their inverses in reverse order:</p>
 <p>\( (AB)^{-1} = B^{-1} A^{-1} \)</p>
 <p><strong>Proof:</strong></p>
@@ -143,7 +141,7 @@
 <p>Now pre-multiply both sides by \( B^{-1} \):</p>
 <p>\( B^{-1}B(AB)^{-1} = B^{-1}A^{-1} \Rightarrow (AB)^{-1} = B^{-1}A^{-1} \)</p>
 
-<h2>5. Adjoint of a Product</h2>
+<h2>Adjoint of a Product</h2>
 <p>The adjoint of the product of two matrices equals the product of their adjoints in reverse order:</p>
 <p>\( \text{Adj}(AB) = \text{Adj}(B) \cdot \text{Adj}(A) \)</p>
 
@@ -160,8 +158,8 @@
 <p>\( \text{Adj}(AB) = \text{Adj}(B) \cdot \text{Adj}(A) \)</p>
 
 <hr>
-<h2 id = "ev">Eigenvalue and Eigenvector</h2>
-
+<h2 id = "ev">Eigenvalue Decomposition</h2>
+<p>Eigenvalue decomposition expresses a matrix as a product of its eigenvectors and eigenvalues, enabling diagonalization and simplifying the analysis of matrix powers and system stability.</p>
 <p>Let’s assume a square matrix \( A \).</p>
 
 <p>The characteristic equation is:</p>
@@ -170,50 +168,55 @@
 
 <p>For eigenvalue \( \lambda = \lambda_1 \), the corresponding eigenvector \( x \) satisfies:</p>
 <div class="math-left">\( (A - \lambda_1 I)x = 0 \)</div>
+<p>Let \( A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \). The eigenvalue decomposition of a square matrix \( A \) is given by:</p>
+<p>\[
+A = P \Lambda P^{-1}
+\]</p>
+<p>Where:</p>
+<ul>
+  <li>\( \Lambda \) is a diagonal matrix of eigenvalues</li>
+  <li>\( P \) is a matrix whose columns are the eigenvectors corresponding to the eigenvalues</li>
+</ul>
 
-<hr>
+<h4>Step 1: Find the eigenvalues</h4>
+<p>We solve the characteristic equation \( \det(A - \lambda I) = 0 \).</p>
+<p>\[
+\begin{vmatrix}
+1 - \lambda & 2 \\
+3 & 4 - \lambda
+\end{vmatrix} = (1 - \lambda)(4 - \lambda) - 6 = \lambda^2 - 5\lambda - 2
+\]</p>
+<p>Solving: \( \lambda = \frac{5 \pm \sqrt{33}}{2} \approx -0.372, \ 5.372 \)</p>
 
-<h2>Power Method for Dominant Eigenvalue</h2>
-<p>The <strong>dominant eigenvalue</strong> \( \lambda_1 \) is the one with the largest magnitude:</p>
-<div class="math-left">\( |\lambda_1| > |\lambda_i| \quad \text{for all } i = 2, 3, \ldots, n \)</div>
+<h4>Step 2: Find eigenvectors</h4>
+<p>For each eigenvalue \( \lambda \), solve \( (A - \lambda I)\vec{v} = 0 \) to get the corresponding eigenvector \( \vec{v} \).</p>
+<p>For example, for \( \lambda_1 = 5.372 \), the corresponding eigenvector is approximately:</p>
+<p>\[
+\vec{v}_1 = \begin{bmatrix} -0.416 \\ -0.909 \end{bmatrix}
+\]</p>
+<p>And for \( \lambda_2 = -0.372 \):</p>
+<p>\[
+\vec{v}_2 = \begin{bmatrix} -0.825 \\ 0.566 \end{bmatrix}
+\]</p>
 
-<h3>Example Matrix</h3>
-<div class="math-left">
-  \( A = \begin{bmatrix} 2 & -12 \\ 1 & -5 \end{bmatrix} \)
-</div>
-
-<p>Initial guess:</p>
-<div class="math-left">
-  \( x_0 = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \)
-</div>
-
-<h3>Iterations</h3>
-<div class="math-left">
-  \( x_1 = Ax_0 = \begin{bmatrix} -10 \\ -4 \end{bmatrix} \) <br>
-  \( x_2 = Ax_1 = \begin{bmatrix} 28 \\ 10 \end{bmatrix} \) <br>
-  \( x_3 = Ax_2 = \begin{bmatrix} -64 \\ -22 \end{bmatrix} \) <br>
-  \( x_4 = Ax_3 = \begin{bmatrix} 136 \\ 46 \end{bmatrix} \)
-</div>
-
-<h3>Observation</h3>
-<p>Each new vector is approaching a scalar multiple of the previous one. This shows convergence toward the dominant eigenvector.</p>
-
-<h3>Estimate Eigenvalue</h3>
-<p>We use the Rayleigh quotient:</p>
-<div class="math-left">
-  \( \lambda \approx \frac{(Ax) \cdot x}{x \cdot x} \)
-</div>
-
-<p>Let’s use \( x = \begin{bmatrix} 28 \\ 10 \end{bmatrix} \), and compute:</p>
-<div class="math-left">
-  \( Ax = \begin{bmatrix} -64 \\ -22 \end{bmatrix} \) <br>
-  \( Ax \cdot x = -1792 - 220 = -2012 \) <br>
-  \( x \cdot x = 784 + 100 = 884 \) <br>
-  \( \lambda \approx \frac{-2012}{884} \approx -2.276 \)
-</div>
+<h4>Step 3: Construct the decomposition</h4>
+<p>Using:</p>
+<p>\[
+P = \begin{bmatrix}
+-0.416 & -0.825 \\
+-0.909 & 0.566
+\end{bmatrix},
+\quad
+\Lambda = \begin{bmatrix}
+5.372 & 0 \\
+0 & -0.372
+\end{bmatrix}
+\]</p>
+<p>You can verify that \( A = P \Lambda P^{-1} \) using matrix multiplication.</p>
 
 <hr>
 <h2 id = "svd">Singular Value Decomposition (SVD)</h2>
+<p>Singular Value Decomposition (SVD) factorizes a matrix into orthogonal vectors and singular values, providing insight into its rank, range, and numerical stability.</p>
 
 <p>SVD is a powerful matrix decomposition technique that expresses any matrix \( A \in \mathbb{R}^{m \times n} \) as:</p>
 <div class="math-block">\( A = U \Sigma V^T \)</div>
@@ -272,6 +275,8 @@
 </div>
 <hr>
 <h2  id = "lu">LU Decomposition</h2>
+<p>LU decomposition breaks a matrix into a product of a lower and an upper triangular matrix, simplifying linear equation solving and matrix inversion.</p>
+
 <p>LU Decomposition is the process of factoring a matrix \( A \) into two triangular matrices: a lower triangular matrix \( L \) and an upper triangular matrix \( U \), such that:</p>
 <div class="math-block">\( A = L \cdot U \)</div>	  
 <h3>Matrix A</h3>
@@ -355,6 +360,8 @@
 </div>
 <hr>
 <h2 id = "ref">Row Echelon Form (REF)</h2>
+<p>Row echelon form is a simplified matrix form where each leading entry is to the right of the one above, making it ideal for solving linear systems using back-substitution.</p>
+
 <p>A matrix is in <strong>Row Echelon Form</strong> if:</p>
 <ul>
 	<li>All rows of all zeroes are at the bottom.</li>
@@ -411,5 +418,64 @@
 </div>		  
 <p>There are no non-zero rows.</p>
 <p><strong>Rank(B) = 0</strong></p>
+<hr/>
+  <h2 id="system">System of Linear Equations</h2>
+  <p>A system of linear equations consists of multiple linear equations involving the same set of variables. Solving such systems helps determine the values of unknowns that satisfy all equations simultaneously.</p>
+
+  <p>Consider a system of \( m \) equations with \( n \) unknowns, represented in matrix form as:</p>
+  <div class="math-left">\( A\vec{x} = \vec{b} \)</div>
+  <p>where:</p>
+  <ul>
+    <li>\( A \) is an \( m \times n \) coefficient matrix</li>
+    <li>\( \vec{x} \) is an \( n \times 1 \) vector of unknowns</li>
+    <li>\( \vec{b} \) is an \( m \times 1 \) constant vector</li>
+  </ul>
+
+  <h3>Example:</h3>
+  <p>Suppose we have the following system:</p>
+  <div class="math-left">
+    \[
+    \begin{aligned}
+    x + 2y &= 5 \\
+    3x + 4y &= 11
+    \end{aligned}
+    \]
+  </div>
+
+  <p>It can be written in matrix form as:</p>
+  <div class="math-left">
+    \[
+    \begin{bmatrix}
+    1 & 2 \\
+    3 & 4
+    \end{bmatrix}
+    \begin{bmatrix}
+    x \\
+    y
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    5 \\
+    11
+    \end{bmatrix}
+    \]
+  </div>
+
+  <h3>Solution Methods:</h3>
+  <p>There are several techniques to solve such systems:</p>
+  <ul>
+    <li><strong>Gaussian Elimination</strong>: Reduces the system to row echelon form and then back-substitutes to find the solution.</li>
+    <li><strong>Matrix Inversion</strong>: If \( A \) is square and invertible, the solution is \( \vec{x} = A^{-1}\vec{b} \).</li>
+    <li><strong>LU Decomposition</strong>: Factors \( A \) into \( LU \) and solves via forward and backward substitution.</li>
+  </ul>
+
+  <h3>Interpreting Solutions:</h3>
+  <ul>
+    <li><strong>Unique Solution</strong>: The system has one solution (e.g., lines intersect at a single point).</li>
+    <li><strong>Infinite Solutions</strong>: The equations are dependent (e.g., same line).</li>
+    <li><strong>No Solution</strong>: The system is inconsistent (e.g., parallel lines).</li>
+  </ul>
+
+  <p>Systems of linear equations are fundamental in engineering, physics, and computer science for modeling real-world problems.</p>
 </body>
 </html>
