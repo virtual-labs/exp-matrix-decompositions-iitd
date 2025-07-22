@@ -34,14 +34,14 @@
         <p>These foundational matrices enable efficient computation, representation, and manipulation of signals, serving as the building blocks for more complex signal processing tasks.</p>
         <br/>
 <ul>
-  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory/properties.html">1. Properties of Matrix Operations</a></li>
-  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#minor">2. Minor, Cofactor, and Adjoint</a></li>
-  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#ev">3. Eigenvalue and Eigenvector</a></li>
-  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#svd">4. Singular Value Decomposition (SVD)</a></li>
-  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#lu">5. LU Decomposition</a></li>
-  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#ref">6. Row Echelon Form (REF)</a></li>
-  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#rank">7. Rank of a Matrix</a></li>
-    <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/theory.html#system">8. System of Linear Equations</a></li>
+  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/properties.html">1. Properties of Matrix Operations</a></li>
+  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/minor.html">2. Minor, Cofactor, and Adjoint</a></li>
+  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/ev.html">3. Eigenvalue and Eigenvector</a></li>
+  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/svd.html">4. Singular Value Decomposition (SVD)</a></li>
+  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/lu.html">5. LU Decomposition</a></li>
+  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/ref.html">6. Row Echelon Form (REF)</a></li>
+  <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/rank.html">7. Rank of a Matrix</a></li>
+    <li><a href="https://virtual-labs.github.io/exp-matrix-decompositions-iitd/system.html">8. System of Linear Equations</a></li>
 </ul>
         </div></div>
 <br/>
@@ -208,7 +208,6 @@ P = \begin{bmatrix}
 \end{bmatrix},
 \quad
 \Lambda = \begin{bmatrix}
-5.372 & 0 \\
 0 & -0.372
 \end{bmatrix}
 \]</p>
