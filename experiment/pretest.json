@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "css": "pre { font-family: 'Times New Roman', serif; font-size: 16px; line-height: 1.6; display: inline-block; padding: 4px 10px; position: relative; border-left: 2px solid black; border-right: 2px solid black; margin: 2px 0; }",
+  "css": "pre { font-family: 'Courier New', monospace; font-size: 16px; line-height: 1.6; display: inline-block; padding: 4px 10px; position: relative; border-left: 2px solid black; border-right: 2px solid black; margin: 2px 0; }",
   "questions": [
     {
       "question": "The identity matrix of order 3 is:",
       "answers": {
-        "a": "<pre>&nbsp;1  0  0\n0  1  0\n0  0  1</pre>",
+        "a": "<pre>1  0  0\n0  1  0\n0  0  1</pre>",
         "b": "<pre>0  1  0\n1  0  1\n0  1  0</pre>",
         "c": "<pre>1  1  1\n0  0  0\n0  0  0</pre>",
         "d": "<pre>0  0  0\n0  0  0\n0  0  0</pre>"
