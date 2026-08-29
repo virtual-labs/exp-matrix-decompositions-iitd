@@ -354,6 +354,20 @@ li.step:hover {
     </div>
 	
     <script>
+      // Restore any previously entered matrix (from this or another
+      // simulation page in this experiment) so it doesn't need re-typing.
+      (function restoreMatrixInputs() {
+        ["matrixTextarea1", "matrixTextarea"].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (!el) return;
+          try {
+            var saved = localStorage.getItem("vlab_" + id);
+            if (saved) el.value = saved;
+          } catch (e) {}
+        });
+      })();
+    </script>
+    <script>
       var overlay = document.getElementById("overlay");
 
       // Function to toggle the overlay visibility
@@ -996,6 +1010,7 @@ function parseMatrixString(matrixString) {
         const grid = document.getElementById(gridId);
         if (!textarea.classList.contains("hidden")) {
           console.log(textarea.value);
+          try { localStorage.setItem("vlab_" + textareaId, textarea.value); } catch (e) {}
           return textarea.value;
         } else {
           const inputs = document.querySelectorAll(`#${gridId} .box`);
@@ -1011,6 +1026,7 @@ function parseMatrixString(matrixString) {
           // Create matrix string with rows separated by newline
           const matrixString = matrix.map((row) => row.join(" ")).join("\n");
           console.log(matrixString);
+          try { localStorage.setItem("vlab_" + textareaId, matrixString); } catch (e) {}
           return matrixString;
         }
       }
