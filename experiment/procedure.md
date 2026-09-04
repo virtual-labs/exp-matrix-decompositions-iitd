@@ -32,6 +32,7 @@
                         <li>To use cell input mode, click on the "Cell" button in the simulator.</li>
                     </ul>
                 </li>
+                <li><strong>Note:</strong> Only real numbers are supported as matrix or cell values &mdash; complex numbers cannot be entered.</li>
             </ul>
         </li>
         <li>2. After entering the matrix values, select the desired operation by clicking the corresponding button:
